@@ -1,0 +1,54 @@
+{
+  "runs": [
+    {
+      "started_at": "2026-11-06T20:39:41+00:00",
+      "git_commit": "4856328",
+      "python": "3.13.14",
+      "host": "Windows-11-10.0.26300-SP0",
+      "tasks": {
+        "intent_routing": {
+          "dataset": "Banking77 (PolyAI, Casanueva et al. 2020), split test, CC BY 4.0",
+          "n_labels": 77
+        },
+        "workflow_next_step": {
+          "dataset": "ABCD v1.1 (ASAPP, Chen et al. NAACL 2021), split test (+dev for rare actions), MIT",
+          "n_labels": 30
+        },
+        "output_quality": {
+          "dataset": "HelpSteer2 (NVIDIA, Wang et al. 2024), split validation, CC BY 4.0",
+          "n_labels": 5
+        }
+      },
+      "systems": {
+        "gpt-5.4-none": {
+          "provider": "Microsoft Foundry (Azure OpenAI Responses API)",
+          "deployment": "gpt-5.4",
+          "api_version": "2025-04-01-preview",
+          "reasoning_effort": "none",
+          "logprobs": true,
+          "pricing": {
+            "input": 2.5,
+            "cached_input": 0.25,
+            "output": 15.0,
+            "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-gpt-5-4-in-microsoft-foundry/4499785 (Global Standard): $2.50/M input, $0.25/M cached input, $15.00/M output"
+          }
+        },
+        "gpt-5.4-medium": {
+          "provider": "Microsoft Foundry (Azure OpenAI Responses API)",
+          "deployment": "gpt-5.4",
+          "api_version": "2025-04-01-preview",
+          "reasoning_effort": "medium",
+          "logprobs": false,
+          "pricing": {
+            "input": 2.5,
+            "cached_input": 0.25,
+            "output": 15.0,
+            "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-gpt-5-4-in-microsoft-foundry/4499785 (Global Standard): $2.50/M input, $0.25/M cached input, $15.00/M output"
+          }
+        }
+      },
+      "limit": null,
+      "concurrency": 8
+    }
+  ]
+}

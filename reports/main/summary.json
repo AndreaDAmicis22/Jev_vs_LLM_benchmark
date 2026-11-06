@@ -1,0 +1,430 @@
+{
+  "run_id": "main",
+  "generated_at": "2026-11-06T20:47:35+00:00",
+  "tasks": {
+    "intent_routing": {
+      "title": "S1 - Classificazione delle richieste in ingresso",
+      "kind": "choice",
+      "dataset": "Banking77 (PolyAI, Casanueva et al. 2020), split test, CC BY 4.0",
+      "systems": {
+        "gpt-5.4-none": {
+          "models": [
+            "gpt-5.4-2026-03-05"
+          ],
+          "complete": true,
+          "quality": {
+            "n": 308,
+            "errors": 0,
+            "accuracy": 0.8733766233766234,
+            "accuracy_ci": [
+              0.8344155844155844,
+              0.9090909090909091
+            ],
+            "macro_f1": 0.8676237903510633,
+            "macro_f1_ci": [
+              0.8113465773043694,
+              0.8896759150493633
+            ]
+          },
+          "latency": {
+            "mean_ms": 1302.4918987013095,
+            "p50_ms": 1161.6429499999867,
+            "p90_ms": 1890.3700700003358,
+            "p95_ms": 2456.5182249999452,
+            "p99_ms": 2961.985173000613,
+            "server_p50_ms": null
+          },
+          "cost": {
+            "usd_per_1k": 1.1871444805194806,
+            "usd_total": 0.3656405,
+            "input_tokens_mean": 1809.892857142857,
+            "cached_share": 0.8895410684782589,
+            "output_tokens_mean": 18.99025974025974,
+            "reasoning_tokens_mean": 0.0
+          },
+          "calibration": {
+            "ece": 0.1222738736999409,
+            "brier": 0.11909075664851411,
+            "auroc_correct": 0.6598989610142025,
+            "share_p_ge_099": 0.9512987012987013,
+            "reliability": [
+              {
+                "bin": 1,
+                "n": 1,
+                "confidence": 0.11921353287076641,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 3,
+                "n": 1,
+                "confidence": 0.39024130516553157,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 5,
+                "n": 1,
+                "confidence": 0.5622065330885153,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 8,
+                "n": 1,
+                "confidence": 0.8174725130143815,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 9,
+                "n": 304,
+                "confidence": 0.9984558464067381,
+                "accuracy": 0.8782894736842105
+              }
+            ]
+          }
+        },
+        "gpt-5.4-medium": {
+          "models": [
+            "gpt-5.4-2026-03-05"
+          ],
+          "complete": true,
+          "quality": {
+            "n": 308,
+            "errors": 0,
+            "accuracy": 0.8831168831168831,
+            "accuracy_ci": [
+              0.8474025974025974,
+              0.9155844155844156
+            ],
+            "macro_f1": 0.874263975562677,
+            "macro_f1_ci": [
+              0.8187629199055793,
+              0.8979951346669612
+            ]
+          },
+          "latency": {
+            "mean_ms": 1676.9317831168698,
+            "p50_ms": 1518.8889999999446,
+            "p90_ms": 2408.035449999534,
+            "p95_ms": 2818.2498099998597,
+            "p99_ms": 4694.647490999984,
+            "server_p50_ms": null
+          },
+          "cost": {
+            "usd_per_1k": 2.1439399350649353,
+            "usd_total": 0.6603335,
+            "input_tokens_mean": 1809.892857142857,
+            "cached_share": 0.88357099419317,
+            "output_tokens_mean": 81.15584415584415,
+            "reasoning_tokens_mean": 60.20779220779221
+          },
+          "calibration": null
+        }
+      }
+    },
+    "workflow_next_step": {
+      "title": "S2 - Decisione del passo successivo in un workflow",
+      "kind": "choice",
+      "dataset": "ABCD v1.1 (ASAPP, Chen et al. NAACL 2021), split test (+dev for rare actions), MIT",
+      "systems": {
+        "gpt-5.4-none": {
+          "models": [
+            "gpt-5.4-2026-03-05"
+          ],
+          "complete": true,
+          "quality": {
+            "n": 300,
+            "errors": 0,
+            "accuracy": 0.7733333333333333,
+            "accuracy_ci": [
+              0.7233333333333334,
+              0.82
+            ],
+            "macro_f1": 0.7738340937416184,
+            "macro_f1_ci": [
+              0.7161618794511613,
+              0.8092091081184886
+            ]
+          },
+          "latency": {
+            "mean_ms": 1307.742771666696,
+            "p50_ms": 1206.4252499999384,
+            "p90_ms": 1588.529860000108,
+            "p95_ms": 1887.781664999375,
+            "p99_ms": 3943.074176999971,
+            "server_p50_ms": null
+          },
+          "cost": {
+            "usd_per_1k": 3.265248333333333,
+            "usd_total": 0.9795745,
+            "input_tokens_mean": 1521.9433333333334,
+            "cached_share": 0.23436702636760456,
+            "output_tokens_mean": 17.53,
+            "reasoning_tokens_mean": 0.0
+          },
+          "calibration": {
+            "ece": 0.22591159611688136,
+            "brier": 0.21857410345710898,
+            "auroc_correct": 0.7668610547667343,
+            "share_p_ge_099": 0.8633333333333333,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 1,
+                "confidence": 0.06001276436315105,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 1,
+                "n": 1,
+                "confidence": 0.11919398345447159,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 2,
+                "n": 2,
+                "confidence": 0.2649150370188209,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 3,
+                "n": 4,
+                "confidence": 0.34704517054170847,
+                "accuracy": 0.75
+              },
+              {
+                "bin": 4,
+                "n": 2,
+                "confidence": 0.4543692455473323,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 6,
+                "n": 2,
+                "confidence": 0.6423015283015006,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 7,
+                "n": 3,
+                "confidence": 0.732112955021026,
+                "accuracy": 0.3333333333333333
+              },
+              {
+                "bin": 8,
+                "n": 6,
+                "confidence": 0.837652987399584,
+                "accuracy": 0.3333333333333333
+              },
+              {
+                "bin": 9,
+                "n": 279,
+                "confidence": 0.9969625428508648,
+                "accuracy": 0.7921146953405018
+              }
+            ]
+          }
+        },
+        "gpt-5.4-medium": {
+          "models": [
+            "gpt-5.4-2026-03-05"
+          ],
+          "complete": true,
+          "quality": {
+            "n": 300,
+            "errors": 0,
+            "accuracy": 0.8,
+            "accuracy_ci": [
+              0.7533333333333333,
+              0.8466666666666667
+            ],
+            "macro_f1": 0.8039056669414052,
+            "macro_f1_ci": [
+              0.7489841568182022,
+              0.8388008566766761
+            ]
+          },
+          "latency": {
+            "mean_ms": 4809.638010999988,
+            "p50_ms": 2274.094149999655,
+            "p90_ms": 10610.31594999996,
+            "p95_ms": 19236.116270000686,
+            "p99_ms": 30914.434763999478,
+            "server_p50_ms": null
+          },
+          "cost": {
+            "usd_per_1k": 7.691608333333333,
+            "usd_total": 2.3074825,
+            "input_tokens_mean": 1521.9433333333334,
+            "cached_share": 0.38967723283608896,
+            "output_tokens_mean": 348.07666666666665,
+            "reasoning_tokens_mean": 328.52
+          },
+          "calibration": null
+        }
+      }
+    },
+    "output_quality": {
+      "title": "S3 - Valutazione della qualita' di un output generato",
+      "kind": "ordinal",
+      "dataset": "HelpSteer2 (NVIDIA, Wang et al. 2024), split validation, CC BY 4.0",
+      "systems": {
+        "gpt-5.4-none": {
+          "models": [
+            "gpt-5.4-2026-03-05"
+          ],
+          "complete": true,
+          "quality": {
+            "n": 300,
+            "errors": 5,
+            "accuracy": 0.39666666666666667,
+            "accuracy_ci": [
+              0.34325,
+              0.4533333333333333
+            ],
+            "n_answered": 295,
+            "within1": 0.7898305084745763,
+            "mae": 0.8542372881355932,
+            "qwk": 0.5672361930782016,
+            "qwk_ci": [
+              0.48354891687571894,
+              0.6438916862775507
+            ],
+            "spearman": 0.6254845081356847,
+            "pass_accuracy": 0.7254237288135593,
+            "pass_f1": 0.5759162303664922,
+            "mean_pred_level": 1.7389830508474575,
+            "mean_gold_level": 1.9966101694915255
+          },
+          "latency": {
+            "mean_ms": 1236.1294016949398,
+            "p50_ms": 1146.6700000000856,
+            "p90_ms": 1549.4457000000696,
+            "p95_ms": 1889.2621099998914,
+            "p99_ms": 3215.729435999929,
+            "server_p50_ms": null
+          },
+          "cost": {
+            "usd_per_1k": 2.020740677966102,
+            "usd_total": 0.5961185,
+            "input_tokens_mean": 721.4203389830509,
+            "cached_share": 0.004811600468003327,
+            "output_tokens_mean": 15.0,
+            "reasoning_tokens_mean": 0.0
+          },
+          "calibration": {
+            "ece": 0.522596284109739,
+            "brier": 0.5093537161501693,
+            "auroc_correct": 0.5744604660045837,
+            "share_p_ge_099": 0.5966101694915255,
+            "reliability": [
+              {
+                "bin": 0,
+                "n": 1,
+                "confidence": 0.06742535823245294,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 1,
+                "n": 6,
+                "confidence": 0.15950663995657843,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 2,
+                "n": 6,
+                "confidence": 0.26573471672270493,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 3,
+                "n": 1,
+                "confidence": 0.37754066879814546,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 4,
+                "n": 5,
+                "confidence": 0.43782349911420193,
+                "accuracy": 0.2
+              },
+              {
+                "bin": 5,
+                "n": 3,
+                "confidence": 0.5743303442910564,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 6,
+                "n": 5,
+                "confidence": 0.6338032047965622,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 7,
+                "n": 11,
+                "confidence": 0.7646886022988677,
+                "accuracy": 0.45454545454545453
+              },
+              {
+                "bin": 8,
+                "n": 25,
+                "confidence": 0.8542440137684464,
+                "accuracy": 0.32
+              },
+              {
+                "bin": 9,
+                "n": 232,
+                "confidence": 0.9880809043224998,
+                "accuracy": 0.4396551724137931
+              }
+            ]
+          }
+        },
+        "gpt-5.4-medium": {
+          "models": [
+            "gpt-5.4-2026-03-05"
+          ],
+          "complete": true,
+          "quality": {
+            "n": 300,
+            "errors": 5,
+            "accuracy": 0.45,
+            "accuracy_ci": [
+              0.3933333333333333,
+              0.5066666666666667
+            ],
+            "n_answered": 295,
+            "within1": 0.8271186440677966,
+            "mae": 0.7627118644067796,
+            "qwk": 0.6200389396435525,
+            "qwk_ci": [
+              0.5414732557496522,
+              0.6950828514115726
+            ],
+            "spearman": 0.6411693839106445,
+            "pass_accuracy": 0.7491525423728813,
+            "pass_f1": 0.6262626262626263,
+            "mean_pred_level": 1.7627118644067796,
+            "mean_gold_level": 1.9966101694915255
+          },
+          "latency": {
+            "mean_ms": 3065.81935355933,
+            "p50_ms": 2802.7195000004212,
+            "p90_ms": 4298.0507000002035,
+            "p95_ms": 4979.090079999605,
+            "p99_ms": 7559.198334000216,
+            "server_p50_ms": null
+          },
+          "cost": {
+            "usd_per_1k": 4.694228813559322,
+            "usd_total": 1.3847975000000001,
+            "input_tokens_mean": 721.4203389830509,
+            "cached_share": 0.0,
+            "output_tokens_mean": 192.71186440677965,
+            "reasoning_tokens_mean": 175.71186440677965
+          },
+          "calibration": null
+        }
+      }
+    }
+  }
+}
