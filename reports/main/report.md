@@ -1,6 +1,6 @@
 # Risultati del benchmark · run `main`
 
-> Generato da `jevbench report` il 2026-11-06T20:47:35+00:00 (UTC). Modelli effettivamente serviti: `gpt-5.4-2026-03-05`.
+> Generato da `jevbench report` il 2026-11-06T20:49:49+00:00 (UTC). Modelli effettivamente serviti: `gpt-5.4-2026-03-05`.
 > Metodologia, limiti e interpretazione: [docs/03-metodologia.md](../../docs/03-metodologia.md) e [docs/04-risultati-e-raccomandazioni.md](../../docs/04-risultati-e-raccomandazioni.md).
 
 > **Attenzione:** in questo run mancano le predizioni di Jev (serve `TYPESAFE_API_KEY` in `.env`, poi `jevbench run --systems jev`).

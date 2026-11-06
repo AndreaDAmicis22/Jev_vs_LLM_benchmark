@@ -758,9 +758,8 @@ def build_report(run_id: str) -> Path:
             fig_confusion(summary, frames, theme, fig_dir / f"confusion-{mode}.png")
         if any(e.get("cascades") for e in summary["tasks"].values()):
             fig_tradeoff(summary, theme, fig_dir / f"tradeoff-{mode}.png")
-    (out_dir / "summary.json").write_text(json.dumps(summary, indent=2, default=float), encoding="utf-8", newline="
-")
+    summary_text = json.dumps(summary, indent=2, default=float)
+    (out_dir / "summary.json").write_text(summary_text, encoding="utf-8", newline="\n")
     report = out_dir / "report.md"
-    report.write_text(render_markdown(summary), encoding="utf-8", newline="
-")
+    report.write_text(render_markdown(summary), encoding="utf-8", newline="\n")
     return report
