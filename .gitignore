@@ -1,0 +1,36 @@
+# --- Secrets -----------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# --- Virtual environments ----------------------------------------------------
+.venv/
+venv/
+env/
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Notebooks ---------------------------------------------------------------
+.ipynb_checkpoints/
+
+# --- Benchmark artefacts -----------------------------------------------------
+# Raw downloads are re-creatable with `jevbench prepare`; the sampled
+# benchmark sets under data/benchmark/ ARE versioned for reproducibility.
+data/raw/
+
+# --- IDE / OS ----------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
