@@ -1,0 +1,308 @@
+{"id":"banking77-test-0355","label":"automatic_top_up","state":{"customer_message":"What is the auto top up function and where can I find that at?"},"meta":{"split":"test","row":355}}
+{"id":"banking77-test-2152","label":"change_pin","state":{"customer_message":"I need to change my pin but I am on the road."},"meta":{"split":"test","row":2152}}
+{"id":"banking77-test-1479","label":"atm_support","state":{"customer_message":"locations to withdraw money"},"meta":{"split":"test","row":1479}}
+{"id":"banking77-test-0897","label":"supported_cards_and_currencies","state":{"customer_message":"What cards and currencies do you support?"},"meta":{"split":"test","row":897}}
+{"id":"banking77-test-2469","label":"top_up_by_cash_or_cheque","state":{"customer_message":"What can I pay with? Does cash work?"},"meta":{"split":"test","row":2469}}
+{"id":"banking77-test-2632","label":"get_disposable_virtual_card","state":{"customer_message":"Where can I get a disposable virtual card?"},"meta":{"split":"test","row":2632}}
+{"id":"banking77-test-0007","label":"card_arrival","state":{"customer_message":"i have not received my card"},"meta":{"split":"test","row":7}}
+{"id":"banking77-test-0533","label":"pin_blocked","state":{"customer_message":"How can I unblock a blocked pin number for my account?"},"meta":{"split":"test","row":533}}
+{"id":"banking77-test-2274","label":"receiving_money","state":{"customer_message":"can I transfer my salary if it's in a different currency?"},"meta":{"split":"test","row":2274}}
+{"id":"banking77-test-0824","label":"card_payment_fee_charged","state":{"customer_message":"So what items  actually come  with  extra  fees"},"meta":{"split":"test","row":824}}
+{"id":"banking77-test-2730","label":"cash_withdrawal_not_recognised","state":{"customer_message":"How do I freeze my bank card, as there has been a strange withdrawal?"},"meta":{"split":"test","row":2730}}
+{"id":"banking77-test-1615","label":"pending_card_payment","state":{"customer_message":"How long does an item I bought show as pending?"},"meta":{"split":"test","row":1615}}
+{"id":"banking77-test-1848","label":"pending_transfer","state":{"customer_message":"I had made a transfer but its still pending."},"meta":{"split":"test","row":1848}}
+{"id":"banking77-test-2647","label":"top_up_failed","state":{"customer_message":"I attempted to top up but the app denied it."},"meta":{"split":"test","row":2647}}
+{"id":"banking77-test-1713","label":"request_refund","state":{"customer_message":"I bought this item and was charged the wrong amount can I get a refund?"},"meta":{"split":"test","row":1713}}
+{"id":"banking77-test-2853","label":"activate_my_card","state":{"customer_message":"I got my new card where do I go to activate it?"},"meta":{"split":"test","row":2853}}
+{"id":"banking77-test-0809","label":"card_payment_fee_charged","state":{"customer_message":"Why was I charged an extra fee when paying with my card?"},"meta":{"split":"test","row":809}}
+{"id":"banking77-test-0361","label":"card_not_working","state":{"customer_message":"I can't get my card to work."},"meta":{"split":"test","row":361}}
+{"id":"banking77-test-1376","label":"disposable_card_limits","state":{"customer_message":"What is the limit to number of transactions I can do with a disposable card?"},"meta":{"split":"test","row":1376}}
+{"id":"banking77-test-2058","label":"transfer_timing","state":{"customer_message":"How long is my Europe transfer wait?"},"meta":{"split":"test","row":2058}}
+{"id":"banking77-test-1372","label":"disposable_card_limits","state":{"customer_message":"What if I need multiple disposable cards?"},"meta":{"split":"test","row":1372}}
+{"id":"banking77-test-1847","label":"pending_transfer","state":{"customer_message":"So the transfer finally worked but now it's been pending for quite a long time. How long do you expect me to wait for it? It's quite urgent"},"meta":{"split":"test","row":1847}}
+{"id":"banking77-test-1769","label":"Refund_not_showing_up","state":{"customer_message":"Can you tell me why my refund is not showing in my statement?"},"meta":{"split":"test","row":1769}}
+{"id":"banking77-test-1470","label":"atm_support","state":{"customer_message":"Where can I withdrawal my money?"},"meta":{"split":"test","row":1470}}
+{"id":"banking77-test-0480","label":"age_limit","state":{"customer_message":"how old do i need to be to get an account for myself"},"meta":{"split":"test","row":480}}
+{"id":"banking77-test-1755","label":"declined_transfer","state":{"customer_message":"I tried to buy something online yesterday but it wouldn't stop saying declined. Tried again today but same thing happened. What's Broken?"},"meta":{"split":"test","row":1755}}
+{"id":"banking77-test-1158","label":"edit_personal_details","state":{"customer_message":"How do I change my address?"},"meta":{"split":"test","row":1158}}
+{"id":"banking77-test-1637","label":"pending_card_payment","state":{"customer_message":"I have paid by my card but payment is still its coming as pending. I think there is some issue please check and let me know when the status will complete."},"meta":{"split":"test","row":1637}}
+{"id":"banking77-test-2884","label":"cash_withdrawal_charge","state":{"customer_message":"Why are fees charged on cash withdrawals? I went to withdraw some money earlier today after shopping. There's a fee that wasn't there before."},"meta":{"split":"test","row":2884}}
+{"id":"banking77-test-2480","label":"order_physical_card","state":{"customer_message":"How do I receive my physical card"},"meta":{"split":"test","row":2480}}
+{"id":"banking77-test-1316","label":"visa_or_mastercard","state":{"customer_message":"Is Visa or Mastercard available?"},"meta":{"split":"test","row":1316}}
+{"id":"banking77-test-0685","label":"cancel_transfer","state":{"customer_message":"I need you to cancel a transfer that I made.  It is the wrong account number and the app won't let me stop the transaction.  Please stop it!"},"meta":{"split":"test","row":685}}
+{"id":"banking77-test-2183","label":"beneficiary_not_allowed","state":{"customer_message":"Why did I receive an error message saying that my transfer was not possible?"},"meta":{"split":"test","row":2183}}
+{"id":"banking77-test-1903","label":"terminate_account","state":{"customer_message":"Please delete my account. I am not happy with the service from your company."},"meta":{"split":"test","row":1903}}
+{"id":"banking77-test-0933","label":"getting_virtual_card","state":{"customer_message":"Can you tell me where I can order a virtual card?"},"meta":{"split":"test","row":933}}
+{"id":"banking77-test-0424","label":"exchange_via_app","state":{"customer_message":"How do I go through the process of currency exchange?"},"meta":{"split":"test","row":424}}
+{"id":"banking77-test-1062","label":"balance_not_updated_after_cheque_or_cash_deposit","state":{"customer_message":"My cash deposit from a week ago hasn't shown up. I need the money - how quickly can you sort this out?"},"meta":{"split":"test","row":1062}}
+{"id":"banking77-test-2712","label":"balance_not_updated_after_bank_transfer","state":{"customer_message":"Hey, I try to make a bank transfer from my UK account a few hours ago, but it haven't show up yet. Please check my account to make sure everything alright with it?"},"meta":{"split":"test","row":2712}}
+{"id":"banking77-test-2051","label":"transfer_timing","state":{"customer_message":"When will a transfer reach my account?"},"meta":{"split":"test","row":2051}}
+{"id":"banking77-test-0654","label":"pending_top_up","state":{"customer_message":"Can you please make my top up go through as soon as possible. I really need the money and it has been pending for an hour already."},"meta":{"split":"test","row":654}}
+{"id":"banking77-test-1339","label":"topping_up_by_card","state":{"customer_message":"Will my friend be able to top off my account?"},"meta":{"split":"test","row":1339}}
+{"id":"banking77-test-1658","label":"lost_or_stolen_phone","state":{"customer_message":"I lost my phone and would like to freeze my accounts."},"meta":{"split":"test","row":1658}}
+{"id":"banking77-test-2660","label":"top_up_failed","state":{"customer_message":"The app denied my top-up"},"meta":{"split":"test","row":2660}}
+{"id":"banking77-test-2246","label":"receiving_money","state":{"customer_message":"Do I need to choose GBP to get my salary deposited properly?"},"meta":{"split":"test","row":2246}}
+{"id":"banking77-test-2710","label":"balance_not_updated_after_bank_transfer","state":{"customer_message":"I made a bank transfer a couple of hours ago from my UK account.  It hasn't appeared, can you check to make sure it went through?"},"meta":{"split":"test","row":2710}}
+{"id":"banking77-test-2791","label":"exchange_charge","state":{"customer_message":"I will need to exchange currencies frequently, will I be able to get a discount?"},"meta":{"split":"test","row":2791}}
+{"id":"banking77-test-0365","label":"card_not_working","state":{"customer_message":"My card won't work."},"meta":{"split":"test","row":365}}
+{"id":"banking77-test-0339","label":"automatic_top_up","state":{"customer_message":"How do I make sure I don't run out of money on my card while traveling?"},"meta":{"split":"test","row":339}}
+{"id":"banking77-test-0983","label":"card_acceptance","state":{"customer_message":"Is my card usable anywhere?"},"meta":{"split":"test","row":983}}
+{"id":"banking77-test-0485","label":"age_limit","state":{"customer_message":"How do I go about setting up an account for my daughter?"},"meta":{"split":"test","row":485}}
+{"id":"banking77-test-0640","label":"pending_top_up","state":{"customer_message":"new customer and filling gas today, it's not working, the thing shows pending half an hour!"},"meta":{"split":"test","row":640}}
+{"id":"banking77-test-2019","label":"verify_source_of_funds","state":{"customer_message":"What is the source of my money?"},"meta":{"split":"test","row":2019}}
+{"id":"banking77-test-0113","label":"exchange_rate","state":{"customer_message":"From where are you getting your exchange rates?"},"meta":{"split":"test","row":113}}
+{"id":"banking77-test-1987","label":"transaction_charged_twice","state":{"customer_message":"My card has been charged two separate times for a single transaction."},"meta":{"split":"test","row":1987}}
+{"id":"banking77-test-2400","label":"getting_spare_card","state":{"customer_message":"Would it be possible to get another card?"},"meta":{"split":"test","row":2400}}
+{"id":"banking77-test-2238","label":"transfer_fee_charged","state":{"customer_message":"I got charged and extra fee when I transferred money so why was I charged?"},"meta":{"split":"test","row":2238}}
+{"id":"banking77-test-1387","label":"disposable_card_limits","state":{"customer_message":"How many disposable virtual cards can I have?"},"meta":{"split":"test","row":1387}}
+{"id":"banking77-test-1796","label":"Refund_not_showing_up","state":{"customer_message":"I am waiting patiently for a week now for the seller to get back to me and there has been no response, could you please help me further with getting my money back.  Thank you."},"meta":{"split":"test","row":1796}}
+{"id":"banking77-test-2353","label":"transfer_into_account","state":{"customer_message":"I want to use bank transfer for topping up my account. How is it handled?"},"meta":{"split":"test","row":2353}}
+{"id":"banking77-test-2364","label":"verify_top_up","state":{"customer_message":"Can you give me information about verification code?"},"meta":{"split":"test","row":2364}}
+{"id":"banking77-test-1686","label":"request_refund","state":{"customer_message":"I would like a refund for something I bought"},"meta":{"split":"test","row":1686}}
+{"id":"banking77-test-0028","label":"card_arrival","state":{"customer_message":"I ordered a card a week ago, and it's still not here. What do I do?"},"meta":{"split":"test","row":28}}
+{"id":"banking77-test-2485","label":"order_physical_card","state":{"customer_message":"Please, how do I order a card?"},"meta":{"split":"test","row":2485}}
+{"id":"banking77-test-1955","label":"card_swallowed","state":{"customer_message":"The ATM at Metro bank on High St. Kensington didn't return my card. What should I do now that the bank is closed?"},"meta":{"split":"test","row":1955}}
+{"id":"banking77-test-2396","label":"verify_top_up","state":{"customer_message":"How can I find the top-up verification code?"},"meta":{"split":"test","row":2396}}
+{"id":"banking77-test-1396","label":"disposable_card_limits","state":{"customer_message":"What are the limits for disposable virtual cards?"},"meta":{"split":"test","row":1396}}
+{"id":"banking77-test-1508","label":"direct_debit_payment_not_recognised","state":{"customer_message":"I didn't make this direct debit transaction"},"meta":{"split":"test","row":1508}}
+{"id":"banking77-test-1893","label":"terminate_account","state":{"customer_message":"This company is terrible! Can you delete my account?"},"meta":{"split":"test","row":1893}}
+{"id":"banking77-test-0683","label":"cancel_transfer","state":{"customer_message":"I made a transaction but did it to the wrong account."},"meta":{"split":"test","row":683}}
+{"id":"banking77-test-2929","label":"card_about_to_expire","state":{"customer_message":"How much does it cost to get a new card?  Mine is almost expired.  How fast does it come?"},"meta":{"split":"test","row":2929}}
+{"id":"banking77-test-2900","label":"cash_withdrawal_charge","state":{"customer_message":"Why was my account charged for using an ATM?"},"meta":{"split":"test","row":2900}}
+{"id":"banking77-test-1021","label":"top_up_reverted","state":{"customer_message":"Can you tell me why my top up was reverted?"},"meta":{"split":"test","row":1021}}
+{"id":"banking77-test-1860","label":"pending_transfer","state":{"customer_message":"Please explain why the transfers shows up as pending?"},"meta":{"split":"test","row":1860}}
+{"id":"banking77-test-1111","label":"card_payment_not_recognised","state":{"customer_message":"I know I didn't make this payment showing up on my card, I don't remember this person at all."},"meta":{"split":"test","row":1111}}
+{"id":"banking77-test-2563","label":"wrong_exchange_rate_for_cash_withdrawal","state":{"customer_message":"Can you look to make sure the exchange rate is correct"},"meta":{"split":"test","row":2563}}
+{"id":"banking77-test-2292","label":"failed_transfer","state":{"customer_message":"I transferred my funds, why did it not go through?"},"meta":{"split":"test","row":2292}}
+{"id":"banking77-test-0901","label":"supported_cards_and_currencies","state":{"customer_message":"Which forms of currency are accepted?"},"meta":{"split":"test","row":901}}
+{"id":"banking77-test-2330","label":"transfer_into_account","state":{"customer_message":"I NEED TO KNOW HOW TO TRANSFER MONEY INTO MY BANK ACCOUNT. PLEASE HELP"},"meta":{"split":"test","row":2330}}
+{"id":"banking77-test-2736","label":"cash_withdrawal_not_recognised","state":{"customer_message":"I am seeing in the App a some cash withdrawal that its not mine"},"meta":{"split":"test","row":2736}}
+{"id":"banking77-test-1452","label":"atm_support","state":{"customer_message":"How can I find the nearest ATM?"},"meta":{"split":"test","row":1452}}
+{"id":"banking77-test-1356","label":"topping_up_by_card","state":{"customer_message":"I topped up my card but the money disappeared."},"meta":{"split":"test","row":1356}}
+{"id":"banking77-test-0430","label":"exchange_via_app","state":{"customer_message":"Can this app help me exchange currencies?"},"meta":{"split":"test","row":430}}
+{"id":"banking77-test-3061","label":"country_support","state":{"customer_message":"I would like to receive and use the card in Europe, is that possible?"},"meta":{"split":"test","row":3061}}
+{"id":"banking77-test-2625","label":"get_disposable_virtual_card","state":{"customer_message":"When can I order a disposable virtual card?"},"meta":{"split":"test","row":2625}}
+{"id":"banking77-test-2061","label":"transfer_timing","state":{"customer_message":"How long is the wait for a US transfer?"},"meta":{"split":"test","row":2061}}
+{"id":"banking77-test-0181","label":"extra_charge_on_statement","state":{"customer_message":"I got a extra €1 fee in my statement"},"meta":{"split":"test","row":181}}
+{"id":"banking77-test-0128","label":"card_payment_wrong_exchange_rate","state":{"customer_message":"I bought something in a foreign currency but the rate applied is wrong!"},"meta":{"split":"test","row":128}}
+{"id":"banking77-test-2115","label":"reverted_card_payment?","state":{"customer_message":"There was a canceled payment for my card."},"meta":{"split":"test","row":2115}}
+{"id":"banking77-test-2474","label":"top_up_by_cash_or_cheque","state":{"customer_message":"I want to do a cash top-up"},"meta":{"split":"test","row":2474}}
+{"id":"banking77-test-2975","label":"apple_pay_or_google_pay","state":{"customer_message":"how do i add money with my apple watch"},"meta":{"split":"test","row":2975}}
+{"id":"banking77-test-2574","label":"wrong_exchange_rate_for_cash_withdrawal","state":{"customer_message":"When I got cash, my exchange rate was wrong."},"meta":{"split":"test","row":2574}}
+{"id":"banking77-test-2204","label":"transfer_fee_charged","state":{"customer_message":"I had to pay in order to do a transfer"},"meta":{"split":"test","row":2204}}
+{"id":"banking77-test-0722","label":"top_up_limits","state":{"customer_message":"Is there a top up limit for my account?"},"meta":{"split":"test","row":722}}
+{"id":"banking77-test-2161","label":"beneficiary_not_allowed","state":{"customer_message":"I've transferred money before without issue but now I am encountering an error stating that it isn't possible. Why is that?"},"meta":{"split":"test","row":2161}}
+{"id":"banking77-test-1643","label":"lost_or_stolen_phone","state":{"customer_message":"I think my phone is either lost or stolen."},"meta":{"split":"test","row":1643}}
+{"id":"banking77-test-2854","label":"activate_my_card","state":{"customer_message":"Would like to use my card and need to activate it first.  Can you help me do this?"},"meta":{"split":"test","row":2854}}
+{"id":"banking77-test-0710","label":"cancel_transfer","state":{"customer_message":"My transaction needs to be canceled."},"meta":{"split":"test","row":710}}
+{"id":"banking77-test-1068","label":"balance_not_updated_after_cheque_or_cash_deposit","state":{"customer_message":"What happened to the cash that I tried to deposit into my account? It's gone!"},"meta":{"split":"test","row":1068}}
+{"id":"banking77-test-2559","label":"virtual_card_not_working","state":{"customer_message":"virtual card is not working for me"},"meta":{"split":"test","row":2559}}
+{"id":"banking77-test-1687","label":"request_refund","state":{"customer_message":"I want to return an item."},"meta":{"split":"test","row":1687}}
+{"id":"banking77-test-1422","label":"compromised_card","state":{"customer_message":"My card has been compromised"},"meta":{"split":"test","row":1422}}
+{"id":"banking77-test-0446","label":"lost_or_stolen_card","state":{"customer_message":"Oh no!  I lost my card!  Help!"},"meta":{"split":"test","row":446}}
+{"id":"banking77-test-2068","label":"transfer_timing","state":{"customer_message":"How long does it take to process transfers from Europe?"},"meta":{"split":"test","row":2068}}
+{"id":"banking77-test-2714","label":"balance_not_updated_after_bank_transfer","state":{"customer_message":"I made a bank transfer and my account balance did not show it."},"meta":{"split":"test","row":2714}}
+{"id":"banking77-test-1569","label":"declined_cash_withdrawal","state":{"customer_message":"I need your help to check my account, please! My card keeps being declined at the ATM, and I've already tried two different ones!"},"meta":{"split":"test","row":1569}}
+{"id":"banking77-test-0088","label":"exchange_rate","state":{"customer_message":"How are exchange rates calculated?"},"meta":{"split":"test","row":88}}
+{"id":"banking77-test-1410","label":"compromised_card","state":{"customer_message":"What do I do to stop unauthorized transactions on my card? I was never in the place from which the transactions on my bill were made and I never made them. Please help!"},"meta":{"split":"test","row":1410}}
+{"id":"banking77-test-0593","label":"contactless_not_working","state":{"customer_message":"Help me with my contactless which isn't working."},"meta":{"split":"test","row":593}}
+{"id":"banking77-test-1163","label":"why_verify_identity","state":{"customer_message":"Why am I required to verify my identity?"},"meta":{"split":"test","row":1163}}
+{"id":"banking77-test-0572","label":"contactless_not_working","state":{"customer_message":"Contactless isn't working for me"},"meta":{"split":"test","row":572}}
+{"id":"banking77-test-0419","label":"exchange_via_app","state":{"customer_message":"I need AUD not GBP, how do I change it?"},"meta":{"split":"test","row":419}}
+{"id":"banking77-test-1757","label":"declined_transfer","state":{"customer_message":"Are there any restrictions causing my transfer to be declined?"},"meta":{"split":"test","row":1757}}
+{"id":"banking77-test-1315","label":"visa_or_mastercard","state":{"customer_message":"What major card payments are accepted?"},"meta":{"split":"test","row":1315}}
+{"id":"banking77-test-1214","label":"unable_to_verify_identity","state":{"customer_message":"Why isn't my ID being verified?"},"meta":{"split":"test","row":1214}}
+{"id":"banking77-test-1093","label":"card_payment_not_recognised","state":{"customer_message":"Why would there be a payment on my account I don't recognize?"},"meta":{"split":"test","row":1093}}
+{"id":"banking77-test-1558","label":"passcode_forgotten","state":{"customer_message":"Can you tell me what to do to reset my passcode?"},"meta":{"split":"test","row":1558}}
+{"id":"banking77-test-0271","label":"fiat_currency_support","state":{"customer_message":"Can I exchange currencies?"},"meta":{"split":"test","row":271}}
+{"id":"banking77-test-1502","label":"direct_debit_payment_not_recognised","state":{"customer_message":"This Direct Debit payment may not be right."},"meta":{"split":"test","row":1502}}
+{"id":"banking77-test-2282","label":"failed_transfer","state":{"customer_message":"My transfer didn't work"},"meta":{"split":"test","row":2282}}
+{"id":"banking77-test-2972","label":"apple_pay_or_google_pay","state":{"customer_message":"I received my American Express card, but I am having problems making it work with Apple pay.  Can you help me with this problem?"},"meta":{"split":"test","row":2972}}
+{"id":"banking77-test-0808","label":"card_payment_fee_charged","state":{"customer_message":"I would appreciate that someone let me know when there is an extra charge for payments. I was checking the app earlier and saying a charge on one of my payments that was additional that no one made me aware of before."},"meta":{"split":"test","row":808}}
+{"id":"banking77-test-2780","label":"exchange_charge","state":{"customer_message":"If I need to exchange currency is there an extra fee?"},"meta":{"split":"test","row":2780}}
+{"id":"banking77-test-0381","label":"card_not_working","state":{"customer_message":"Is my card broken?"},"meta":{"split":"test","row":381}}
+{"id":"banking77-test-0272","label":"fiat_currency_support","state":{"customer_message":"Do you work with all fiat currencies?"},"meta":{"split":"test","row":272}}
+{"id":"banking77-test-2280","label":"failed_transfer","state":{"customer_message":"dont understand why transfer failed"},"meta":{"split":"test","row":2280}}
+{"id":"banking77-test-2233","label":"transfer_fee_charged","state":{"customer_message":"What extra charges are there?"},"meta":{"split":"test","row":2233}}
+{"id":"banking77-test-3003","label":"verify_my_identity","state":{"customer_message":"How can I verify my indentity?"},"meta":{"split":"test","row":3003}}
+{"id":"banking77-test-1905","label":"terminate_account","state":{"customer_message":"I am sick of this damn company and want to close out my account."},"meta":{"split":"test","row":1905}}
+{"id":"banking77-test-3033","label":"verify_my_identity","state":{"customer_message":"Do I need any kind of documentation for the identity check?"},"meta":{"split":"test","row":3033}}
+{"id":"banking77-test-1602","label":"pending_card_payment","state":{"customer_message":"My card payment is still pending."},"meta":{"split":"test","row":1602}}
+{"id":"banking77-test-0069","label":"card_linking","state":{"customer_message":"Can you please show me where I can find the location to link my card?"},"meta":{"split":"test","row":69}}
+{"id":"banking77-test-1090","label":"card_payment_not_recognised","state":{"customer_message":"There are some payments with my card that I don't know where they are coming from. Just checked today and it's been since a couple days as well! What to I do? Can I revert this retrospectively? My card needs to be frozen immediately as well!"},"meta":{"split":"test","row":1090}}
+{"id":"banking77-test-0510","label":"age_limit","state":{"customer_message":"will i be able to open an account for my daughter"},"meta":{"split":"test","row":510}}
+{"id":"banking77-test-0149","label":"card_payment_wrong_exchange_rate","state":{"customer_message":"I wasn't applied the correct exchange rate for an item I bought"},"meta":{"split":"test","row":149}}
+{"id":"banking77-test-0060","label":"card_linking","state":{"customer_message":"How do I link to my credit card with you?"},"meta":{"split":"test","row":60}}
+{"id":"banking77-test-2452","label":"top_up_by_cash_or_cheque","state":{"customer_message":"Can I add to my account balance with a cheque?"},"meta":{"split":"test","row":2452}}
+{"id":"banking77-test-1639","label":"pending_card_payment","state":{"customer_message":"I have a pending payment from stuff I bought this morning."},"meta":{"split":"test","row":1639}}
+{"id":"banking77-test-1232","label":"unable_to_verify_identity","state":{"customer_message":"It doesn't let me verify my identity."},"meta":{"split":"test","row":1232}}
+{"id":"banking77-test-1991","label":"transaction_charged_twice","state":{"customer_message":"I was double charged"},"meta":{"split":"test","row":1991}}
+{"id":"banking77-test-1313","label":"visa_or_mastercard","state":{"customer_message":"Please give me both a visa and a master card."},"meta":{"split":"test","row":1313}}
+{"id":"banking77-test-1805","label":"declined_card_payment","state":{"customer_message":"My card was declined in a shop"},"meta":{"split":"test","row":1805}}
+{"id":"banking77-test-2543","label":"virtual_card_not_working","state":{"customer_message":"Why can't I get my virtual card to work?"},"meta":{"split":"test","row":2543}}
+{"id":"banking77-test-1815","label":"declined_card_payment","state":{"customer_message":"I'm really stuck. I don't know why but my card payment has not gone through."},"meta":{"split":"test","row":1815}}
+{"id":"banking77-test-1156","label":"edit_personal_details","state":{"customer_message":"I need to change my name what do I do?"},"meta":{"split":"test","row":1156}}
+{"id":"banking77-test-2792","label":"exchange_charge","state":{"customer_message":"Is there a charge for a foreign currency exchange?"},"meta":{"split":"test","row":2792}}
+{"id":"banking77-test-1344","label":"topping_up_by_card","state":{"customer_message":"I tried to use my card to top up but all of the money has disappeared."},"meta":{"split":"test","row":1344}}
+{"id":"banking77-test-0928","label":"getting_virtual_card","state":{"customer_message":"what is the virtual card"},"meta":{"split":"test","row":928}}
+{"id":"banking77-test-0872","label":"transfer_not_received_by_recipient","state":{"customer_message":"The person I sent money to hasn't gotten it yet!"},"meta":{"split":"test","row":872}}
+{"id":"banking77-test-1529","label":"passcode_forgotten","state":{"customer_message":"I can't recall my passcode and need to reset it."},"meta":{"split":"test","row":1529}}
+{"id":"banking77-test-0935","label":"getting_virtual_card","state":{"customer_message":"Is this where I order a virtual card?"},"meta":{"split":"test","row":935}}
+{"id":"banking77-test-1770","label":"Refund_not_showing_up","state":{"customer_message":"I asked for a refund last week but nothing has happened yet, can you help me please?"},"meta":{"split":"test","row":1770}}
+{"id":"banking77-test-2155","label":"change_pin","state":{"customer_message":"Show me how to change my pin?"},"meta":{"split":"test","row":2155}}
+{"id":"banking77-test-2980","label":"apple_pay_or_google_pay","state":{"customer_message":"Is Apple Pay a possible top up option?"},"meta":{"split":"test","row":2980}}
+{"id":"banking77-test-2802","label":"top_up_by_card_charge","state":{"customer_message":"i was charged when i used a us issued card. why and what cards are free to use to add money"},"meta":{"split":"test","row":2802}}
+{"id":"banking77-test-2565","label":"wrong_exchange_rate_for_cash_withdrawal","state":{"customer_message":"Hello. I'm on holiday and didn't bring any cash with me. I need to withdrawal my home currency from one of your machines. Do you have any that will do this and is there a charge?"},"meta":{"split":"test","row":2565}}
+{"id":"banking77-test-0956","label":"getting_virtual_card","state":{"customer_message":"I need to reorder my virtual card!"},"meta":{"split":"test","row":956}}
+{"id":"banking77-test-0761","label":"wrong_amount_of_cash_received","state":{"customer_message":"I didn't get all the cash I requested for at the ATM"},"meta":{"split":"test","row":761}}
+{"id":"banking77-test-0129","label":"card_payment_wrong_exchange_rate","state":{"customer_message":"My exchange went wrong. I swapped Russian Ruble for UK pounds and was charged too much."},"meta":{"split":"test","row":129}}
+{"id":"banking77-test-2095","label":"reverted_card_payment?","state":{"customer_message":"Do you know why my card payment was reverted?"},"meta":{"split":"test","row":2095}}
+{"id":"banking77-test-2936","label":"card_about_to_expire","state":{"customer_message":"It appears my card expires next month, can I order a new one?"},"meta":{"split":"test","row":2936}}
+{"id":"banking77-test-0161","label":"extra_charge_on_statement","state":{"customer_message":"Why is there a fee for an extra pound in my statement?"},"meta":{"split":"test","row":161}}
+{"id":"banking77-test-0221","label":"pending_cash_withdrawal","state":{"customer_message":"I have a pending cash withdrawal"},"meta":{"split":"test","row":221}}
+{"id":"banking77-test-2104","label":"reverted_card_payment?","state":{"customer_message":"Why has my card payment been reverted?"},"meta":{"split":"test","row":2104}}
+{"id":"banking77-test-2413","label":"getting_spare_card","state":{"customer_message":"I need to get some more physical cards."},"meta":{"split":"test","row":2413}}
+{"id":"banking77-test-1994","label":"transaction_charged_twice","state":{"customer_message":"I have a transaction that shows several times"},"meta":{"split":"test","row":1994}}
+{"id":"banking77-test-2018","label":"verify_source_of_funds","state":{"customer_message":"I want to know where the funds come from."},"meta":{"split":"test","row":2018}}
+{"id":"banking77-test-1587","label":"declined_cash_withdrawal","state":{"customer_message":"why couldn't I get cash in the ATM?"},"meta":{"split":"test","row":1587}}
+{"id":"banking77-test-0584","label":"contactless_not_working","state":{"customer_message":"I wanted to use my card contactless but it doesn't seem to be working, what could be the problem?"},"meta":{"split":"test","row":584}}
+{"id":"banking77-test-0907","label":"supported_cards_and_currencies","state":{"customer_message":"Which credit or debit cards can I use to top up?"},"meta":{"split":"test","row":907}}
+{"id":"banking77-test-2173","label":"beneficiary_not_allowed","state":{"customer_message":"Why isn't my transfer not going through? I keep getting an error message."},"meta":{"split":"test","row":2173}}
+{"id":"banking77-test-2558","label":"virtual_card_not_working","state":{"customer_message":"How do I make my virtual card work?"},"meta":{"split":"test","row":2558}}
+{"id":"banking77-test-1825","label":"declined_card_payment","state":{"customer_message":"My card payment didn't work, can you help?"},"meta":{"split":"test","row":1825}}
+{"id":"banking77-test-1866","label":"pending_transfer","state":{"customer_message":"I would like to know why my payment is still pending, can you help?"},"meta":{"split":"test","row":1866}}
+{"id":"banking77-test-2795","label":"exchange_charge","state":{"customer_message":"Will it cost more money if my currency needs to be exchanged?"},"meta":{"split":"test","row":2795}}
+{"id":"banking77-test-0692","label":"cancel_transfer","state":{"customer_message":"I want to cancel a transfer right away! Can you help?"},"meta":{"split":"test","row":692}}
+{"id":"banking77-test-1421","label":"compromised_card","state":{"customer_message":"How do I freeze my card using the app?"},"meta":{"split":"test","row":1421}}
+{"id":"banking77-test-0996","label":"card_acceptance","state":{"customer_message":"Will filling stations accept my card?"},"meta":{"split":"test","row":996}}
+{"id":"banking77-test-0673","label":"pending_top_up","state":{"customer_message":"Where is the money I topped off with?"},"meta":{"split":"test","row":673}}
+{"id":"banking77-test-1922","label":"card_swallowed","state":{"customer_message":"I was retrieving money and my card wouldn't remove."},"meta":{"split":"test","row":1922}}
+{"id":"banking77-test-0383","label":"card_not_working","state":{"customer_message":"My card stopped working"},"meta":{"split":"test","row":383}}
+{"id":"banking77-test-1048","label":"balance_not_updated_after_cheque_or_cash_deposit","state":{"customer_message":"cash from this morning has not deposited"},"meta":{"split":"test","row":1048}}
+{"id":"banking77-test-0555","label":"pin_blocked","state":{"customer_message":"My card's frozen, what can I do?"},"meta":{"split":"test","row":555}}
+{"id":"banking77-test-2338","label":"transfer_into_account","state":{"customer_message":"How do I top up my card?"},"meta":{"split":"test","row":2338}}
+{"id":"banking77-test-0206","label":"pending_cash_withdrawal","state":{"customer_message":"I tried taking money from the ATM but no money came out, but the transaction is still pending? How is this possible?"},"meta":{"split":"test","row":206}}
+{"id":"banking77-test-0351","label":"automatic_top_up","state":{"customer_message":"Can I be topped up once I hit a certain balance?"},"meta":{"split":"test","row":351}}
+{"id":"banking77-test-2814","label":"top_up_by_card_charge","state":{"customer_message":"How much is the charge to top up my card?"},"meta":{"split":"test","row":2814}}
+{"id":"banking77-test-1201","label":"unable_to_verify_identity","state":{"customer_message":"I do not have what is required to prove my identity"},"meta":{"split":"test","row":1201}}
+{"id":"banking77-test-1951","label":"card_swallowed","state":{"customer_message":"If my card is trapped in the ATM, what do I do?"},"meta":{"split":"test","row":1951}}
+{"id":"banking77-test-0787","label":"wrong_amount_of_cash_received","state":{"customer_message":"I didn't receive the right amount of cash back"},"meta":{"split":"test","row":787}}
+{"id":"banking77-test-1657","label":"lost_or_stolen_phone","state":{"customer_message":"my phone was taken! can you place cancel my account so no one uses it"},"meta":{"split":"test","row":1657}}
+{"id":"banking77-test-1965","label":"transaction_charged_twice","state":{"customer_message":"Why was I chaged twice for the same thing?"},"meta":{"split":"test","row":1965}}
+{"id":"banking77-test-1276","label":"get_physical_card","state":{"customer_message":"Why can't I find my PIN?"},"meta":{"split":"test","row":1276}}
+{"id":"banking77-test-1681","label":"request_refund","state":{"customer_message":"Can I receive a refund for my item?"},"meta":{"split":"test","row":1681}}
+{"id":"banking77-test-2130","label":"change_pin","state":{"customer_message":"I need a new Pin how do I go about that?"},"meta":{"split":"test","row":2130}}
+{"id":"banking77-test-2131","label":"change_pin","state":{"customer_message":"Is there a location near me that i can change my PIN?"},"meta":{"split":"test","row":2131}}
+{"id":"banking77-test-0888","label":"supported_cards_and_currencies","state":{"customer_message":"Can I use my American Express to add money to my account?"},"meta":{"split":"test","row":888}}
+{"id":"banking77-test-0259","label":"fiat_currency_support","state":{"customer_message":"Can I hold money in other currencies?"},"meta":{"split":"test","row":259}}
+{"id":"banking77-test-3068","label":"country_support","state":{"customer_message":"Do you have a list of countries you operate in?"},"meta":{"split":"test","row":3068}}
+{"id":"banking77-test-1244","label":"get_physical_card","state":{"customer_message":"I cannot seem to find my PIN. Where is it?"},"meta":{"split":"test","row":1244}}
+{"id":"banking77-test-0613","label":"top_up_by_bank_transfer_charge","state":{"customer_message":"Will there be any charges for money received?"},"meta":{"split":"test","row":613}}
+{"id":"banking77-test-2620","label":"get_disposable_virtual_card","state":{"customer_message":"I would like to create a disposable virtual card. How do I go about doing that?"},"meta":{"split":"test","row":2620}}
+{"id":"banking77-test-2880","label":"cash_withdrawal_charge","state":{"customer_message":"I see some fees for cash withdraw."},"meta":{"split":"test","row":2880}}
+{"id":"banking77-test-2673","label":"top_up_failed","state":{"customer_message":"My top-up has failed."},"meta":{"split":"test","row":2673}}
+{"id":"banking77-test-0117","label":"exchange_rate","state":{"customer_message":"What is my foreign exchange rate?"},"meta":{"split":"test","row":117}}
+{"id":"banking77-test-1140","label":"edit_personal_details","state":{"customer_message":"What do i have to do to change my name?"},"meta":{"split":"test","row":1140}}
+{"id":"banking77-test-0476","label":"lost_or_stolen_card","state":{"customer_message":"I cannot find my credit card."},"meta":{"split":"test","row":476}}
+{"id":"banking77-test-0811","label":"card_payment_fee_charged","state":{"customer_message":"Why are there fees for card usage?"},"meta":{"split":"test","row":811}}
+{"id":"banking77-test-1050","label":"balance_not_updated_after_cheque_or_cash_deposit","state":{"customer_message":"Cash deposit to my account but it has not appeared."},"meta":{"split":"test","row":1050}}
+{"id":"banking77-test-1517","label":"direct_debit_payment_not_recognised","state":{"customer_message":"I was charged on my account that shouldn't be there."},"meta":{"split":"test","row":1517}}
+{"id":"banking77-test-1293","label":"visa_or_mastercard","state":{"customer_message":"What do I have to do to get a Visa credit card?"},"meta":{"split":"test","row":1293}}
+{"id":"banking77-test-2887","label":"cash_withdrawal_charge","state":{"customer_message":"Do ATM cash withdrawals carry a charge now? They've been free in the past, but all of a sudden I have to pay to make ATM withdrawals?"},"meta":{"split":"test","row":2887}}
+{"id":"banking77-test-1423","label":"compromised_card","state":{"customer_message":"What should I do if I think that someone else may be using my card."},"meta":{"split":"test","row":1423}}
+{"id":"banking77-test-0731","label":"top_up_limits","state":{"customer_message":"How can I tell what the limit is to top-ups?"},"meta":{"split":"test","row":731}}
+{"id":"banking77-test-0406","label":"exchange_via_app","state":{"customer_message":"How are currencies exchanged?"},"meta":{"split":"test","row":406}}
+{"id":"banking77-test-1013","label":"top_up_reverted","state":{"customer_message":"Why would my top up be cancelled?"},"meta":{"split":"test","row":1013}}
+{"id":"banking77-test-2700","label":"balance_not_updated_after_bank_transfer","state":{"customer_message":"I made a transfer and it doesnt' show up in my account."},"meta":{"split":"test","row":2700}}
+{"id":"banking77-test-2311","label":"failed_transfer","state":{"customer_message":"My transfer did not seem to work."},"meta":{"split":"test","row":2311}}
+{"id":"banking77-test-1476","label":"atm_support","state":{"customer_message":"Do you know the closest ATM?"},"meta":{"split":"test","row":1476}}
+{"id":"banking77-test-0558","label":"pin_blocked","state":{"customer_message":"My PIN is not working and I need assistance."},"meta":{"split":"test","row":558}}
+{"id":"banking77-test-2272","label":"receiving_money","state":{"customer_message":"Do you know if I can use this for my salary?"},"meta":{"split":"test","row":2272}}
+{"id":"banking77-test-0628","label":"top_up_by_bank_transfer_charge","state":{"customer_message":"Will I be charged for a SEPA transfer?"},"meta":{"split":"test","row":628}}
+{"id":"banking77-test-0664","label":"pending_top_up","state":{"customer_message":"Your top-up function isn't working, it still says pending even though I know my card works."},"meta":{"split":"test","row":664}}
+{"id":"banking77-test-1101","label":"card_payment_not_recognised","state":{"customer_message":"I think my statement has a fraudulent charge"},"meta":{"split":"test","row":1101}}
+{"id":"banking77-test-0281","label":"card_delivery_estimate","state":{"customer_message":"my card was not in the mail again can you advise?"},"meta":{"split":"test","row":281}}
+{"id":"banking77-test-0777","label":"wrong_amount_of_cash_received","state":{"customer_message":"I have withdrawn cash from ATM but i received the wrong amount. I want cash back as in app its showing actual amount which i got. Please help me in this."},"meta":{"split":"test","row":777}}
+{"id":"banking77-test-1551","label":"passcode_forgotten","state":{"customer_message":"Can I reset my password?  I don't know what it is."},"meta":{"split":"test","row":1551}}
+{"id":"banking77-test-1763","label":"Refund_not_showing_up","state":{"customer_message":"I was supposed to get a purchase refunded but I don't see the money in my account"},"meta":{"split":"test","row":1763}}
+{"id":"banking77-test-0563","label":"contactless_not_working","state":{"customer_message":"I don't know what's wrong, my contactless stopped working. Tried it in a few different places today and it didn't work in any of them."},"meta":{"split":"test","row":563}}
+{"id":"banking77-test-1342","label":"topping_up_by_card","state":{"customer_message":"I tried to top up using my card, but now the money just disappeared!"},"meta":{"split":"test","row":1342}}
+{"id":"banking77-test-2005","label":"verify_source_of_funds","state":{"customer_message":"What is the source of my funds."},"meta":{"split":"test","row":2005}}
+{"id":"banking77-test-1736","label":"declined_transfer","state":{"customer_message":"Why was I unable to do a transfer?"},"meta":{"split":"test","row":1736}}
+{"id":"banking77-test-1168","label":"why_verify_identity","state":{"customer_message":"Why is identity verification mandatory?"},"meta":{"split":"test","row":1168}}
+{"id":"banking77-test-0620","label":"top_up_by_bank_transfer_charge","state":{"customer_message":"What are the charges for receiving money?"},"meta":{"split":"test","row":620}}
+{"id":"banking77-test-1261","label":"get_physical_card","state":{"customer_message":"Where can I find the card PIN?"},"meta":{"split":"test","row":1261}}
+{"id":"banking77-test-0209","label":"pending_cash_withdrawal","state":{"customer_message":"Are you sure when the withdrawal will show?"},"meta":{"split":"test","row":209}}
+{"id":"banking77-test-2840","label":"activate_my_card","state":{"customer_message":"Could you please activate my card"},"meta":{"split":"test","row":2840}}
+{"id":"banking77-test-3045","label":"country_support","state":{"customer_message":"Can I get a card outside the UK?"},"meta":{"split":"test","row":3045}}
+{"id":"banking77-test-1579","label":"declined_cash_withdrawal","state":{"customer_message":"Why did the ATM machine fail to give me a cash withdrawal?"},"meta":{"split":"test","row":1579}}
+{"id":"banking77-test-0440","label":"lost_or_stolen_card","state":{"customer_message":"My entire gym bag, including my wallet, was stolen out of my locker today. Everything in my wallet is gone - how do I block the card to make it can't be used?"},"meta":{"split":"test","row":440}}
+{"id":"banking77-test-0874","label":"transfer_not_received_by_recipient","state":{"customer_message":"How long does it take for transfers to finish?  I sent funds to my pal, and she says that she has not gotten anything."},"meta":{"split":"test","row":874}}
+{"id":"banking77-test-0732","label":"top_up_limits","state":{"customer_message":"Is there a limit to top-up amounts?"},"meta":{"split":"test","row":732}}
+{"id":"banking77-test-0989","label":"card_acceptance","state":{"customer_message":"areas card is accpeted"},"meta":{"split":"test","row":989}}
+{"id":"banking77-test-2422","label":"getting_spare_card","state":{"customer_message":"Where can I get a second card?"},"meta":{"split":"test","row":2422}}
+{"id":"banking77-test-3073","label":"country_support","state":{"customer_message":"What countries do you currently do business in?"},"meta":{"split":"test","row":3073}}
+{"id":"banking77-test-0795","label":"wrong_amount_of_cash_received","state":{"customer_message":"The ATM didn't give me the the withdraw amount requested."},"meta":{"split":"test","row":795}}
+{"id":"banking77-test-3022","label":"verify_my_identity","state":{"customer_message":"What steps do I take to verify my identity?"},"meta":{"split":"test","row":3022}}
+{"id":"banking77-test-1490","label":"direct_debit_payment_not_recognised","state":{"customer_message":"Why is there a direct debit payment on my app that is not from me?"},"meta":{"split":"test","row":1490}}
+{"id":"banking77-test-1006","label":"top_up_reverted","state":{"customer_message":"The app wouldn't accept my top up."},"meta":{"split":"test","row":1006}}
+{"id":"banking77-test-1571","label":"declined_cash_withdrawal","state":{"customer_message":"Hi, I was trying to use my card but it was declining by ATM. I have cross checked with two different ATMs but i was facing the same issue. Could you please check my account."},"meta":{"split":"test","row":1571}}
+{"id":"banking77-test-0184","label":"extra_charge_on_statement","state":{"customer_message":"Something went wrong, I was charged an extra pound?"},"meta":{"split":"test","row":184}}
+{"id":"banking77-test-2380","label":"verify_top_up","state":{"customer_message":"Why is it important to verify a top-up card?"},"meta":{"split":"test","row":2380}}
+{"id":"banking77-test-2958","label":"card_about_to_expire","state":{"customer_message":"My card is about to expire. How do I get a new one?"},"meta":{"split":"test","row":2958}}
+{"id":"banking77-test-0193","label":"extra_charge_on_statement","state":{"customer_message":"What is the purpose of the extra fee that is showing up on my statement?"},"meta":{"split":"test","row":193}}
+{"id":"banking77-test-0975","label":"card_acceptance","state":{"customer_message":"Does this card work everywhere?"},"meta":{"split":"test","row":975}}
+{"id":"banking77-test-1189","label":"why_verify_identity","state":{"customer_message":"I do not wish to verify my identity."},"meta":{"split":"test","row":1189}}
+{"id":"banking77-test-1145","label":"edit_personal_details","state":{"customer_message":"I need help changing my last name on my account."},"meta":{"split":"test","row":1145}}
+{"id":"banking77-test-2750","label":"cash_withdrawal_not_recognised","state":{"customer_message":"I don't recognise a cash withdrawal"},"meta":{"split":"test","row":2750}}
+{"id":"banking77-test-0286","label":"card_delivery_estimate","state":{"customer_message":"How long will it take to deliver something to US?"},"meta":{"split":"test","row":286}}
+{"id":"banking77-test-1226","label":"unable_to_verify_identity","state":{"customer_message":"I tried verifying my ID, but it won't let me."},"meta":{"split":"test","row":1226}}
+{"id":"banking77-test-0508","label":"age_limit","state":{"customer_message":"Is there an age limit?"},"meta":{"split":"test","row":508}}
+{"id":"banking77-test-0074","label":"card_linking","state":{"customer_message":"Where do I need to go in the app to enter my card info?"},"meta":{"split":"test","row":74}}
+{"id":"banking77-test-2570","label":"wrong_exchange_rate_for_cash_withdrawal","state":{"customer_message":"The exchange rate you gave me for my cash withdrawal is wrong"},"meta":{"split":"test","row":2570}}
+{"id":"banking77-test-2630","label":"get_disposable_virtual_card","state":{"customer_message":"How do disposable cards work?"},"meta":{"split":"test","row":2630}}
+{"id":"banking77-test-2186","label":"beneficiary_not_allowed","state":{"customer_message":"Why isn't my transfer going through? I get a message saying it's not possible. I've had no issues in the past."},"meta":{"split":"test","row":2186}}
+{"id":"banking77-test-2418","label":"getting_spare_card","state":{"customer_message":"Can I give a second card to my daughter?"},"meta":{"split":"test","row":2418}}
+{"id":"banking77-test-2801","label":"top_up_by_card_charge","state":{"customer_message":"Are there any fees for adding money with an international card?"},"meta":{"split":"test","row":2801}}
+{"id":"banking77-test-0605","label":"top_up_by_bank_transfer_charge","state":{"customer_message":"Are SWIFT transfers accepted?"},"meta":{"split":"test","row":605}}
+{"id":"banking77-test-0001","label":"card_arrival","state":{"customer_message":"I still have not received my new card, I ordered over a week ago."},"meta":{"split":"test","row":1}}
+{"id":"banking77-test-0744","label":"top_up_limits","state":{"customer_message":"Are there limits to top-ups?"},"meta":{"split":"test","row":744}}
+{"id":"banking77-test-3000","label":"verify_my_identity","state":{"customer_message":"What can I use to verify my identify?"},"meta":{"split":"test","row":3000}}
+{"id":"banking77-test-2036","label":"verify_source_of_funds","state":{"customer_message":"How can I see my source of funds?"},"meta":{"split":"test","row":2036}}
+{"id":"banking77-test-0853","label":"transfer_not_received_by_recipient","state":{"customer_message":"I just finished sending money, but it's not logging on the recipient side."},"meta":{"split":"test","row":853}}
+{"id":"banking77-test-1801","label":"declined_card_payment","state":{"customer_message":"The new card that was just sent to me was declined multiple times yesterday when I tried to use it at a restaurant to pay for my dinner.  I am really disappointed  and embarrassed that my card was denied when I tried to use it to pay for my friend's birthday dinner."},"meta":{"split":"test","row":1801}}
+{"id":"banking77-test-2457","label":"top_up_by_cash_or_cheque","state":{"customer_message":"I'm looking for the option to top up by cheque."},"meta":{"split":"test","row":2457}}
+{"id":"banking77-test-1674","label":"lost_or_stolen_phone","state":{"customer_message":"Is there anything I need to do since my phone was stolen?"},"meta":{"split":"test","row":1674}}
+{"id":"banking77-test-1268","label":"get_physical_card","state":{"customer_message":"I cannot locate the card PIN."},"meta":{"split":"test","row":1268}}
+{"id":"banking77-test-2483","label":"order_physical_card","state":{"customer_message":"Where can I get my card at?"},"meta":{"split":"test","row":2483}}
+{"id":"banking77-test-0153","label":"card_payment_wrong_exchange_rate","state":{"customer_message":"The incorrect rate was used in my foreign purchase"},"meta":{"split":"test","row":153}}
+{"id":"banking77-test-0076","label":"card_linking","state":{"customer_message":"Could you help me reactivate my card? It was previously lost, but I found it this morning in my jacket."},"meta":{"split":"test","row":76}}
+{"id":"banking77-test-2950","label":"card_about_to_expire","state":{"customer_message":"The expiration date of my card is approaching ."},"meta":{"split":"test","row":2950}}
+{"id":"banking77-test-2114","label":"reverted_card_payment?","state":{"customer_message":"What happens if a merchant doesn't accept a payment?"},"meta":{"split":"test","row":2114}}
+{"id":"banking77-test-0256","label":"fiat_currency_support","state":{"customer_message":"What fiat currencies are supported for holding and exchange?"},"meta":{"split":"test","row":256}}
+{"id":"banking77-test-0306","label":"card_delivery_estimate","state":{"customer_message":"When are cards delivered?"},"meta":{"split":"test","row":306}}
+{"id":"banking77-test-1027","label":"top_up_reverted","state":{"customer_message":"The app reverted my action when I topped up."},"meta":{"split":"test","row":1027}}
+{"id":"banking77-test-2978","label":"apple_pay_or_google_pay","state":{"customer_message":"My American express is experiencing a problem with apple play with top up, can you fix it?"},"meta":{"split":"test","row":2978}}
+{"id":"banking77-test-2501","label":"order_physical_card","state":{"customer_message":"How can I get a physical card"},"meta":{"split":"test","row":2501}}
+{"id":"banking77-test-1952","label":"card_swallowed","state":{"customer_message":"My card has been swallowed by an ATM"},"meta":{"split":"test","row":1952}}
+{"id":"banking77-test-2215","label":"transfer_fee_charged","state":{"customer_message":"Why did I get charged for something I bought online? Even though it was international, I thought it would be covered."},"meta":{"split":"test","row":2215}}
+{"id":"banking77-test-2661","label":"top_up_failed","state":{"customer_message":"I think my top up did not work"},"meta":{"split":"test","row":2661}}
+{"id":"banking77-test-0545","label":"pin_blocked","state":{"customer_message":"Can you assist me with unblocking my PIN? I put it in wrong too many times."},"meta":{"split":"test","row":545}}
+{"id":"banking77-test-0224","label":"pending_cash_withdrawal","state":{"customer_message":"I'm not quite understanding why my cash withdrawal is showing as pending."},"meta":{"split":"test","row":224}}
+{"id":"banking77-test-2827","label":"top_up_by_card_charge","state":{"customer_message":"When using a US card, what is the cost for a top up/off?"},"meta":{"split":"test","row":2827}}
+{"id":"banking77-test-1175","label":"why_verify_identity","state":{"customer_message":"I don't like that I have to fill out so much information about my identity."},"meta":{"split":"test","row":1175}}
+{"id":"banking77-test-2365","label":"verify_top_up","state":{"customer_message":"What are the benefits to verifying the top-up?"},"meta":{"split":"test","row":2365}}
+{"id":"banking77-test-0852","label":"transfer_not_received_by_recipient","state":{"customer_message":"transaction failed?"},"meta":{"split":"test","row":852}}
+{"id":"banking77-test-2331","label":"transfer_into_account","state":{"customer_message":"I would like to transfer some money from my other bank account into this one."},"meta":{"split":"test","row":2331}}
+{"id":"banking77-test-1728","label":"declined_transfer","state":{"customer_message":"My transfers are being declined. IT has always worked for me but now it's declining my card. I've tried several times."},"meta":{"split":"test","row":1728}}
+{"id":"banking77-test-0111","label":"exchange_rate","state":{"customer_message":"How are you determining your exchange rates?"},"meta":{"split":"test","row":111}}
+{"id":"banking77-test-0005","label":"card_arrival","state":{"customer_message":"When will I get my card?"},"meta":{"split":"test","row":5}}
+{"id":"banking77-test-2855","label":"activate_my_card","state":{"customer_message":"I need help activating my new card."},"meta":{"split":"test","row":2855}}
+{"id":"banking77-test-0291","label":"card_delivery_estimate","state":{"customer_message":"How long will it take to arrive?"},"meta":{"split":"test","row":291}}
+{"id":"banking77-test-1885","label":"terminate_account","state":{"customer_message":"I'm tired of all the problems I've had. I want to quit this account!"},"meta":{"split":"test","row":1885}}
+{"id":"banking77-test-0456","label":"lost_or_stolen_card","state":{"customer_message":"Can you freeze my card it was stolen"},"meta":{"split":"test","row":456}}
+{"id":"banking77-test-2275","label":"receiving_money","state":{"customer_message":"Can I get paid in a different currency?"},"meta":{"split":"test","row":2275}}
+{"id":"banking77-test-2539","label":"virtual_card_not_working","state":{"customer_message":"How can I fix a problem where my virtual card is rejected?"},"meta":{"split":"test","row":2539}}
+{"id":"banking77-test-0333","label":"automatic_top_up","state":{"customer_message":"where is theft-top option?"},"meta":{"split":"test","row":333}}
+{"id":"banking77-test-2733","label":"cash_withdrawal_not_recognised","state":{"customer_message":"I have a strange cash withdrawal in my statement"},"meta":{"split":"test","row":2733}}
+{"id":"banking77-test-1546","label":"passcode_forgotten","state":{"customer_message":"I forgot my code to get into the app."},"meta":{"split":"test","row":1546}}
