@@ -176,6 +176,17 @@ def _print_quick_stats(system: str, task: str, preds: list) -> None:
     )
 
 
+@app.command()
+def report(
+    run_id: Annotated[str, typer.Option(help="Results folder name under results/")] = "main",
+) -> None:
+    """Compute metrics and write reports/<run_id>/report.md with figures."""
+    from jev_benchmark.report import build_report  # matplotlib is imported only when needed
+
+    path = build_report(run_id)
+    console.print(f"[green]OK[/] report written to {path}")
+
+
 @app.command(name="tasks")
 def list_tasks() -> None:
     """List the benchmark scenarios."""
