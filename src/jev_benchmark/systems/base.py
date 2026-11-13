@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from datetime import UTC, datetime
-from typing import Protocol
+from typing import Any, Protocol
 
 from pydantic import BaseModel, Field
 
@@ -41,6 +41,8 @@ class Prediction(BaseModel):
     attempts: int = 1
     error: str | None = None
     raw: str | None = None
+    order: str = "canonical"  # order in which the options were listed (position-bias study)
+    extra: dict[str, Any] | None = None  # system-specific details (e.g. per-order answers of jev-perm)
     timestamp: str = Field(default_factory=_now)
 
     @property
@@ -59,6 +61,10 @@ class Classifier(Protocol):
 
     async def classify(self, task: Task, example: Example) -> Prediction:
         """Single attempt; raises on failure (retries are handled by the runner)."""
+        ...
+
+    def supports(self, task: Task) -> bool:
+        """False for combinations that make no sense (e.g. reordering the levels of an ordinal scale)."""
         ...
 
     def is_retryable(self, exc: BaseException) -> bool: ...

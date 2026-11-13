@@ -1,9 +1,10 @@
-"""Generative LLM baseline: GPT-5.4 served by Microsoft Foundry (Azure OpenAI Responses API).
+"""Generative LLM baselines served by Microsoft Foundry (Azure OpenAI Responses API).
 
-The answer is forced into the option set with Structured Outputs (strict JSON schema with an `enum`),
-so the LLM can only return a valid label. Without reasoning (`effort="none"`) the API also returns
-token logprobs, from which we derive the probability of the chosen label: this gives the LLM a
-confidence signal comparable to Jev's probabilities.
+Any Foundry deployment with a configured price can be used (GPT-5.4, GPT-5.4 mini). The answer is
+forced into the option set with Structured Outputs (strict JSON schema with an `enum`), so the LLM can
+only return a valid label. Without reasoning (`effort="none"`) the API can also return token logprobs,
+from which we derive the probability of the chosen label: a confidence signal comparable to Jev's
+probabilities. If a deployment refuses logprobs, the classifier switches them off and goes on.
 """
 
 from __future__ import annotations
@@ -15,9 +16,9 @@ import time
 import openai
 from openai import AsyncAzureOpenAI
 
-from jev_benchmark.config import GPT54_PRICING, Settings
+from jev_benchmark.config import Settings, llm_pricing
 from jev_benchmark.systems.base import Prediction
-from jev_benchmark.tasks.base import Example, Task, TaskKind, render_state_text
+from jev_benchmark.tasks.base import ORDERS, Example, Task, TaskKind, render_state_text
 
 TOP_LOGPROBS = 10
 REASONING_EFFORTS = ("none", "low", "medium", "high", "xhigh")
@@ -27,8 +28,10 @@ def answer_field(task: Task) -> str:
     return "label" if task.kind is TaskKind.CHOICE else "score"
 
 
-def build_system_prompt(task: Task) -> str:
-    options = "\n".join(f"- {name}: {description}" for name, description in task.labels.items())
+def build_system_prompt(task: Task, labels: dict[str, str] | None = None) -> str:
+    """`labels` are the options in presentation order (default: canonical)."""
+    labels = task.labels if labels is None else labels
+    options = "\n".join(f"- {name}: {description}" for name, description in labels.items())
     header = "Choose exactly one label from this list:" if task.kind is TaskKind.CHOICE else "Use this scale:"
     return (
         f"{task.instructions}\n\n{header}\n{options}\n\n"
@@ -37,10 +40,11 @@ def build_system_prompt(task: Task) -> str:
     )
 
 
-def build_response_format(task: Task) -> dict:
+def build_response_format(task: Task, labels: dict[str, str] | None = None) -> dict:
+    labels = task.labels if labels is None else labels
     field = answer_field(task)
     if task.kind is TaskKind.CHOICE:
-        prop = {"type": "string", "enum": task.label_names}
+        prop = {"type": "string", "enum": list(labels)}
     else:
         prop = {"type": "integer", "enum": [int(level) for level in task.label_names]}
     return {
@@ -63,17 +67,24 @@ class FoundryLLMClassifier:
         reasoning_effort: str = "none",
         deployment: str | None = None,
         logprobs: bool | None = None,
+        order: str = "canonical",
         timeout: float = 180.0,
     ) -> None:
         if reasoning_effort not in REASONING_EFFORTS:
             raise ValueError(f"reasoning_effort must be one of {REASONING_EFFORTS}")
+        if order not in ORDERS:
+            raise ValueError(f"Unknown option order {order!r}: use one of {ORDERS}")
         if not settings.azure_openai_endpoint or not settings.azure_openai_api_key.get_secret_value():
             raise RuntimeError("AZURE_OPENAI_ENDPOINT / AZURE_OPENAI_API_KEY are not set in .env")
         self.deployment = deployment or settings.azure_openai_deployment
+        self.pricing = llm_pricing(self.deployment)  # fail fast: costs are never guessed
         self.effort = reasoning_effort
-        self.name = f"{self.deployment}-{reasoning_effort}"
+        self.order = order
+        base = f"{self.deployment}-{reasoning_effort}"
+        self.name = base if order == "canonical" else f"{base}@{order}"
         # Logprobs are only available when the model does not reason.
         self.logprobs = (reasoning_effort == "none") if logprobs is None else logprobs
+        self.logprobs_note: str | None = None
         self._client = AsyncAzureOpenAI(
             azure_endpoint=settings.azure_openai_endpoint,
             api_key=settings.azure_openai_api_key.get_secret_value(),
@@ -83,14 +94,19 @@ class FoundryLLMClassifier:
         )
         self.api_version = settings.azure_openai_api_version
 
+    def supports(self, task: Task) -> bool:
+        return self.order == "canonical" or task.kind is TaskKind.CHOICE
+
     def describe(self) -> dict:
         return {
             "provider": "Microsoft Foundry (Azure OpenAI Responses API)",
             "deployment": self.deployment,
             "api_version": self.api_version,
             "reasoning_effort": self.effort,
+            "option_order": self.order,
             "logprobs": self.logprobs,
-            "pricing": GPT54_PRICING.__dict__,
+            "logprobs_note": self.logprobs_note,
+            "pricing": self.pricing.__dict__,
         }
 
     def is_retryable(self, exc: BaseException) -> bool:
@@ -103,13 +119,14 @@ class FoundryLLMClassifier:
         )
 
     def request_kwargs(self, task: Task, example: Example) -> dict:
+        labels = task.ordered_labels(self.order, example.id)
         kwargs: dict = {
             "model": self.deployment,
             "input": [
-                {"role": "system", "content": build_system_prompt(task)},
+                {"role": "system", "content": build_system_prompt(task, labels)},
                 {"role": "user", "content": render_state_text(example.state)},
             ],
-            "text": {"format": build_response_format(task)},
+            "text": {"format": build_response_format(task, labels)},
             "reasoning": {"effort": self.effort},
             "max_output_tokens": 16_000,
             "store": False,
@@ -119,11 +136,22 @@ class FoundryLLMClassifier:
             kwargs["top_logprobs"] = TOP_LOGPROBS
         return kwargs
 
-    async def classify(self, task: Task, example: Example) -> Prediction:
-        kwargs = self.request_kwargs(task, example)
+    async def _create(self, kwargs: dict):
         start = time.perf_counter()
         raw = await self._client.responses.with_raw_response.create(**kwargs)
-        latency_ms = (time.perf_counter() - start) * 1000
+        return raw, (time.perf_counter() - start) * 1000
+
+    async def classify(self, task: Task, example: Example) -> Prediction:
+        try:
+            raw, latency_ms = await self._create(self.request_kwargs(task, example))
+        except (openai.BadRequestError, openai.PermissionDeniedError) as exc:
+            # Some deployments refuse logprobs (reported for gpt-5.4-mini): switch them off for the
+            # rest of the run and repeat the request; the rejected call is not used as a latency sample.
+            if not (self.logprobs and "logprob" in str(exc).lower()):
+                raise
+            self.logprobs = False
+            self.logprobs_note = f"disabled after {type(exc).__name__}: {str(exc)[:200]}"
+            raw, latency_ms = await self._create(self.request_kwargs(task, example))
         response = raw.parse()
 
         if response.status != "completed":
@@ -167,9 +195,10 @@ class FoundryLLMClassifier:
             cached_tokens=cached,
             output_tokens=output_tokens,
             reasoning_tokens=reasoning,
-            cost_usd=GPT54_PRICING.cost(input_tokens, output_tokens, cached),
+            cost_usd=self.pricing.cost(input_tokens, output_tokens, cached),
             model=raw.headers.get("x-ms-served-model") or response.model,
             raw=response.output_text,
+            order=self.order,
         )
 
     async def aclose(self) -> None:

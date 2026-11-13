@@ -31,6 +31,9 @@ class Settings(BaseSettings):
 
     typesafe_api_key: SecretStr = SecretStr("")
     jev_model: str = "jev-1.14.0"
+    # Optional: route Jev through a compatible gateway, e.g. OpenRouter "https://openrouter.ai/api"
+    # (then TYPESAFE_API_KEY is the gateway key and JEV_MODEL e.g. "jev-1.13").
+    typesafe_base_url: str | None = None
 
 
 @lru_cache(maxsize=1)
@@ -71,3 +74,23 @@ GPT54_PRICING = Pricing(
     "introducing-gpt-5-4-in-microsoft-foundry/4499785 (Global Standard): $2.50/M input, "
     "$0.25/M cached input, $15.00/M output",
 )
+
+GPT54_MINI_PRICING = Pricing(
+    input=0.75,
+    cached_input=0.075,
+    output=4.50,
+    source="https://www.azurespeed.com/AzureAiModelPricing/Models/openai-gpt-5-4-mini "
+    "(accessed 2026-11-13, Global Standard): $0.75/M input, $0.075/M cached input, $4.50/M output",
+)
+
+# Foundry deployment name -> list price. Costs must never be guessed: an unknown deployment is an error.
+LLM_PRICING: dict[str, Pricing] = {"gpt-5.4": GPT54_PRICING, "gpt-5.4-mini": GPT54_MINI_PRICING}
+
+
+def llm_pricing(deployment: str) -> Pricing:
+    try:
+        return LLM_PRICING[deployment]
+    except KeyError:
+        raise KeyError(
+            f"No price configured for Foundry deployment {deployment!r}: add it to config.LLM_PRICING"
+        ) from None
