@@ -12,22 +12,38 @@ import pandas as pd
 import streamlit as st
 
 from jev_benchmark.config import REPORTS_DIR, get_settings
-from jev_benchmark.systems import build_system
+from jev_benchmark.systems import MAIN_SYSTEMS, build_system
 from jev_benchmark.systems.base import Prediction
-from jev_benchmark.tasks import TASKS, Example, Task, TaskKind
+from jev_benchmark.tasks import ORDERS, TASKS, Example, Task, TaskKind
 
 st.set_page_config(page_title="Jev vs GPT-5.4", page_icon="⚖️", layout="wide")
 
-SYSTEMS = ["jev", "gpt-5.4-none", "gpt-5.4-medium"]
+SYSTEMS = MAIN_SYSTEMS  # jev, jev-perm, gpt-5.4-none, gpt-5.4-medium, gpt-5.4-mini-none
+LLMS = [s for s in SYSTEMS if not s.startswith("jev")]
 LABELS = {
     "jev": "Jev",
+    "jev-perm": "Jev · media su 3 ordini",
     "gpt-5.4-none": "GPT-5.4 · reasoning none",
     "gpt-5.4-medium": "GPT-5.4 · reasoning medium",
+    "gpt-5.4-mini-none": "GPT-5.4 mini · reasoning none",
 }
-COLORS = {"jev": "#2a78d6", "gpt-5.4-none": "#eb6834", "gpt-5.4-medium": "#1baf7a"}  # same as the report
+# same colours as the report (colour = model)
+COLORS = {
+    "jev": "#2a78d6",
+    "jev-perm": "#184f95",
+    "gpt-5.4-none": "#eb6834",
+    "gpt-5.4-medium": "#1baf7a",
+    "gpt-5.4-mini-none": "#eda100",
+}
+ORDER_LABELS = {"canonical": "canonico", "reversed": "inverso", "shuffled": "casuale"}
 
 settings = get_settings()
 JEV_READY = bool(settings.typesafe_api_key.get_secret_value())
+
+
+def with_order(name: str, order: str) -> str:
+    """System name for an option order (jev-perm already averages over orders)."""
+    return name if order == "canonical" or name == "jev-perm" else f"{name}@{order}"
 
 
 async def classify_all(names: list[str], task: Task, example: Example) -> dict[str, Prediction | str]:
@@ -57,17 +73,27 @@ with st.sidebar:
     st.header("Configurazione")
     task_name = st.selectbox("Scenario", list(TASKS), format_func=lambda n: TASKS[n].title)
     task = TASKS[task_name]
-    default = ["jev", "gpt-5.4-none"] if JEV_READY else ["gpt-5.4-none"]
-    chosen = st.multiselect("Sistemi da confrontare", SYSTEMS, default=default, format_func=LABELS.get)
+    is_choice = task.kind is TaskKind.CHOICE
+    options = SYSTEMS if is_choice else [s for s in SYSTEMS if s != "jev-perm"]  # jev-perm: Choice only
+    default = ["jev", "gpt-5.4-mini-none"] if JEV_READY else ["gpt-5.4-mini-none", "gpt-5.4-none"]
+    chosen = st.multiselect("Sistemi da confrontare", options, default=default, format_func=LABELS.get)
+    order = st.selectbox(
+        "Ordine delle opzioni",
+        ORDERS if is_choice else ("canonical",),
+        format_func=ORDER_LABELS.get,
+        help="Riordina le opzioni per vedere se la decisione cambia (bias di posizione). "
+        "Non si applica alla scala ordinale di S3.",
+    )
     tau = st.slider(
         "Soglia della cascata τ",
         0.0,
         1.0,
         0.80,
         0.01,
-        help="Se la probabilità (S1, S2) o la confidenza (S3) di Jev è sotto τ, la richiesta passa all'LLM.",
+        help="Se la probabilità (scenari Choice) o la confidenza (S3) di Jev è sotto τ, la richiesta passa "
+        "all'LLM.",
     )
-    fallback = st.selectbox("LLM di fallback", SYSTEMS[1:], format_func=LABELS.get)
+    fallback = st.selectbox("LLM di fallback", LLMS, format_func=LABELS.get)
     if not JEV_READY:
         st.warning("`TYPESAFE_API_KEY` non impostata in `.env`: Jev non è disponibile.")
     st.caption(f"Jev: `{settings.jev_model}` · Foundry: `{settings.azure_openai_deployment}`")
@@ -96,18 +122,20 @@ with tab_live:
         }
         example = Example(id="custom", label=task.label_names[0], state=state)
 
-    with st.expander("Opzioni e descrizioni (identiche per entrambi i sistemi)"):
+    presented = task.ordered_labels(order, example.id)
+    with st.expander(f"Opzioni e descrizioni, nell'ordine presentato ({ORDER_LABELS[order]})"):
         st.markdown(f"**Domanda:** {task.instructions}")
         st.dataframe(
-            pd.DataFrame({"opzione": list(task.labels), "descrizione": list(task.labels.values())}),
-            hide_index=True,
+            pd.DataFrame({"opzione": list(presented), "descrizione": list(presented.values())}),
             width="stretch",
         )
 
     if st.button("Classifica", type="primary", disabled=not chosen or not all(example.state.values())):
-        names = list(dict.fromkeys(chosen + (["jev", fallback] if JEV_READY else [])))
+        wanted = chosen + (["jev", fallback] if JEV_READY else [])
+        run_names = {name: with_order(name, order) for name in dict.fromkeys(wanted)}
         with st.spinner("Chiamata ai sistemi in parallelo…"):
-            results = asyncio.run(classify_all(names, task, example))
+            by_run = asyncio.run(classify_all(list(run_names.values()), task, example))
+        results = {name: by_run[run] for name, run in run_names.items()}
 
         cols = st.columns(len(chosen))
         for col, name in zip(cols, chosen, strict=True):
@@ -127,10 +155,12 @@ with tab_live:
                     top = sorted(res.probabilities.items(), key=lambda kv: -kv[1])[:10]
                     chart = pd.DataFrame(top, columns=["opzione", "probabilità"]).set_index("opzione")
                     st.bar_chart(chart, horizontal=True, color=COLORS[name], height=260)
+                agree = (res.extra or {}).get("agree")
                 st.caption(
                     f"modello `{res.model}` · token input {res.input_tokens:,}"
                     + (f" (cache {res.cached_tokens:,})" if res.cached_tokens else "")
                     + (f" · reasoning {res.reasoning_tokens:,}" if res.reasoning_tokens else "")
+                    + ("" if agree is None else f" · 3 ordini {'concordi' if agree else 'NON concordi'}")
                 )
 
         jev, llm = results.get("jev"), results.get(fallback)
