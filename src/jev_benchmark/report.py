@@ -16,26 +16,38 @@ import pandas as pd  # noqa: E402
 from matplotlib.colors import LinearSegmentedColormap  # noqa: E402
 from matplotlib.ticker import FuncFormatter, NullFormatter, PercentFormatter  # noqa: E402
 
+from jev_benchmark import bias as B  # noqa: E402
 from jev_benchmark import metrics as M  # noqa: E402
-from jev_benchmark.config import GPT54_PRICING, JEV_PRICING, REPORTS_DIR, RESULTS_DIR  # noqa: E402
+from jev_benchmark.config import (  # noqa: E402
+    GPT54_MINI_PRICING,
+    GPT54_PRICING,
+    JEV_PRICING,
+    REPORTS_DIR,
+    RESULTS_DIR,
+)
 from jev_benchmark.tasks import TASKS, TaskKind  # noqa: E402
 
-SYSTEM_ORDER = ["jev", "gpt-5.4-none", "gpt-5.4-medium"]
+SYSTEM_ORDER = ["jev", "jev-perm", "gpt-5.4-none", "gpt-5.4-medium", "gpt-5.4-mini-none"]
 SYSTEM_LABELS = {
     "jev": "Jev",
+    "jev-perm": "Jev · media su 3 ordini",
     "gpt-5.4-none": "GPT-5.4 · reasoning none",
     "gpt-5.4-medium": "GPT-5.4 · reasoning medium",
+    "gpt-5.4-mini-none": "GPT-5.4 mini · reasoning none",
 }
+FIRST_STAGES = ("jev", "jev-perm")  # systems that can open a cascade
 MIN_BIN = 5  # minimum answers in a reliability bin to be drawn
 
 SHORT_TITLES = {
     "intent_routing": "S1 · Richieste in ingresso",
     "workflow_next_step": "S2 · Passo successivo workflow",
     "output_quality": "S3 · Qualità output generato",
+    "intent_routing_it": "S4 · Richieste in italiano",
 }
 
-# Reference categorical palette (first three slots validate all-pairs in both modes), fixed per
-# entity: Jev = slot 1, GPT-5.4 none = slot 2, GPT-5.4 medium = slot 3.
+# Reference categorical palette, colour fixed per entity (never by rank): Jev = slot 1 (blue),
+# GPT-5.4 none = slot 2, GPT-5.4 medium = slot 3, GPT-5.4 mini = slot 4. jev-perm is the same model
+# as Jev with another strategy: a darker step of the same blue ramp, plus its own marker and label.
 THEMES = {
     "light": {
         "surface": "#fcfcfb",
@@ -44,7 +56,13 @@ THEMES = {
         "muted": "#898781",
         "grid": "#e1e0d9",
         "axis": "#c3c2b7",
-        "series": ["#2a78d6", "#eb6834", "#1baf7a", "#eda100"],
+        "systems": {
+            "jev": "#2a78d6",
+            "jev-perm": "#184f95",
+            "gpt-5.4-none": "#eb6834",
+            "gpt-5.4-medium": "#1baf7a",
+            "gpt-5.4-mini-none": "#eda100",
+        },
         "ramp": ["#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b"],
     },
     "dark": {
@@ -54,10 +72,17 @@ THEMES = {
         "muted": "#898781",
         "grid": "#2c2c2a",
         "axis": "#383835",
-        "series": ["#3987e5", "#d95926", "#199e70", "#c98500"],
+        "systems": {
+            "jev": "#3987e5",
+            "jev-perm": "#9ec5f4",
+            "gpt-5.4-none": "#d95926",
+            "gpt-5.4-medium": "#199e70",
+            "gpt-5.4-mini-none": "#c98500",
+        },
         "ramp": ["#0d366b", "#184f95", "#256abf", "#3987e5", "#6da7ec", "#9ec5f4", "#cde2fb"],
     },
 }
+MARKERS = {"jev": "o", "jev-perm": "s", "gpt-5.4-none": "o", "gpt-5.4-medium": "^", "gpt-5.4-mini-none": "D"}
 
 logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 plt.rcParams.update(
@@ -78,19 +103,28 @@ def label(system: str) -> str:
 
 
 def color(system: str, theme: dict) -> str:
-    idx = SYSTEM_ORDER.index(system) if system in SYSTEM_ORDER else 3
-    return theme["series"][idx]
+    return theme["systems"].get(system, theme["muted"])
+
+
+def marker(system: str) -> str:
+    return MARKERS.get(system, "o")
+
+
+def linestyle(system: str) -> str:
+    """Strategy variants of the same model are dashed (colour = model, dash = variant)."""
+    return "--" if system in ("jev-perm", "gpt-5.4-medium") else "-"
 
 
 # --- data -----------------------------------------------------------------------------------------
 
 
 def discover_systems(run_id: str) -> list[str]:
+    """Systems of the main comparison (option-order variants `x@order` go to the bias section)."""
     names: set[str] = set()
     for task in TASKS.values():
         folder = RESULTS_DIR / run_id / task.name
         if folder.exists():
-            names |= {p.stem for p in folder.glob("*.jsonl")}
+            names |= {p.stem for p in folder.glob("*.jsonl") if "@" not in p.stem}
     return sorted(names, key=lambda s: (SYSTEM_ORDER.index(s) if s in SYSTEM_ORDER else 99, s))
 
 
@@ -120,7 +154,7 @@ def compute(run_id: str) -> tuple[dict, dict]:
                 "calibration": M.calibration(df),
             }
         if "jev" in entry["systems"]:
-            entry["mcnemar"], entry["cascades"] = {}, {}
+            entry["mcnemar"] = {}
             jev = frames[(task.name, "jev")]
             for system in entry["systems"]:
                 if system == "jev":
@@ -130,28 +164,80 @@ def compute(run_id: str) -> tuple[dict, dict]:
                 entry["mcnemar"][system] = M.mcnemar_exact(
                     pair["correct_x"].to_numpy(bool), pair["correct_y"].to_numpy(bool)
                 )
-                m = M.paired(jev, other)
-                signal = M.default_signal(task)
+        llms = [s for s in entry["systems"] if not s.startswith("jev")]
+        entry["cascades"] = {}
+        for first in FIRST_STAGES:
+            if first not in entry["systems"]:
+                continue
+            for fallback in llms:
+                other = frames[(task.name, fallback)]
+                m = M.paired(frames[(task.name, first)], other)
+                signal = M.default_signal(task, first)
                 llm_acc = float(other["correct"].mean())
-                entry["cascades"][system] = {
+                entry["cascades"][f"{first}->{fallback}"] = {
+                    "first": first,
+                    "fallback": fallback,
                     "signal": signal,
                     "parity": M.cascade_operating_point(m, signal, target_accuracy=llm_acc),
                     "near_parity": M.cascade_operating_point(m, signal, target_accuracy=llm_acc - 0.02),
                     "sweep": M.cascade_sweep(m, signal).to_dict(orient="records"),
                 }
         summary["tasks"][task.name] = entry
+    summary["bias"] = B.compute(run_id, list(TASKS.values()))
     return summary, frames
 
 
 # --- figures --------------------------------------------------------------------------------------
 
 
+def _active(summary: dict) -> dict:
+    """Scenarios with at least one system (e.g. a new scenario not run yet is left out of the figures)."""
+    return {name: entry for name, entry in summary["tasks"].items() if entry["systems"]}
+
+
 def _figure(theme: dict, n: int, title: str, height: float = 3.5, width: float = 4.3):
-    fig, axes = plt.subplots(1, n, figsize=(width * n, height), facecolor=theme["surface"], squeeze=False)
+    """One panel per scenario: a row for up to 3 panels, a 2x2 grid for 4 (legible when scaled down)."""
+    # set_title() takes its colour from rcParams at call time (the left-aligned title is not ax.title)
+    plt.rcParams["axes.titlecolor"] = theme["ink"]
+    ncols = 2 if n == 4 else n
+    nrows = -(-n // ncols)
+    fig, grid = plt.subplots(
+        nrows, ncols, figsize=(width * ncols, height * nrows), facecolor=theme["surface"], squeeze=False
+    )
+    axes = list(grid.flat)
+    for ax in axes[n:]:
+        ax.set_visible(False)
     fig.suptitle(
         title, x=0.01, y=0.99, ha="left", va="top", color=theme["ink"], fontsize=12, fontweight="bold"
     )
-    return fig, list(axes[0])
+    return fig, axes[:n]
+
+
+def _first_col(ax) -> bool:
+    return ax.get_subplotspec().is_first_col()
+
+
+def _fig_legend(fig, axes, theme: dict, ncol: int = 3) -> None:
+    """One legend for the whole figure, below the panels (series are the same in every panel)."""
+    entries: dict[str, object] = {}
+    for ax in axes:
+        for handle, text in zip(*ax.get_legend_handles_labels(), strict=True):
+            entries.setdefault(text, handle)
+    if not entries:
+        return
+    ncol = min(ncol, len(entries))
+    leg = fig.legend(
+        list(entries.values()),
+        list(entries),
+        loc="lower center",
+        ncol=ncol,
+        frameon=False,
+        fontsize=8.5,
+        handlelength=1.8,
+    )
+    for text in leg.get_texts():
+        text.set_color(theme["ink2"])
+    fig._legend_margin_in = 0.2 + 0.24 * -(-len(entries) // ncol)
 
 
 def _style(ax, theme: dict, grid: str = "both") -> None:
@@ -176,7 +262,8 @@ def _legend(ax, theme: dict, **kwargs) -> None:
 
 
 def _save(fig, path: Path, theme: dict) -> None:
-    fig.tight_layout(rect=(0, 0, 1, 1 - 0.2 / fig.get_figheight()))
+    bottom = getattr(fig, "_legend_margin_in", 0.0) / fig.get_figheight()
+    fig.tight_layout(rect=(0, bottom, 1, 1 - 0.2 / fig.get_figheight()))
     fig.savefig(path, facecolor=theme["surface"])
     plt.close(fig)
 
@@ -188,7 +275,7 @@ def _usd(x: float, _pos=None) -> str:
 
 
 def fig_quality(summary: dict, theme: dict, path: Path) -> None:
-    tasks = list(summary["tasks"].values())
+    tasks = list(_active(summary).values())
     n_sys = max(len(e["systems"]) for e in tasks)
     fig, axes = _figure(
         theme,
@@ -196,7 +283,7 @@ def fig_quality(summary: dict, theme: dict, path: Path) -> None:
         "Accuratezza per scenario · punto = stima, barra = IC 95% bootstrap",
         height=1.3 + 0.55 * n_sys,
     )
-    for ax, (name, entry) in zip(axes, summary["tasks"].items(), strict=True):
+    for ax, (name, entry) in zip(axes, _active(summary).items(), strict=True):
         _style(ax, theme, grid="x")
         systems = list(entry["systems"])
         for i, system in enumerate(systems):
@@ -225,9 +312,9 @@ def fig_quality(summary: dict, theme: dict, path: Path) -> None:
 
 def fig_latency(summary: dict, frames: dict, theme: dict, path: Path) -> None:
     fig, axes = _figure(
-        theme, len(summary["tasks"]), "Distribuzione della latenza end-to-end (client → API → client)"
+        theme, len(_active(summary)), "Distribuzione della latenza end-to-end (client → API → client)"
     )
-    for k, (ax, (name, entry)) in enumerate(zip(axes, summary["tasks"].items(), strict=True)):
+    for _k, (ax, (name, entry)) in enumerate(zip(axes, _active(summary).items(), strict=True)):
         _style(ax, theme)
         for system in entry["systems"]:
             df = frames[(name, system)]
@@ -237,6 +324,7 @@ def fig_latency(summary: dict, frames: dict, theme: dict, path: Path) -> None:
                 np.arange(1, len(lat) + 1) / len(lat),
                 where="post",
                 lw=2,
+                ls=linestyle(system),
                 color=color(system, theme),
                 label=label(system),
             )
@@ -245,23 +333,26 @@ def fig_latency(summary: dict, frames: dict, theme: dict, path: Path) -> None:
         ax.xaxis.set_minor_formatter(NullFormatter())
         ax.yaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
         ax.set_xlabel("latenza (ms, scala log)")
-        if k == 0:
+        if _first_col(ax):
             ax.set_ylabel("richieste completate entro x")
-            _legend(ax, theme, loc="lower right")
         ax.set_title(SHORT_TITLES[name])
+    _fig_legend(fig, axes, theme)
     _save(fig, path, theme)
 
 
 def fig_tradeoff(summary: dict, theme: dict, path: Path) -> None:
     fig, axes = _figure(
         theme,
-        len(summary["tasks"]),
+        len(_active(summary)),
         "Accuratezza vs costo · punti = sistemi, linee = cascata Jev → LLM al variare della soglia",
         height=3.8,
     )
-    for k, (ax, (name, entry)) in enumerate(zip(axes, summary["tasks"].items(), strict=True)):
+    for _k, (ax, (name, entry)) in enumerate(zip(axes, _active(summary).items(), strict=True)):
         _style(ax, theme)
-        for fallback, cascade in entry.get("cascades", {}).items():
+        for cascade in entry.get("cascades", {}).values():
+            if cascade["first"] != "jev":  # jev-perm cascades are in the table only, to keep it legible
+                continue
+            fallback = cascade["fallback"]
             sweep = pd.DataFrame(cascade["sweep"]).sort_values("tau")
             ax.plot(
                 sweep["usd_per_1k"],
@@ -286,43 +377,35 @@ def fig_tradeoff(summary: dict, theme: dict, path: Path) -> None:
             ax.plot(
                 x,
                 y,
-                "o",
+                marker(system),
                 ms=9,
                 color=color(system, theme),
                 mec=theme["surface"],
                 mew=2,
-                label=label(system) if not entry.get("cascades") else None,
+                ls="none",
+                label=label(system),
                 zorder=5,
-            )
-            ax.annotate(
-                label(system).split(" · ")[-1] if system != "jev" else "Jev",
-                (x, y),
-                xytext=(6, -12),
-                textcoords="offset points",
-                color=theme["ink2"],
-                fontsize=8,
             )
         ax.set_xscale("log")
         ax.xaxis.set_major_formatter(FuncFormatter(_usd))
         ax.xaxis.set_minor_formatter(NullFormatter())
         ax.yaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
         ax.set_xlabel("costo per 1.000 richieste (USD, scala log)")
-        if k == 0:
+        if _first_col(ax):
             ax.set_ylabel("accuratezza")
-            if ax.get_legend_handles_labels()[0]:
-                _legend(ax, theme, loc="lower right")
         ax.set_title(SHORT_TITLES[name])
+    _fig_legend(fig, axes, theme)
     _save(fig, path, theme)
 
 
 def fig_calibration(summary: dict, theme: dict, path: Path) -> None:
     fig, axes = _figure(
         theme,
-        len(summary["tasks"]),
+        len(_active(summary)),
         f"Calibrazione · accuratezza osservata per fascia di probabilità (fasce con ≥ {MIN_BIN} "
         "risposte, area del punto proporzionale al numero di risposte)",
     )
-    for k, (ax, (name, entry)) in enumerate(zip(axes, summary["tasks"].items(), strict=True)):
+    for _k, (ax, (name, entry)) in enumerate(zip(axes, _active(summary).items(), strict=True)):
         _style(ax, theme)
         ax.plot([0, 1], [0, 1], color=theme["muted"], lw=1, label="calibrazione perfetta")
         for system, stats in entry["systems"].items():
@@ -353,7 +436,7 @@ def fig_calibration(summary: dict, theme: dict, path: Path) -> None:
         ax.xaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
         ax.yaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
         ax.set_xlabel("probabilità assegnata alla risposta")
-        if k == 0:
+        if _first_col(ax):
             ax.set_ylabel("risposte corrette")
         _legend(ax, theme, loc="upper left")
         ax.set_title(SHORT_TITLES[name])
@@ -362,29 +445,205 @@ def fig_calibration(summary: dict, theme: dict, path: Path) -> None:
 
 def fig_selective(summary: dict, frames: dict, theme: dict, path: Path) -> None:
     fig, axes = _figure(
-        theme, len(summary["tasks"]), "Accuratezza vs copertura · si accettano solo le risposte più sicure"
+        theme, len(_active(summary)), "Accuratezza vs copertura · si accettano solo le risposte più sicure"
     )
-    for k, (ax, (name, entry)) in enumerate(zip(axes, summary["tasks"].items(), strict=True)):
+    for _k, (ax, (name, entry)) in enumerate(zip(axes, _active(summary).items(), strict=True)):
         _style(ax, theme)
         task = TASKS[name]
         for system in entry["systems"]:
-            signal = M.default_signal(task) if system == "jev" else "p_pred"
+            signal = M.default_signal(task, system) if system.startswith("jev") else "p_pred"
             curve = M.selective_curve(frames[(name, system)], signal)
             if curve is None:
                 continue
             curve = curve[curve["coverage"] >= 0.05]  # the first few answers are noise
             ax.plot(
-                curve["coverage"], curve["accuracy"], lw=2, color=color(system, theme), label=label(system)
+                curve["coverage"],
+                curve["accuracy"],
+                lw=2,
+                ls=linestyle(system),
+                color=color(system, theme),
+                label=label(system),
             )
         ax.set_xlim(0, 1)
         ax.xaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
         ax.yaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
         ax.set_xlabel("quota di richieste accettate (copertura)")
-        if k == 0:
+        if _first_col(ax):
             ax.set_ylabel("accuratezza sulle richieste accettate")
-            _legend(ax, theme, loc="lower left")
         ax.set_title(SHORT_TITLES[name])
+    _fig_legend(fig, axes, theme)
     _save(fig, path, theme)
+
+
+def fig_bias(summary: dict, theme: dict, path: Path) -> bool:
+    """Selection rate by position decile vs gold rate, with per-example shuffled options."""
+    names = [
+        n
+        for n, entry in summary.get("bias", {}).items()
+        if any("shuffled" in entry.get(b, {}).get("orders", {}) for b in B.BIAS_BASE_SYSTEMS)
+    ]
+    if not names:
+        return False
+    fig, axes = _figure(
+        theme,
+        len(names),
+        "Bias di posizione · quota di scelte per decile della lista diviso quota di risposte corrette "
+        "(opzioni in ordine casuale; 1 = nessun bias)",
+    )
+    for _k, (ax, name) in enumerate(zip(axes, names, strict=True)):
+        _style(ax, theme)
+        ax.axhline(1.0, color=theme["muted"], lw=1)
+        for base in B.BIAS_BASE_SYSTEMS:
+            res = summary["bias"][name].get(base)
+            if not res or "shuffled" not in res["orders"]:
+                continue
+            o = res["orders"]["shuffled"]
+            ratio = [
+                p / g if g else np.nan for p, g in zip(o["pred_deciles"], o["gold_deciles"], strict=True)
+            ]
+            ax.plot(range(1, 11), ratio, "-", lw=2, color=color(base, theme), label=label(base))
+            ax.plot(
+                range(1, 11),
+                ratio,
+                marker(base),
+                ms=6,
+                color=color(base, theme),
+                mec=theme["surface"],
+                mew=1.2,
+            )
+        ax.set_xticks(range(1, 11))
+        ax.set_xlabel("decile della posizione (1 = in cima alla lista)")
+        if _first_col(ax):
+            ax.set_ylabel("scelte / risposte corrette")
+        ax.set_title(SHORT_TITLES[name])
+    _fig_legend(fig, axes, theme)
+    _save(fig, path, theme)
+    return True
+
+
+def _render_bias(summary: dict) -> list[str]:
+    bias = summary.get("bias") or {}
+    if not bias:
+        return []
+    order_names = {"canonical": "canonico", "reversed": "inverso", "shuffled": "casuale"}
+    lines = [
+        "## Bias di posizione (ordine delle opzioni)",
+        "",
+        "TypeSafe documenta che Jev tende a favorire la prima opzione di una Choice. Negli scenari Choice gli "
+        "stessi esempi sono ripetuti con le opzioni in ordine **canonico**, **inverso** e **casuale** "
+        "(permutazione diversa per ogni esempio, seed fisso). Con l'ordine casuale la posizione di un'opzione è "
+        "indipendente dalla sua identità: se un sistema sceglie la prima posizione più spesso di quanto vi "
+        "compaia la risposta corretta, l'eccesso è un puro effetto di posizione.",
+        "",
+    ]
+    if (summary.get("_figures") or {}).get("bias"):
+        lines += [_picture("bias", "Bias di posizione"), ""]
+    for name, entry in bias.items():
+        lines += [f"### {SHORT_TITLES.get(name, name)}", ""]
+        rows, flips = [], []
+        for base in B.BIAS_BASE_SYSTEMS:
+            res = entry.get(base)
+            if not res:
+                continue
+            for order, o in res["orders"].items():
+                mc = res.get("mcnemar_vs_canonical", {}).get(order)
+                delta = (
+                    "–"
+                    if order == "canonical" or mc is None
+                    else f"{(o['accuracy'] - res['orders']['canonical']['accuracy']) * 100:+.1f} pt (p {mc['p_value']:.2g})"
+                )
+                rows.append(
+                    [
+                        label(base),
+                        order_names[order],
+                        f"{_pct(o['accuracy'])} {_ci(o['accuracy_ci'])}",
+                        delta,
+                        f"{_pct(o['pred_first'])} ({_pct(o['gold_first'])})",
+                        f"{_pct(o['pred_top'])} ({_pct(o['gold_top'])})",
+                    ]
+                )
+            if "consistency" in res:
+                f = res.get("flips", {})
+                p_flip, p_stable = f.get("median_p_flip"), f.get("median_p_stable")
+                flips.append(
+                    [
+                        label(base),
+                        str(res["n_common"]),
+                        _pct(res["consistency"]),
+                        str(f.get("n", 0)),
+                        "–"
+                        if p_flip is None
+                        else f"{p_flip:.2f} / {p_stable:.2f}"
+                        if p_stable is not None
+                        else f"{p_flip:.2f}",
+                        "–"
+                        if f.get("share_flip_p_below_0_5") is None
+                        else _pct(f["share_flip_p_below_0_5"], 0),
+                        "–"
+                        if f.get("auroc_low_p_flags_flip") is None
+                        else f"{f['auroc_low_p_flags_flip']:.2f}",
+                    ]
+                )
+        if rows:
+            top_k = next(iter(entry[b] for b in B.BIAS_BASE_SYSTEMS if b in entry))["top_k"]
+            lines += [
+                _table(
+                    [
+                        "Sistema",
+                        "Ordine",
+                        "Accuratezza [IC 95%]",
+                        "Δ vs canonico (McNemar)",
+                        "Scelte in 1ª posizione (corrette lì)",
+                        f"Scelte nelle prime {top_k} posizioni (corrette lì)",
+                    ],
+                    rows,
+                ),
+                "",
+            ]
+        if flips:
+            lines += [
+                _table(
+                    [
+                        "Sistema",
+                        "Esempi nei 3 ordini",
+                        "Stessa risposta in tutti gli ordini",
+                        "Esempi che cambiano risposta",
+                        "p mediana (cambiano / stabili)",
+                        "Cambi con p < 0,5",
+                        "AUROC: p bassa segnala il cambio",
+                    ],
+                    flips,
+                ),
+                "",
+                "*p* è la probabilità della risposta nell'ordine canonico. Se gli esempi che cambiano risposta hanno "
+                "p bassa, la soglia della cascata li inoltra già all'LLM.",
+                "",
+            ]
+        if perm := entry.get("jev-perm"):
+            mc = perm["mcnemar"]
+            lines += [
+                _table(
+                    [
+                        "Variante",
+                        "Esempi",
+                        "Accuratezza",
+                        "Concordanza dei 3 ordini",
+                        "Accuratezza se concordano / se no",
+                    ],
+                    [
+                        ["Jev (ordine canonico)", str(perm["n"]), _pct(perm["accuracy_jev"]), "–", "–"],
+                        [
+                            "Jev · media su 3 ordini",
+                            str(perm["n"]),
+                            f"{_pct(perm['accuracy_perm'])} (McNemar p {mc['p_value']:.2g})",
+                            _pct(perm["agreement"]),
+                            f"{_pct(perm['accuracy_if_agree'])} / {_pct(perm['accuracy_if_disagree'])}",
+                        ],
+                    ],
+                ),
+                "",
+            ]
+    return lines
 
 
 def fig_confusion(
@@ -524,8 +783,14 @@ def render_markdown(summary: dict) -> str:
         "",
     ]
 
+    missing = [SHORT_TITLES.get(n, n) for n, e in tasks.items() if not e["systems"]]
+    if missing:
+        lines += [f"Scenari ancora senza risultati: {', '.join(missing)}.", ""]
+
     lines += ["## Qualità", "", _picture("quality", "Accuratezza per scenario"), ""]
     for name, entry in tasks.items():
+        if not entry["systems"]:
+            continue
         task = TASKS[name]
         lines += [f"### {task.title}", "", f"Dataset: {task.dataset}. Opzioni: {len(task.labels)}.", ""]
         if task.kind is TaskKind.CHOICE:
@@ -592,7 +857,7 @@ def render_markdown(summary: dict) -> str:
             lines += [
                 "Test di McNemar esatto (stessi esempi):",
                 "",
-                _table(["Confronto", "Solo Jev corretto", "Solo LLM corretto", "p-value"], rows),
+                _table(["Confronto", "Solo Jev corretto", "Solo l'altro sistema corretto", "p-value"], rows),
                 "",
             ]
     if "output_quality" in tasks and tasks["output_quality"]["systems"]:
@@ -655,7 +920,9 @@ def render_markdown(summary: dict) -> str:
         f"Prezzi applicati: Jev {JEV_PRICING.input} $/M token input, output gratuito "
         f"([fonte]({JEV_PRICING.source.split(' ')[0]})); GPT-5.4 {GPT54_PRICING.input} $/M input, "
         f"{GPT54_PRICING.cached_input} $/M input in cache, {GPT54_PRICING.output} $/M output "
-        f"([fonte]({GPT54_PRICING.source.split(' ')[0]})). I token di Jev e di GPT-5.4 sono contati da "
+        f"([fonte]({GPT54_PRICING.source.split(' ')[0]})); GPT-5.4 mini {GPT54_MINI_PRICING.input} $/M input, "
+        f"{GPT54_MINI_PRICING.cached_input} $/M in cache, {GPT54_MINI_PRICING.output} $/M output "
+        f"([fonte]({GPT54_MINI_PRICING.source.split(' ')[0]})). I token di Jev e di GPT-5.4 sono contati da "
         "tokenizer diversi.",
         "",
     ]
@@ -699,22 +966,24 @@ def render_markdown(summary: dict) -> str:
             "",
             _picture("tradeoff", "Accuratezza vs costo"),
             "",
-            "Jev risponde a tutte le richieste; quelle con probabilità (S1, S2) o confidenza (S3) sotto la soglia "
-            "τ vengono inoltrate all'LLM. Il punto operativo è la soglia più bassa che raggiunge l'accuratezza "
-            "dell'LLM da solo (o -2 punti), scelta con *2-fold cross-fitting* (si sceglie τ su metà degli esempi "
-            "e si misura sull'altra metà).",
+            "Jev risponde a tutte le richieste; quelle con probabilità (scenari Choice) o confidenza (S3) sotto la "
+            "soglia τ vengono inoltrate all'LLM. Per *Jev · media su 3 ordini* viene inoltrata anche ogni richiesta "
+            "su cui i tre ordini delle opzioni non concordano. Il punto operativo è la soglia più bassa che "
+            "raggiunge l'accuratezza dell'LLM da solo (o -2 punti), scelta con *2-fold cross-fitting* (si sceglie "
+            "τ su metà degli esempi e si misura sull'altra metà).",
             "",
         ]
         rows = []
         for name, entry in tasks.items():
-            for fallback, c in entry.get("cascades", {}).items():
+            for c in entry.get("cascades", {}).values():
+                fallback = c["fallback"]
                 llm = entry["systems"][fallback]
                 for key, desc in (("parity", "parità con LLM"), ("near_parity", "LLM - 2 punti")):
                     op = c[key]
                     rows.append(
                         [
                             SHORT_TITLES[name],
-                            f"Jev → {label(fallback)}",
+                            f"{label(c['first'])} → {label(fallback)}",
                             desc,
                             ", ".join(f"{t:.3f}" for t in op["tau_folds"]),
                             _pct(op["escalation_rate"], 0),
@@ -739,6 +1008,7 @@ def render_markdown(summary: dict) -> str:
             ),
             "",
         ]
+    lines += _render_bias(summary)
     return "\n".join(lines) + "\n"
 
 
@@ -758,6 +1028,7 @@ def build_report(run_id: str) -> Path:
             fig_confusion(summary, frames, theme, fig_dir / f"confusion-{mode}.png")
         if any(e.get("cascades") for e in summary["tasks"].values()):
             fig_tradeoff(summary, theme, fig_dir / f"tradeoff-{mode}.png")
+        summary.setdefault("_figures", {})["bias"] = fig_bias(summary, theme, fig_dir / f"bias-{mode}.png")
     summary_text = json.dumps(summary, indent=2, default=float)
     (out_dir / "summary.json").write_text(summary_text, encoding="utf-8", newline="\n")
     report = out_dir / "report.md"

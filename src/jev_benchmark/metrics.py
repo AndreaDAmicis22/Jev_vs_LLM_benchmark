@@ -35,6 +35,7 @@ def load_frame(run_id: str, task: Task, system: str) -> pd.DataFrame | None:
         p = by_id.get(ex.id)
         if p is None:
             continue
+        agree = (p.extra or {}).get("agree")  # jev-perm: do the three option orders agree?
         rows.append(
             {
                 "example_id": ex.id,
@@ -43,7 +44,12 @@ def load_frame(run_id: str, task: Task, system: str) -> pd.DataFrame | None:
                 "ok": p.ok,
                 "correct": p.correct,
                 "p_pred": p.p_pred,
+                # cascade signal of jev-perm: disagreement between orders forces escalation
+                "p_pred_agree": 0.0 if agree is False else p.p_pred,
+                "agree": agree,
                 "confidence": p.confidence,
+                "probabilities": p.probabilities,
+                "order": p.order,
                 "expected_score": p.expected_score,
                 "latency_ms": p.latency_ms,
                 "server_ms": p.server_ms,
@@ -227,15 +233,18 @@ class CascadeSpec:
     signal: str  # column of the first system compared with the threshold
 
 
-def default_signal(task: Task) -> str:
+def default_signal(task: Task, system: str = "jev") -> str:
     """TypeSafe guidance: threshold the probability of the chosen option for Choice questions,
-    and the (ordinal-aware) confidence for Score questions."""
-    return "p_pred" if task.kind is TaskKind.CHOICE else "confidence"
+    and the (ordinal-aware) confidence for Score questions. For jev-perm, disagreement between the
+    three option orders also counts as uncertainty."""
+    if task.kind is not TaskKind.CHOICE:
+        return "confidence"
+    return "p_pred_agree" if system == "jev-perm" else "p_pred"
 
 
 def paired(first: pd.DataFrame, fallback: pd.DataFrame) -> pd.DataFrame:
     """Join two systems on the same examples (suffix `_a` = first system, `_b` = fallback)."""
-    cols = ["example_id", "gold", "correct", "p_pred", "confidence", "latency_ms", "cost_usd"]
+    cols = ["example_id", "gold", "correct", "p_pred", "p_pred_agree", "confidence", "latency_ms", "cost_usd"]
     return first[cols].merge(fallback[cols], on=["example_id", "gold"], suffixes=("_a", "_b"))
 
 
