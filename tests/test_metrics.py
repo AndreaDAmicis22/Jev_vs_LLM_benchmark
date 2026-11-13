@@ -24,6 +24,10 @@ def _frame(gold, pred, p, latency, cost, confidence=None):
         }
     )
     df["confidence"] = confidence if confidence is not None else p
+    df["p_pred_agree"] = df["p_pred"]
+    df["agree"] = None
+    df["probabilities"] = None
+    df["order"] = "canonical"
     df["ok"] = df["pred"].notna()
     df["correct"] = df["ok"] & (df["pred"] == df["gold"])
     for col in ("input_tokens", "cached_tokens", "output_tokens", "reasoning_tokens"):
@@ -81,6 +85,22 @@ def test_cascade_extremes_and_monotonic_escalation():
     # escalating only the two uncertain answers fixes both mistakes: better than either system
     best = M.cascade_at(m, "p_pred", 0.7)
     assert best["accuracy"] == pytest.approx(1.0) and best["escalation_rate"] == pytest.approx(0.5)
+
+
+def test_jev_perm_disagreement_forces_escalation():
+    gold = ["a", "b"]
+    first = _frame(gold, ["a", "a"], [0.95, 0.9], [100] * 2, [0.001] * 2)
+    first["agree"] = [True, False]
+    first["p_pred_agree"] = [0.95, 0.0]  # what load_frame computes for jev-perm
+    llm = _frame(gold, ["a", "b"], [1.0] * 2, [1000] * 2, [0.01] * 2)
+    m = M.paired(first, llm)
+    task = get_task("intent_routing")
+    assert M.default_signal(task, "jev-perm") == "p_pred_agree"
+    assert M.default_signal(task, "jev") == "p_pred"
+    assert M.default_signal(get_task("output_quality"), "jev") == "confidence"
+    # a confident (0.9) but order-dependent answer is escalated and fixed by the LLM
+    res = M.cascade_at(m, "p_pred_agree", 0.5)
+    assert res["escalation_rate"] == pytest.approx(0.5) and res["accuracy"] == pytest.approx(1.0)
 
 
 def test_calibration_perfectly_calibrated_bins():
