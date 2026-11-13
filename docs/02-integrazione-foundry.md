@@ -20,6 +20,16 @@ Questo documento copre due aspetti:
 | Limiti | ~44.590 richieste/min e ~4,46 M token/min (`x-ratelimit-limit-*`) |
 | Prezzo | $2,50/M input, $0,25/M input in cache, $15,00/M output ([annuncio Microsoft](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-gpt-5-4-in-microsoft-foundry/4499785)) |
 
+Secondo deployment, l'**alternativa economica**: `gpt-5.4-mini` sulla stessa risorsa, con stesse API,
+Structured Outputs e prompt caching. Costa circa il 30% di GPT-5.4: $0,75/M input, $0,075/M in cache,
+$4,50/M output ([listino](https://www.azurespeed.com/AzureAiModelPricing/Models/openai-gpt-5-4-mini)).
+Supporta `reasoning.effort="none"`. Per i **logprobs** ci sono segnalazioni di rifiuto (errori 400/403)
+sul forum OpenAI: il client del PoC li richiede e, se il deployment li rifiuta, li disattiva e ripete
+la richiesta, annotandolo nel manifest. `jevbench check` lo mostra con una sola richiesta.
+
+I listini sono in [`config.py`](../src/jev_benchmark/config.py) (`LLM_PRICING`). Un deployment senza
+prezzo configurato blocca l'esecuzione invece di produrre costi inventati.
+
 ### Structured Outputs: l'LLM può rispondere solo con un'etichetta valida
 
 L'opzione scelta è vincolata da uno **schema JSON strict con `enum`**, costruito dalle stesse opzioni
@@ -103,9 +113,38 @@ async def decide(task, state, tau: float):
 
 - La soglia τ si tara su un set etichettato: il benchmark riporta la curva completa e un punto
   operativo scelto in cross-fitting.
+- Il fallback naturale è **GPT-5.4 mini**: costa circa il 30% di GPT-5.4. GPT-5.4 o un operatore
+  umano restano come terzo livello per i casi più difficili.
 - Variante a **latenza minima**: si chiamano Jev e LLM in parallelo e si usa Jev se è sicuro. La
   latenza diventa quella del più lento solo sui casi incerti, ma si paga sempre l'LLM.
-- Variante **a tre livelli**: Jev → GPT-5.4 `none` → GPT-5.4 `medium` o un operatore umano.
+
+#### Contro il bias di posizione: media su più ordini nella stessa richiesta
+
+Jev tende a favorire l'opzione elencata per prima. In produzione la stessa domanda si può porre più
+volte **nella stessa richiesta**, con id diversi e opzioni in ordine diverso, facendo poi la media
+delle probabilità. Le domande sono valutate in parallelo, quindi la latenza cambia poco; si pagano solo
+i token delle opzioni ripetute. Il disaccordo tra gli ordini è un ulteriore motivo per inoltrare il
+caso all'LLM.
+
+```python
+orders = {"a": labels, "b": labels[::-1], "c": shuffled(labels)}          # 3 ordini delle stesse opzioni
+questions = {f"intent_{k}": Choice(instructions=q, criteria=opts) for k, opts in orders.items()}
+r = await typesafe.system_one(state=state, questions=questions)
+probs = {o: mean(r.answers[q].probabilities[o] for q in questions) for o in labels}
+choice = max(probs, key=probs.get)
+agree = len({r.answers[q].choice for q in questions}) == 1                 # False -> inoltra all'LLM
+```
+
+Nel benchmark questa strategia è il sistema `jev-perm`
+([`systems/jev.py`](../src/jev_benchmark/systems/jev.py)). Altre contromisure: classificazione
+gerarchica (liste più corte) e opzione residuale ("other") sempre in fondo, oppure una *companion noul*.
+
+#### Jev tramite un gateway
+
+Il client supporta `TYPESAFE_BASE_URL` in `.env`. Con `https://openrouter.ai/api`, una chiave
+OpenRouter in `TYPESAFE_API_KEY` e `JEV_MODEL=jev-1.13`, Jev passa da OpenRouter senza modifiche al
+codice: utile se l'azienda ha già un contratto o un credito lì. In quel caso la latenza include un
+passaggio in più, e su OpenRouter è documentata la versione 1.13, non la 1.14.
 
 ### B. Jev come tool di un agente Foundry
 

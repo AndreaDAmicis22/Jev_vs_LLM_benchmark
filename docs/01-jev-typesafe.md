@@ -185,7 +185,7 @@ Fonte: [docs.typesafe.ai/model-jaggedness](https://docs.typesafe.ai/model-jagged
 | Indirezione e ragionamento multi-hop | istruzioni dirette, nominare le parti di stato rilevanti |
 | Stato ampio con dettagli irrilevanti | inviare solo i campi necessari, oppure filtrare con una `noul` |
 | Contenuto avversario nello stato (prompt injection) | criteri espliciti, test sui casi limite |
-| Bias verso la **prima opzione** delle `choice` | riordinare le opzioni e verificare la coerenza |
+| Bias verso la **prima opzione** delle `choice` | riordinare le opzioni e verificare la coerenza; nel benchmark è misurato con tre ordini e mitigato con la media su più ordini (`jev-perm`), vedi [03-metodologia.md](03-metodologia.md) |
 | Livelli di `score` debolmente calibrati come grandezze | usare la media solo per confronti con soglie |
 | Generazione di testo | non è il suo compito: lasciarla a un LLM, Jev sceglie tra candidati |
 

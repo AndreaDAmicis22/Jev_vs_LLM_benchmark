@@ -1,12 +1,14 @@
 # 04 · Risultati e raccomandazioni
 
-> **Stato: preliminare.** I baseline GPT-5.4 sono stati misurati su tutti i 908 esempi (run `main`,
-> 6 novembre 2026). Le predizioni di Jev sono in attesa della `TYPESAFE_API_KEY`. Questo documento
-> riporta (1) ciò che è già misurato e (2) i criteri decisionali, fissati **prima** di vedere i
-> risultati di Jev, con cui verrà formulata la raccomandazione finale. Numeri completi:
-> [reports/main/report.md](../reports/main/report.md).
+> **Stato: preliminare.** I baseline GPT-5.4 sono stati misurati sul campione **v1** (908 esempi, run
+> `main`, 6 novembre 2026). Il benchmark è stato poi esteso alla **v2** (500 esempi per scenario,
+> scenario italiano S4, GPT-5.4 mini, test del bias di posizione): la v2 contiene integralmente la v1,
+> quindi questi risultati restano validi e verranno completati, non rifatti. Le predizioni di Jev sono
+> in attesa della `TYPESAFE_API_KEY`. Questo documento riporta (1) ciò che è già misurato e (2) i criteri
+> decisionali, fissati **prima** di vedere i risultati di Jev, con cui verrà formulata la
+> raccomandazione finale. Numeri completi: [reports/main/report.md](../reports/main/report.md).
 
-## 1. Cosa sappiamo già: i baseline GPT-5.4 su Foundry
+## 1. Cosa sappiamo già: i baseline GPT-5.4 su Foundry (campione v1)
 
 | Scenario | Configurazione | Accuratezza [IC 95%] | Latenza p50 / p95 | Costo / 1.000 richieste |
 |---|---|---|---|---|
@@ -41,21 +43,38 @@
    entrambe le configurazioni, errore 400). Un giudice LLM su Azure non può valutare proprio i
    contenuti problematici, che spesso sono quelli che un quality gate deve intercettare.
 6. **Il prompt caching abbatte il costo quando le opzioni sono molte.** In S1 l'89% dei token di input
-   è servito dalla cache ($0,25/M invece di $2,50/M), perché istruzioni e 77 opzioni sono un prefisso
-   costante. Il costo scende da $4,81 a $1,19 per 1.000 richieste, circa 4 volte meno. In S3 il prefisso costante è sotto la soglia di 1.024 token e la cache non si
-   attiva.
+   è servito dalla cache ($0,25/M invece di $2,50/M), perché istruzioni, 77 opzioni e schema JSON sono
+   un prefisso costante. Il costo scende da $4,81 a $1,19 per 1.000 richieste, circa 4 volte meno. In
+   S3 il prefisso costante è sotto la soglia di 1.024 token e la cache non si attiva.
 
 ## 2. Criteri decisionali (fissati prima dei risultati di Jev)
 
-Per ogni scenario, confrontando Jev con GPT-5.4 `none` (il baseline più comparabile per latenza) e con
-`medium` (il baseline di qualità):
+> Revisione del 13 novembre 2026, ancora prima di qualsiasi risultato di Jev: il termine di paragone
+> principale diventa **GPT-5.4 mini**, l'alternativa più economica che funziona. Sono aggiunti anche
+> i criteri sul bias di posizione.
 
-| Esito | Condizione | Raccomandazione |
+Per ogni scenario si confronta Jev (o `jev-perm`, se la variante migliora in modo significativo) con:
+
+- **GPT-5.4 mini · none** → *decide la raccomandazione*: è l'alternativa che un cliente userebbe
+  davvero per decisioni ripetitive ad alto volume;
+- **GPT-5.4 · none** → riferimento di qualità e latenza;
+- **GPT-5.4 · medium** → tetto di qualità, solo per contesto.
+
+| Esito | Condizione (rispetto a GPT-5.4 mini) | Raccomandazione |
 |---|---|---|
-| **Jev da solo** | accuratezza di Jev non significativamente inferiore all'LLM (McNemar p ≥ 0,05 e differenza ≤ 2 punti; per S3 QWK ≥ QWK_LLM − 0,05) | sostituire l'LLM: stessa qualità con un costo e una latenza inferiori |
-| **Combinazione (cascata)** | Jev significativamente peggiore, ma la cascata raggiunge la parità (o -2 punti) inoltrando **≤ 50%** delle richieste, con soglia scelta in cross-fitting | Jev su tutto il traffico e LLM solo sotto soglia: si risparmia sulla quota non inoltrata |
+| **Jev da solo** | accuratezza di Jev non significativamente inferiore (McNemar p ≥ 0,05 e differenza ≤ 2 punti; per S3 QWK ≥ QWK_mini − 0,05) | sostituire l'LLM: stessa qualità con un costo e una latenza inferiori |
+| **Combinazione (cascata)** | Jev significativamente peggiore, ma la cascata Jev → mini raggiunge la parità (o -2 punti) inoltrando **≤ 50%** delle richieste, con soglia scelta in cross-fitting | Jev su tutto il traffico e LLM solo sotto soglia: si risparmia sulla quota non inoltrata |
 | **LLM** | la parità richiede di inoltrare > 70% delle richieste, oppure la probabilità di Jev non separa giusto/sbagliato (AUROC < 0,70) | tenere l'LLM. Jev resta eventualmente utile come pre-filtro economico (*noul screen*) |
 | Zona grigia | inoltro tra 50% e 70% | decidere in base al vincolo dominante (latenza sincrona vs costo vs accuratezza) |
+
+**Criteri sul bias di posizione** (scenari Choice):
+
+| Esito | Condizione | Conseguenza |
+|---|---|---|
+| Bias trascurabile | variazione di accuratezza tra ordini ≤ 2 punti e non significativa, e coerenza nei tre ordini ≥ 90% | Jev con ordine singolo |
+| Bias assorbito dalla cascata | gli esempi che cambiano risposta hanno in maggioranza probabilità sotto la soglia scelta | Jev con ordine singolo in cascata: la soglia intercetta già i casi instabili |
+| Bias da mitigare | variazione > 2 punti o significativa, oppure cambi con probabilità alta | usare `jev-perm` (media su 3 ordini) se recupera accuratezza; il costo in token di Jev resta comunque trascurabile |
+| Scenario italiano (S4) | si applicano gli stessi criteri della tabella principale | se Jev perde in S4 più che in S1, va segnalata una dipendenza dalla lingua da validare sui dati del cliente |
 
 Elementi aggiuntivi che pesano sulla scelta, oltre ai numeri:
 
@@ -68,5 +87,13 @@ Elementi aggiuntivi che pesano sulla scelta, oltre ai numeri:
 
 ## 3. Raccomandazione finale
 
-*Da completare dopo `jevbench run --systems jev` e `jevbench report`, applicando i criteri della
-sezione 2 scenario per scenario.*
+*Da completare dopo i run della v2 e `jevbench report`, applicando i criteri della sezione 2 scenario
+per scenario:*
+
+```bash
+poetry run jevbench estimate               # costo previsto, offline
+poetry run jevbench check --systems all    # una richiesta per sistema
+poetry run jevbench run --systems main     # Jev, jev-perm, GPT-5.4 mini + esempi nuovi di GPT-5.4
+poetry run jevbench run --systems bias     # varianti di ordine per il bias di posizione
+poetry run jevbench report
+```
