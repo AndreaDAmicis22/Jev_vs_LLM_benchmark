@@ -1,0 +1,500 @@
+{"id":"massive-it-test-4702","label":"audio_volume_up","state":{"richiesta_utente":"google accendi i miei altoparlanti per favore"},"meta":{"split":"test","massive_id":"4702","scenario":"audio"}}
+{"id":"massive-it-test-11987","label":"recommendation_movies","state":{"richiesta_utente":"cerca film vicino a me"},"meta":{"split":"test","massive_id":"11987","scenario":"recommendation"}}
+{"id":"massive-it-test-8825","label":"calendar_set","state":{"richiesta_utente":"ricordami l'incontro con marco venerdì prossimo"},"meta":{"split":"test","massive_id":"8825","scenario":"calendar"}}
+{"id":"massive-it-test-5014","label":"iot_hue_lightup","state":{"richiesta_utente":"puoi rendere la stanza più luminosa"},"meta":{"split":"test","massive_id":"5014","scenario":"iot"}}
+{"id":"massive-it-test-2198","label":"datetime_query","state":{"richiesta_utente":"che giorno della settimana era il quattro dicembre millenovecentoottantadue"},"meta":{"split":"test","massive_id":"2198","scenario":"datetime"}}
+{"id":"massive-it-test-5406","label":"takeaway_query","state":{"richiesta_utente":"da michele fa da asporto"},"meta":{"split":"test","massive_id":"5406","scenario":"takeaway"}}
+{"id":"massive-it-test-1266","label":"datetime_convert","state":{"richiesta_utente":"sono le cinque di mattina a berlino che ore sono qui"},"meta":{"split":"test","massive_id":"1266","scenario":"datetime"}}
+{"id":"massive-it-test-11265","label":"play_podcasts","state":{"richiesta_utente":"riproduci la prossima"},"meta":{"split":"test","massive_id":"11265","scenario":"play"}}
+{"id":"massive-it-test-12693","label":"transport_traffic","state":{"richiesta_utente":"com'è il traffico sulla mia solita strada per il lavoro"},"meta":{"split":"test","massive_id":"12693","scenario":"transport"}}
+{"id":"massive-it-test-12233","label":"transport_ticket","state":{"richiesta_utente":"google biglietti del treno per napoli"},"meta":{"split":"test","massive_id":"12233","scenario":"transport"}}
+{"id":"massive-it-test-12413","label":"transport_traffic","state":{"richiesta_utente":"com'è la condizione del traffico al momento"},"meta":{"split":"test","massive_id":"12413","scenario":"transport"}}
+{"id":"massive-it-dev-1988","label":"iot_hue_lighton","state":{"richiesta_utente":"alexa accendi le luci da ballo nel mio appartamento e fai iniziare la festa"},"meta":{"split":"dev","massive_id":"1988","scenario":"iot"}}
+{"id":"massive-it-test-2451","label":"datetime_convert","state":{"richiesta_utente":"settecento"},"meta":{"split":"test","massive_id":"2451","scenario":"datetime"}}
+{"id":"massive-it-test-3819","label":"music_likeness","state":{"richiesta_utente":"per favore dai cinque stelle a questa canzone"},"meta":{"split":"test","massive_id":"3819","scenario":"music"}}
+{"id":"massive-it-test-16225","label":"email_addcontact","state":{"richiesta_utente":"apri contatti"},"meta":{"split":"test","massive_id":"16225","scenario":"email"}}
+{"id":"massive-it-test-2512","label":"iot_coffee","state":{"richiesta_utente":"come faccio a impostare la macchinetta del caffè per fare il caffè"},"meta":{"split":"test","massive_id":"2512","scenario":"iot"}}
+{"id":"massive-it-test-1043","label":"takeaway_order","state":{"richiesta_utente":"chiama il ristorante thai più vicino con servizio d'asporto"},"meta":{"split":"test","massive_id":"1043","scenario":"takeaway"}}
+{"id":"massive-it-test-2560","label":"play_music","state":{"richiesta_utente":"riproduci musica casuale"},"meta":{"split":"test","massive_id":"2560","scenario":"play"}}
+{"id":"massive-it-test-2690","label":"iot_wemo_off","state":{"richiesta_utente":"spegni la presa"},"meta":{"split":"test","massive_id":"2690","scenario":"iot"}}
+{"id":"massive-it-test-1575","label":"iot_cleaning","state":{"richiesta_utente":"attiva l'aspirapolvere"},"meta":{"split":"test","massive_id":"1575","scenario":"iot"}}
+{"id":"massive-it-test-15205","label":"social_query","state":{"richiesta_utente":"aggiornami sul mio facebook ogni tre ore"},"meta":{"split":"test","massive_id":"15205","scenario":"social"}}
+{"id":"massive-it-test-1579","label":"general_joke","state":{"richiesta_utente":"trova una barzelletta sul calcio"},"meta":{"split":"test","massive_id":"1579","scenario":"general"}}
+{"id":"massive-it-test-6506","label":"general_quirky","state":{"richiesta_utente":"fammi domande di cultura generale"},"meta":{"split":"test","massive_id":"6506","scenario":"general"}}
+{"id":"massive-it-test-10981","label":"lists_query","state":{"richiesta_utente":"dimmi la lista"},"meta":{"split":"test","massive_id":"10981","scenario":"lists"}}
+{"id":"massive-it-test-15815","label":"email_querycontact","state":{"richiesta_utente":"qual è il numero di telefono di lavoro di emilia"},"meta":{"split":"test","massive_id":"15815","scenario":"email"}}
+{"id":"massive-it-test-468","label":"iot_hue_lightdim","state":{"richiesta_utente":"cambia la luce in tenue"},"meta":{"split":"test","massive_id":"468","scenario":"iot"}}
+{"id":"massive-it-dev-3464","label":"iot_hue_lighton","state":{"richiesta_utente":"accendi tutte le luci esterne per favore"},"meta":{"split":"dev","massive_id":"3464","scenario":"iot"}}
+{"id":"massive-it-test-11665","label":"recommendation_locations","state":{"richiesta_utente":"cerco una sfilata puoi trovarmi dei negozi di abbigliamento nel raggio di due chilometri"},"meta":{"split":"test","massive_id":"11665","scenario":"recommendation"}}
+{"id":"massive-it-test-321","label":"iot_wemo_off","state":{"richiesta_utente":"disattiva la presa"},"meta":{"split":"test","massive_id":"321","scenario":"iot"}}
+{"id":"massive-it-test-9955","label":"cooking_recipe","state":{"richiesta_utente":"fammi vedere un video su come preparare le cotolette di pollo"},"meta":{"split":"test","massive_id":"9955","scenario":"cooking"}}
+{"id":"massive-it-test-15557","label":"social_post","state":{"richiesta_utente":"potresti twittare una lamentela"},"meta":{"split":"test","massive_id":"15557","scenario":"social"}}
+{"id":"massive-it-test-4244","label":"iot_coffee","state":{"richiesta_utente":"olly avvia la macchinetta e fammi del caffè"},"meta":{"split":"test","massive_id":"4244","scenario":"iot"}}
+{"id":"massive-it-test-448","label":"iot_coffee","state":{"richiesta_utente":"avvia caffettiera"},"meta":{"split":"test","massive_id":"448","scenario":"iot"}}
+{"id":"massive-it-test-15511","label":"social_query","state":{"richiesta_utente":"mostrami la mia più recente attività sui social"},"meta":{"split":"test","massive_id":"15511","scenario":"social"}}
+{"id":"massive-it-test-12526","label":"transport_query","state":{"richiesta_utente":"qual è il modo più veloce per arrivare da starbucks"},"meta":{"split":"test","massive_id":"12526","scenario":"transport"}}
+{"id":"massive-it-test-10563","label":"lists_createoradd","state":{"richiesta_utente":"puoi crearmi una lista"},"meta":{"split":"test","massive_id":"10563","scenario":"lists"}}
+{"id":"massive-it-test-17111","label":"email_querycontact","state":{"richiesta_utente":"dettagli contatto di paolo"},"meta":{"split":"test","massive_id":"17111","scenario":"email"}}
+{"id":"massive-it-test-3486","label":"audio_volume_down","state":{"richiesta_utente":"parla più piano per favore"},"meta":{"split":"test","massive_id":"3486","scenario":"audio"}}
+{"id":"massive-it-test-9321","label":"play_radio","state":{"richiesta_utente":"accendi la radio"},"meta":{"split":"test","massive_id":"9321","scenario":"play"}}
+{"id":"massive-it-test-219","label":"weather_query","state":{"richiesta_utente":"dovrò prendere l'ombrello domani"},"meta":{"split":"test","massive_id":"219","scenario":"weather"}}
+{"id":"massive-it-test-4799","label":"iot_wemo_on","state":{"richiesta_utente":"spegni la presa intelligente per favore"},"meta":{"split":"test","massive_id":"4799","scenario":"iot"}}
+{"id":"massive-it-test-3398","label":"alarm_set","state":{"richiesta_utente":"imposta la mia sveglia per le diciassette per favore"},"meta":{"split":"test","massive_id":"3398","scenario":"alarm"}}
+{"id":"massive-it-dev-2470","label":"iot_hue_lighton","state":{"richiesta_utente":"accendi le luci"},"meta":{"split":"dev","massive_id":"2470","scenario":"iot"}}
+{"id":"massive-it-test-9986","label":"cooking_recipe","state":{"richiesta_utente":"bollire"},"meta":{"split":"test","massive_id":"9986","scenario":"cooking"}}
+{"id":"massive-it-test-11932","label":"recommendation_movies","state":{"richiesta_utente":"cosa dovrei guardare oggi"},"meta":{"split":"test","massive_id":"11932","scenario":"recommendation"}}
+{"id":"massive-it-test-4874","label":"music_likeness","state":{"richiesta_utente":"inserisci un suggerimento per una canzone"},"meta":{"split":"test","massive_id":"4874","scenario":"music"}}
+{"id":"massive-it-test-15318","label":"social_post","state":{"richiesta_utente":"voglio ringraziare tutti per gli auguri di compleanno"},"meta":{"split":"test","massive_id":"15318","scenario":"social"}}
+{"id":"massive-it-test-11954","label":"recommendation_locations","state":{"richiesta_utente":"c'è un teatro nella mia zona"},"meta":{"split":"test","massive_id":"11954","scenario":"recommendation"}}
+{"id":"massive-it-test-1675","label":"alarm_remove","state":{"richiesta_utente":"rimuovi la sveglia di martedì mattina alle nove"},"meta":{"split":"test","massive_id":"1675","scenario":"alarm"}}
+{"id":"massive-it-test-16120","label":"email_sendemail","state":{"richiesta_utente":"l'aiuto deve essere inviato solo a jessica"},"meta":{"split":"test","massive_id":"16120","scenario":"email"}}
+{"id":"massive-it-test-11215","label":"lists_query","state":{"richiesta_utente":"lista"},"meta":{"split":"test","massive_id":"11215","scenario":"lists"}}
+{"id":"massive-it-test-12548","label":"transport_taxi","state":{"richiesta_utente":"mi serve un passaggio a casa"},"meta":{"split":"test","massive_id":"12548","scenario":"transport"}}
+{"id":"massive-it-test-12098","label":"recommendation_events","state":{"richiesta_utente":"mostrami gli eventi musicali qui vicino"},"meta":{"split":"test","massive_id":"12098","scenario":"recommendation"}}
+{"id":"massive-it-test-322","label":"iot_wemo_on","state":{"richiesta_utente":"abilita la mia presa"},"meta":{"split":"test","massive_id":"322","scenario":"iot"}}
+{"id":"massive-it-test-4216","label":"general_joke","state":{"richiesta_utente":"raccontami la barzelletta più divertente di sempre"},"meta":{"split":"test","massive_id":"4216","scenario":"general"}}
+{"id":"massive-it-test-13242","label":"general_quirky","state":{"richiesta_utente":"qual è la miglior ricetta per i biscotti al burro"},"meta":{"split":"test","massive_id":"13242","scenario":"general"}}
+{"id":"massive-it-test-9812","label":"play_audiobook","state":{"richiesta_utente":"apri audiolibro di harry potter e ricomincia da dove avevo lasciato"},"meta":{"split":"test","massive_id":"9812","scenario":"play"}}
+{"id":"massive-it-test-6958","label":"calendar_remove","state":{"richiesta_utente":"assicurati che non ci siano eventi nel mio calendario"},"meta":{"split":"test","massive_id":"6958","scenario":"calendar"}}
+{"id":"massive-it-test-12604","label":"transport_query","state":{"richiesta_utente":"come prenoto un biglietto del treno online"},"meta":{"split":"test","massive_id":"12604","scenario":"transport"}}
+{"id":"massive-it-test-46","label":"general_greet","state":{"richiesta_utente":"come va olly"},"meta":{"split":"test","massive_id":"46","scenario":"general"}}
+{"id":"massive-it-test-10338","label":"play_game","state":{"richiesta_utente":"gioca a harry potter e la camera dei segreti"},"meta":{"split":"test","massive_id":"10338","scenario":"play"}}
+{"id":"massive-it-test-6372","label":"news_query","state":{"richiesta_utente":"notizie sulle piante"},"meta":{"split":"test","massive_id":"6372","scenario":"news"}}
+{"id":"massive-it-test-10081","label":"cooking_recipe","state":{"richiesta_utente":"dimmi come cuocere le polpette"},"meta":{"split":"test","massive_id":"10081","scenario":"cooking"}}
+{"id":"massive-it-test-3809","label":"audio_volume_down","state":{"richiesta_utente":"abbassa volume altoparlante"},"meta":{"split":"test","massive_id":"3809","scenario":"audio"}}
+{"id":"massive-it-test-2230","label":"iot_hue_lightoff","state":{"richiesta_utente":"spegni la luce della cucina"},"meta":{"split":"test","massive_id":"2230","scenario":"iot"}}
+{"id":"massive-it-test-4443","label":"iot_coffee","state":{"richiesta_utente":"avvia la macchinetta del caffè alle tre"},"meta":{"split":"test","massive_id":"4443","scenario":"iot"}}
+{"id":"massive-it-test-2903","label":"iot_cleaning","state":{"richiesta_utente":"avvia l' aspirapolvere per favore"},"meta":{"split":"test","massive_id":"2903","scenario":"iot"}}
+{"id":"massive-it-test-15399","label":"social_post","state":{"richiesta_utente":"inoltra un reclamo alla wind per i problemi di rete"},"meta":{"split":"test","massive_id":"15399","scenario":"social"}}
+{"id":"massive-it-test-9768","label":"play_audiobook","state":{"richiesta_utente":"continua a leggere l' audiolibro"},"meta":{"split":"test","massive_id":"9768","scenario":"play"}}
+{"id":"massive-it-test-1830","label":"takeaway_order","state":{"richiesta_utente":"voglio mangiare qualcosa di piccante"},"meta":{"split":"test","massive_id":"1830","scenario":"takeaway"}}
+{"id":"massive-it-test-13199","label":"qa_maths","state":{"richiesta_utente":"ti intendi di matematica"},"meta":{"split":"test","massive_id":"13199","scenario":"qa"}}
+{"id":"massive-it-test-6162","label":"alarm_remove","state":{"richiesta_utente":"rimuovi sveglia"},"meta":{"split":"test","massive_id":"6162","scenario":"alarm"}}
+{"id":"massive-it-test-11862","label":"recommendation_movies","state":{"richiesta_utente":"consigliami un film"},"meta":{"split":"test","massive_id":"11862","scenario":"recommendation"}}
+{"id":"massive-it-test-11442","label":"play_podcasts","state":{"richiesta_utente":"per favore riproduci l'ultimo podcast di francesco costa"},"meta":{"split":"test","massive_id":"11442","scenario":"play"}}
+{"id":"massive-it-test-9519","label":"play_radio","state":{"richiesta_utente":"metti qualsiasi radio stazione pop"},"meta":{"split":"test","massive_id":"9519","scenario":"play"}}
+{"id":"massive-it-test-5250","label":"music_query","state":{"richiesta_utente":"titolo della canzone"},"meta":{"split":"test","massive_id":"5250","scenario":"music"}}
+{"id":"massive-it-test-297","label":"play_music","state":{"richiesta_utente":"riproduzione casuale dei coldplay"},"meta":{"split":"test","massive_id":"297","scenario":"play"}}
+{"id":"massive-it-test-3522","label":"iot_hue_lighton","state":{"richiesta_utente":"accendi le luci sul mio balcone"},"meta":{"split":"test","massive_id":"3522","scenario":"iot"}}
+{"id":"massive-it-test-4247","label":"iot_hue_lightchange","state":{"richiesta_utente":"casa cambia tutte le luci in blu"},"meta":{"split":"test","massive_id":"4247","scenario":"iot"}}
+{"id":"massive-it-test-2733","label":"iot_coffee","state":{"richiesta_utente":"avvia una tazza di caffè"},"meta":{"split":"test","massive_id":"2733","scenario":"iot"}}
+{"id":"massive-it-test-5570","label":"takeaway_order","state":{"richiesta_utente":"cerca del cibo e ordina"},"meta":{"split":"test","massive_id":"5570","scenario":"takeaway"}}
+{"id":"massive-it-test-16711","label":"email_querycontact","state":{"richiesta_utente":"i miei contatti sono per lo più donne o uomini"},"meta":{"split":"test","massive_id":"16711","scenario":"email"}}
+{"id":"massive-it-test-12329","label":"transport_taxi","state":{"richiesta_utente":"chiama un taxi"},"meta":{"split":"test","massive_id":"12329","scenario":"transport"}}
+{"id":"massive-it-test-8409","label":"calendar_remove","state":{"richiesta_utente":"cancella la mia cena domani"},"meta":{"split":"test","massive_id":"8409","scenario":"calendar"}}
+{"id":"massive-it-test-5307","label":"datetime_query","state":{"richiesta_utente":"oggi è il venti marzo"},"meta":{"split":"test","massive_id":"5307","scenario":"datetime"}}
+{"id":"massive-it-test-5611","label":"audio_volume_down","state":{"richiesta_utente":"abbassa il volume"},"meta":{"split":"test","massive_id":"5611","scenario":"audio"}}
+{"id":"massive-it-test-2798","label":"play_music","state":{"richiesta_utente":"alexa suona la canzone ma come fanno i marinai"},"meta":{"split":"test","massive_id":"2798","scenario":"play"}}
+{"id":"massive-it-test-5050","label":"iot_wemo_off","state":{"richiesta_utente":"spegni ogni tipo di dispositivo attivo"},"meta":{"split":"test","massive_id":"5050","scenario":"iot"}}
+{"id":"massive-it-test-13297","label":"qa_factoid","state":{"richiesta_utente":"cos'è una celebrità"},"meta":{"split":"test","massive_id":"13297","scenario":"qa"}}
+{"id":"massive-it-test-11636","label":"recommendation_movies","state":{"richiesta_utente":"film vicino ame"},"meta":{"split":"test","massive_id":"11636","scenario":"recommendation"}}
+{"id":"massive-it-test-862","label":"alarm_query","state":{"richiesta_utente":"impostazioni sveglia"},"meta":{"split":"test","massive_id":"862","scenario":"alarm"}}
+{"id":"massive-it-test-8640","label":"calendar_set","state":{"richiesta_utente":"voglio creare una nota nel calendario per l'evento di domani in biblioteca"},"meta":{"split":"test","massive_id":"8640","scenario":"calendar"}}
+{"id":"massive-it-test-13754","label":"qa_stock","state":{"richiesta_utente":"dimmi quanto costano attualmente le azioni di exor"},"meta":{"split":"test","massive_id":"13754","scenario":"qa"}}
+{"id":"massive-it-test-8336","label":"calendar_query","state":{"richiesta_utente":"a che ora è il mio brunch con anna"},"meta":{"split":"test","massive_id":"8336","scenario":"calendar"}}
+{"id":"massive-it-test-1778","label":"iot_hue_lightdim","state":{"richiesta_utente":"abbassa le luci"},"meta":{"split":"test","massive_id":"1778","scenario":"iot"}}
+{"id":"massive-it-test-9284","label":"play_radio","state":{"richiesta_utente":"riproduci la radio f. m."},"meta":{"split":"test","massive_id":"9284","scenario":"play"}}
+{"id":"massive-it-test-443","label":"audio_volume_up","state":{"richiesta_utente":"alza il volume"},"meta":{"split":"test","massive_id":"443","scenario":"audio"}}
+{"id":"massive-it-test-2647","label":"music_settings","state":{"richiesta_utente":"puoi per favore creare una playlist spotify per elisa"},"meta":{"split":"test","massive_id":"2647","scenario":"music"}}
+{"id":"massive-it-test-5219","label":"audio_volume_down","state":{"richiesta_utente":"diminuisci il volume dell' altoparlante per favore"},"meta":{"split":"test","massive_id":"5219","scenario":"audio"}}
+{"id":"massive-it-test-426","label":"iot_wemo_on","state":{"richiesta_utente":"accendi la presa numero uno"},"meta":{"split":"test","massive_id":"426","scenario":"iot"}}
+{"id":"massive-it-test-13855","label":"music_query","state":{"richiesta_utente":"quali sono i brani più popolari di lady gaga"},"meta":{"split":"test","massive_id":"13855","scenario":"music"}}
+{"id":"massive-it-test-16888","label":"email_query","state":{"richiesta_utente":"c'è una nuova mail"},"meta":{"split":"test","massive_id":"16888","scenario":"email"}}
+{"id":"massive-it-test-3184","label":"iot_wemo_on","state":{"richiesta_utente":"ferma inizia il succo"},"meta":{"split":"test","massive_id":"3184","scenario":"iot"}}
+{"id":"massive-it-test-3029","label":"music_dislikeness","state":{"richiesta_utente":"odio questa canzone"},"meta":{"split":"test","massive_id":"3029","scenario":"music"}}
+{"id":"massive-it-test-9062","label":"calendar_set","state":{"richiesta_utente":"puoi mettere il compleanno di leonardo il ventidue giugno"},"meta":{"split":"test","massive_id":"9062","scenario":"calendar"}}
+{"id":"massive-it-test-5579","label":"audio_volume_other","state":{"richiesta_utente":"puoi portare il volume al"},"meta":{"split":"test","massive_id":"5579","scenario":"audio"}}
+{"id":"massive-it-test-10565","label":"lists_remove","state":{"richiesta_utente":"elimina tutte le liste"},"meta":{"split":"test","massive_id":"10565","scenario":"lists"}}
+{"id":"massive-it-test-12452","label":"transport_taxi","state":{"richiesta_utente":"chiamami un taxi per l'aeroporto"},"meta":{"split":"test","massive_id":"12452","scenario":"transport"}}
+{"id":"massive-it-test-1065","label":"audio_volume_other","state":{"richiesta_utente":"dove si imposta il volume"},"meta":{"split":"test","massive_id":"1065","scenario":"audio"}}
+{"id":"massive-it-test-5577","label":"weather_query","state":{"richiesta_utente":"avrò bisogno di un giaccone pesante se la serata è troppo burrascosa"},"meta":{"split":"test","massive_id":"5577","scenario":"weather"}}
+{"id":"massive-it-test-1551","label":"iot_wemo_on","state":{"richiesta_utente":"accendi la presa intelligente"},"meta":{"split":"test","massive_id":"1551","scenario":"iot"}}
+{"id":"massive-it-test-12582","label":"transport_query","state":{"richiesta_utente":"a che ora arriva il primo intercity la mattina"},"meta":{"split":"test","massive_id":"12582","scenario":"transport"}}
+{"id":"massive-it-dev-113","label":"music_settings","state":{"richiesta_utente":"ripeti questa traccia"},"meta":{"split":"dev","massive_id":"113","scenario":"music"}}
+{"id":"massive-it-test-11366","label":"play_podcasts","state":{"richiesta_utente":"torna indietro all'episodio precedente del podcast"},"meta":{"split":"test","massive_id":"11366","scenario":"play"}}
+{"id":"massive-it-test-16222","label":"email_querycontact","state":{"richiesta_utente":"dimmi di più su maria s."},"meta":{"split":"test","massive_id":"16222","scenario":"email"}}
+{"id":"massive-it-test-16693","label":"email_addcontact","state":{"richiesta_utente":"aggiungi bricoman ai miei contatti email di verona in veneto"},"meta":{"split":"test","massive_id":"16693","scenario":"email"}}
+{"id":"massive-it-test-951","label":"weather_query","state":{"richiesta_utente":"com'è il tempo proprio adesso a lucca"},"meta":{"split":"test","massive_id":"951","scenario":"weather"}}
+{"id":"massive-it-test-6118","label":"datetime_query","state":{"richiesta_utente":"ehi che ore sono a dallas texas"},"meta":{"split":"test","massive_id":"6118","scenario":"datetime"}}
+{"id":"massive-it-test-2566","label":"iot_wemo_off","state":{"richiesta_utente":"presa wemo"},"meta":{"split":"test","massive_id":"2566","scenario":"iot"}}
+{"id":"massive-it-test-10335","label":"play_game","state":{"richiesta_utente":"olly gioca a poker con me"},"meta":{"split":"test","massive_id":"10335","scenario":"play"}}
+{"id":"massive-it-test-2035","label":"takeaway_query","state":{"richiesta_utente":"olly dov'è il mio cibo"},"meta":{"split":"test","massive_id":"2035","scenario":"takeaway"}}
+{"id":"massive-it-test-1454","label":"alarm_remove","state":{"richiesta_utente":"fai partire la sveglia"},"meta":{"split":"test","massive_id":"1454","scenario":"alarm"}}
+{"id":"massive-it-test-317","label":"audio_volume_mute","state":{"richiesta_utente":"non parlare oggi"},"meta":{"split":"test","massive_id":"317","scenario":"audio"}}
+{"id":"massive-it-dev-14737","label":"cooking_query","state":{"richiesta_utente":"ok google qual è il modo più facile e veloce per cucinare un tacchino"},"meta":{"split":"dev","massive_id":"14737","scenario":"cooking"}}
+{"id":"massive-it-test-16178","label":"email_query","state":{"richiesta_utente":"qualche email da amazon oggi"},"meta":{"split":"test","massive_id":"16178","scenario":"email"}}
+{"id":"massive-it-test-12675","label":"transport_traffic","state":{"richiesta_utente":"il traffico è leggero"},"meta":{"split":"test","massive_id":"12675","scenario":"transport"}}
+{"id":"massive-it-test-2093","label":"music_query","state":{"richiesta_utente":"dimmi il titolo di questa musica"},"meta":{"split":"test","massive_id":"2093","scenario":"music"}}
+{"id":"massive-it-test-12846","label":"transport_ticket","state":{"richiesta_utente":"prenota il biglietto del treno da taranto a bari per domani mattina"},"meta":{"split":"test","massive_id":"12846","scenario":"transport"}}
+{"id":"massive-it-test-4013","label":"iot_cleaning","state":{"richiesta_utente":"aspiriamo tutta la polvere"},"meta":{"split":"test","massive_id":"4013","scenario":"iot"}}
+{"id":"massive-it-test-14859","label":"qa_currency","state":{"richiesta_utente":"qual è il tasso di cambio con la sterlina britannica"},"meta":{"split":"test","massive_id":"14859","scenario":"qa"}}
+{"id":"massive-it-test-3167","label":"iot_hue_lightoff","state":{"richiesta_utente":"spegni le luci della mia camera da letto"},"meta":{"split":"test","massive_id":"3167","scenario":"iot"}}
+{"id":"massive-it-test-1640","label":"audio_volume_up","state":{"richiesta_utente":"olly alza"},"meta":{"split":"test","massive_id":"1640","scenario":"audio"}}
+{"id":"massive-it-test-16560","label":"email_sendemail","state":{"richiesta_utente":"rispondi all'email del mio capo dicendo che arriverò alle sedici"},"meta":{"split":"test","massive_id":"16560","scenario":"email"}}
+{"id":"massive-it-test-3543","label":"iot_hue_lightchange","state":{"richiesta_utente":"voglio che la luce sia un po' più rossa"},"meta":{"split":"test","massive_id":"3543","scenario":"iot"}}
+{"id":"massive-it-test-13625","label":"qa_definition","state":{"richiesta_utente":"qual è la scrivania più grande"},"meta":{"split":"test","massive_id":"13625","scenario":"qa"}}
+{"id":"massive-it-test-15133","label":"qa_stock","state":{"richiesta_utente":"come va atlantia"},"meta":{"split":"test","massive_id":"15133","scenario":"qa"}}
+{"id":"massive-it-test-3829","label":"alarm_remove","state":{"richiesta_utente":"rimuovi la sveglia impostata per i giorni feriali alle nove per favore"},"meta":{"split":"test","massive_id":"3829","scenario":"alarm"}}
+{"id":"massive-it-test-8188","label":"calendar_query","state":{"richiesta_utente":"che data è"},"meta":{"split":"test","massive_id":"8188","scenario":"calendar"}}
+{"id":"massive-it-test-2355","label":"music_query","state":{"richiesta_utente":"da che film viene questa musica e come si chiama"},"meta":{"split":"test","massive_id":"2355","scenario":"music"}}
+{"id":"massive-it-test-10824","label":"lists_remove","state":{"richiesta_utente":"olly cancella la lista"},"meta":{"split":"test","massive_id":"10824","scenario":"lists"}}
+{"id":"massive-it-test-5103","label":"alarm_remove","state":{"richiesta_utente":"olly cancella tutte le sveglie per gli allenamenti di calcio"},"meta":{"split":"test","massive_id":"5103","scenario":"alarm"}}
+{"id":"massive-it-test-13140","label":"qa_definition","state":{"richiesta_utente":"dimmi tutto sugli uragani"},"meta":{"split":"test","massive_id":"13140","scenario":"qa"}}
+{"id":"massive-it-test-13135","label":"qa_factoid","state":{"richiesta_utente":"quand'è il compleanno di riccardo scamarcio"},"meta":{"split":"test","massive_id":"13135","scenario":"qa"}}
+{"id":"massive-it-test-10805","label":"lists_query","state":{"richiesta_utente":"per favore mostra la lista che ho"},"meta":{"split":"test","massive_id":"10805","scenario":"lists"}}
+{"id":"massive-it-test-4638","label":"audio_volume_other","state":{"richiesta_utente":"cambia impostazioni volume al negativo alexa"},"meta":{"split":"test","massive_id":"4638","scenario":"audio"}}
+{"id":"massive-it-test-3460","label":"audio_volume_mute","state":{"richiesta_utente":"ora silenzio"},"meta":{"split":"test","massive_id":"3460","scenario":"audio"}}
+{"id":"massive-it-test-14440","label":"qa_factoid","state":{"richiesta_utente":"qual è la capitale del messico"},"meta":{"split":"test","massive_id":"14440","scenario":"qa"}}
+{"id":"massive-it-test-4560","label":"music_query","state":{"richiesta_utente":"che canzone è questa"},"meta":{"split":"test","massive_id":"4560","scenario":"music"}}
+{"id":"massive-it-test-14700","label":"qa_definition","state":{"richiesta_utente":"cos'è esattamente un'otturazione dei denti in resina"},"meta":{"split":"test","massive_id":"14700","scenario":"qa"}}
+{"id":"massive-it-test-9619","label":"play_radio","state":{"richiesta_utente":"riproduci l'idealista sulla radio della macchina"},"meta":{"split":"test","massive_id":"9619","scenario":"play"}}
+{"id":"massive-it-test-12281","label":"transport_ticket","state":{"richiesta_utente":"per favore prenota un biglietto del treno da milano a roma"},"meta":{"split":"test","massive_id":"12281","scenario":"transport"}}
+{"id":"massive-it-test-11644","label":"recommendation_events","state":{"richiesta_utente":"mostrami eventi a bologna"},"meta":{"split":"test","massive_id":"11644","scenario":"recommendation"}}
+{"id":"massive-it-test-1400","label":"weather_query","state":{"richiesta_utente":"faccio attenzione quasi sempre"},"meta":{"split":"test","massive_id":"1400","scenario":"weather"}}
+{"id":"massive-it-test-13181","label":"recommendation_movies","state":{"richiesta_utente":"trova prezzi e disponibilità nei cinema della mia zona per il film appena uscito"},"meta":{"split":"test","massive_id":"13181","scenario":"recommendation"}}
+{"id":"massive-it-test-3532","label":"datetime_convert","state":{"richiesta_utente":"per favore cambia in fuso orario dell'italia"},"meta":{"split":"test","massive_id":"3532","scenario":"datetime"}}
+{"id":"massive-it-test-1180","label":"news_query","state":{"richiesta_utente":"trova gli articoli dedicati a draghi sul corriere della sera di oggi"},"meta":{"split":"test","massive_id":"1180","scenario":"news"}}
+{"id":"massive-it-test-15304","label":"social_query","state":{"richiesta_utente":"qualcuno mi ha seguito oggi su twitter"},"meta":{"split":"test","massive_id":"15304","scenario":"social"}}
+{"id":"massive-it-test-10350","label":"play_game","state":{"richiesta_utente":"giochiamo alle corse"},"meta":{"split":"test","massive_id":"10350","scenario":"play"}}
+{"id":"massive-it-test-12818","label":"transport_query","state":{"richiesta_utente":"quanto costa un biglietto del treno per milano"},"meta":{"split":"test","massive_id":"12818","scenario":"transport"}}
+{"id":"massive-it-test-2775","label":"iot_hue_lightoff","state":{"richiesta_utente":"discontinua l'uso delle luci"},"meta":{"split":"test","massive_id":"2775","scenario":"iot"}}
+{"id":"massive-it-test-10776","label":"lists_query","state":{"richiesta_utente":"ho una lista della spesa pronta"},"meta":{"split":"test","massive_id":"10776","scenario":"lists"}}
+{"id":"massive-it-test-14342","label":"qa_stock","state":{"richiesta_utente":"qual è il prezzo delle azioni di unicredit"},"meta":{"split":"test","massive_id":"14342","scenario":"qa"}}
+{"id":"massive-it-test-7690","label":"calendar_query","state":{"richiesta_utente":"cosa mi aspetta"},"meta":{"split":"test","massive_id":"7690","scenario":"calendar"}}
+{"id":"massive-it-test-12835","label":"transport_query","state":{"richiesta_utente":"a che ora parte il treno per luogo"},"meta":{"split":"test","massive_id":"12835","scenario":"transport"}}
+{"id":"massive-it-test-80","label":"iot_hue_lightup","state":{"richiesta_utente":"imposta l'intensità delle luci più alta"},"meta":{"split":"test","massive_id":"80","scenario":"iot"}}
+{"id":"massive-it-test-2432","label":"takeaway_query","state":{"richiesta_utente":"a che punto è il mio ordine"},"meta":{"split":"test","massive_id":"2432","scenario":"takeaway"}}
+{"id":"massive-it-test-16467","label":"email_query","state":{"richiesta_utente":"ho qualche nuova email dal mio contatto sig."},"meta":{"split":"test","massive_id":"16467","scenario":"email"}}
+{"id":"massive-it-test-17023","label":"email_sendemail","state":{"richiesta_utente":"manda una email a mamma e chiedi come è il tempo lì"},"meta":{"split":"test","massive_id":"17023","scenario":"email"}}
+{"id":"massive-it-test-16398","label":"email_sendemail","state":{"richiesta_utente":"manda un' email a giorgio"},"meta":{"split":"test","massive_id":"16398","scenario":"email"}}
+{"id":"massive-it-test-15513","label":"social_query","state":{"richiesta_utente":"c'è qualcosa di importante che sta succedendo sui social"},"meta":{"split":"test","massive_id":"15513","scenario":"social"}}
+{"id":"massive-it-test-964","label":"iot_hue_lightdim","state":{"richiesta_utente":"voglio luci più tenui"},"meta":{"split":"test","massive_id":"964","scenario":"iot"}}
+{"id":"massive-it-test-1205","label":"alarm_remove","state":{"richiesta_utente":"disattiva la sveglia delle quindici"},"meta":{"split":"test","massive_id":"1205","scenario":"alarm"}}
+{"id":"massive-it-test-5912","label":"music_settings","state":{"richiesta_utente":"salta i brani in questa playlist"},"meta":{"split":"test","massive_id":"5912","scenario":"music"}}
+{"id":"massive-it-test-12672","label":"transport_traffic","state":{"richiesta_utente":"com'è il traffico in città"},"meta":{"split":"test","massive_id":"12672","scenario":"transport"}}
+{"id":"massive-it-test-12813","label":"transport_ticket","state":{"richiesta_utente":"per favore prenota un biglietto per il treno regionale da bologna"},"meta":{"split":"test","massive_id":"12813","scenario":"transport"}}
+{"id":"massive-it-test-4764","label":"weather_query","state":{"richiesta_utente":"pioverà lunedì"},"meta":{"split":"test","massive_id":"4764","scenario":"weather"}}
+{"id":"massive-it-test-10501","label":"lists_createoradd","state":{"richiesta_utente":"aggiungi broccoli alla mia lista della spesa"},"meta":{"split":"test","massive_id":"10501","scenario":"lists"}}
+{"id":"massive-it-test-1658","label":"alarm_query","state":{"richiesta_utente":"voglio vedere tutte le sveglie attive"},"meta":{"split":"test","massive_id":"1658","scenario":"alarm"}}
+{"id":"massive-it-test-9691","label":"play_audiobook","state":{"richiesta_utente":"apri l' audiolibro storia di roma"},"meta":{"split":"test","massive_id":"9691","scenario":"play"}}
+{"id":"massive-it-test-4168","label":"weather_query","state":{"richiesta_utente":"per favore verifica il tempo in toscana"},"meta":{"split":"test","massive_id":"4168","scenario":"weather"}}
+{"id":"massive-it-test-12293","label":"transport_ticket","state":{"richiesta_utente":"biglietto per roma"},"meta":{"split":"test","massive_id":"12293","scenario":"transport"}}
+{"id":"massive-it-test-14","label":"iot_hue_lighton","state":{"richiesta_utente":"e scese l'oscurità"},"meta":{"split":"test","massive_id":"14","scenario":"iot"}}
+{"id":"massive-it-test-10366","label":"play_game","state":{"richiesta_utente":"dovremmo mettere need for speed a velocità alta"},"meta":{"split":"test","massive_id":"10366","scenario":"play"}}
+{"id":"massive-it-test-12838","label":"transport_traffic","state":{"richiesta_utente":"com'è il traffico al momento"},"meta":{"split":"test","massive_id":"12838","scenario":"transport"}}
+{"id":"massive-it-test-8666","label":"calendar_remove","state":{"richiesta_utente":"cancella tutti gli eventi dal mio calendario"},"meta":{"split":"test","massive_id":"8666","scenario":"calendar"}}
+{"id":"massive-it-test-13966","label":"qa_currency","state":{"richiesta_utente":"quanto vale lo yen"},"meta":{"split":"test","massive_id":"13966","scenario":"qa"}}
+{"id":"massive-it-test-16131","label":"email_sendemail","state":{"richiesta_utente":"questa nuova email andrebbe aggiunta ai miei contatti"},"meta":{"split":"test","massive_id":"16131","scenario":"email"}}
+{"id":"massive-it-test-3175","label":"audio_volume_mute","state":{"richiesta_utente":"spegni gli altoparlanti"},"meta":{"split":"test","massive_id":"3175","scenario":"audio"}}
+{"id":"massive-it-test-8670","label":"calendar_remove","state":{"richiesta_utente":"rimuovi eventi dal calendario"},"meta":{"split":"test","massive_id":"8670","scenario":"calendar"}}
+{"id":"massive-it-test-14767","label":"qa_definition","state":{"richiesta_utente":"come descriveresti una palla"},"meta":{"split":"test","massive_id":"14767","scenario":"qa"}}
+{"id":"massive-it-test-475","label":"general_quirky","state":{"richiesta_utente":"quali errori fai di solito"},"meta":{"split":"test","massive_id":"475","scenario":"general"}}
+{"id":"massive-it-test-15409","label":"social_post","state":{"richiesta_utente":"apri twitter scrivi il mio reclamo e pubblicalo al servizio consumatori"},"meta":{"split":"test","massive_id":"15409","scenario":"social"}}
+{"id":"massive-it-test-4268","label":"music_settings","state":{"richiesta_utente":"vai al prossimo brano nella lista"},"meta":{"split":"test","massive_id":"4268","scenario":"music"}}
+{"id":"massive-it-test-5270","label":"news_query","state":{"richiesta_utente":"quali sono le notizie dell'ultima ora"},"meta":{"split":"test","massive_id":"5270","scenario":"news"}}
+{"id":"massive-it-test-16506","label":"email_sendemail","state":{"richiesta_utente":"aggiungi nuovo indirizzo email e invia email"},"meta":{"split":"test","massive_id":"16506","scenario":"email"}}
+{"id":"massive-it-test-3077","label":"iot_wemo_off","state":{"richiesta_utente":"spegni la presa"},"meta":{"split":"test","massive_id":"3077","scenario":"iot"}}
+{"id":"massive-it-test-12710","label":"transport_taxi","state":{"richiesta_utente":"chiama un taxi"},"meta":{"split":"test","massive_id":"12710","scenario":"transport"}}
+{"id":"massive-it-test-10738","label":"lists_createoradd","state":{"richiesta_utente":"per favore puoi aggiungere un elemento alla mia lista della spesa"},"meta":{"split":"test","massive_id":"10738","scenario":"lists"}}
+{"id":"massive-it-test-17054","label":"email_addcontact","state":{"richiesta_utente":"aggiungi una nuova email di michele tra i miei contatti"},"meta":{"split":"test","massive_id":"17054","scenario":"email"}}
+{"id":"massive-it-test-16859","label":"email_query","state":{"richiesta_utente":"cosa ho scritto a chiara nella mia ultima email"},"meta":{"split":"test","massive_id":"16859","scenario":"email"}}
+{"id":"massive-it-test-16427","label":"email_query","state":{"richiesta_utente":"quante nuove email ho ricevuto oggi"},"meta":{"split":"test","massive_id":"16427","scenario":"email"}}
+{"id":"massive-it-test-5324","label":"takeaway_query","state":{"richiesta_utente":"ehi fai consegna a domicilio"},"meta":{"split":"test","massive_id":"5324","scenario":"takeaway"}}
+{"id":"massive-it-test-2283","label":"iot_hue_lightchange","state":{"richiesta_utente":"ho bisogno di cambiare le luci di casa mia in blu"},"meta":{"split":"test","massive_id":"2283","scenario":"iot"}}
+{"id":"massive-it-test-6060","label":"iot_coffee","state":{"richiesta_utente":"accendi la caffettiera"},"meta":{"split":"test","massive_id":"6060","scenario":"iot"}}
+{"id":"massive-it-test-11858","label":"recommendation_movies","state":{"richiesta_utente":"film con buone recensioni"},"meta":{"split":"test","massive_id":"11858","scenario":"recommendation"}}
+{"id":"massive-it-test-12869","label":"transport_traffic","state":{"richiesta_utente":"notizie sul traffico"},"meta":{"split":"test","massive_id":"12869","scenario":"transport"}}
+{"id":"massive-it-test-7080","label":"calendar_remove","state":{"richiesta_utente":"cancella tutto sul mio calendario"},"meta":{"split":"test","massive_id":"7080","scenario":"calendar"}}
+{"id":"massive-it-test-13412","label":"qa_maths","state":{"richiesta_utente":"quanto fa quattro più cinque"},"meta":{"split":"test","massive_id":"13412","scenario":"qa"}}
+{"id":"massive-it-test-12256","label":"transport_traffic","state":{"richiesta_utente":"com'è il traffico al momento vicino a parco sempione"},"meta":{"split":"test","massive_id":"12256","scenario":"transport"}}
+{"id":"massive-it-test-564","label":"iot_hue_lightchange","state":{"richiesta_utente":"cambia il colore della luce"},"meta":{"split":"test","massive_id":"564","scenario":"iot"}}
+{"id":"massive-it-test-2816","label":"iot_hue_lightchange","state":{"richiesta_utente":"imposta le luci del soggiorno al cinquanta percento"},"meta":{"split":"test","massive_id":"2816","scenario":"iot"}}
+{"id":"massive-it-test-1300","label":"audio_volume_up","state":{"richiesta_utente":"veloce"},"meta":{"split":"test","massive_id":"1300","scenario":"audio"}}
+{"id":"massive-it-test-13766","label":"qa_maths","state":{"richiesta_utente":"due per due fa"},"meta":{"split":"test","massive_id":"13766","scenario":"qa"}}
+{"id":"massive-it-test-15187","label":"social_post","state":{"richiesta_utente":"condividi nel post degli amici"},"meta":{"split":"test","massive_id":"15187","scenario":"social"}}
+{"id":"massive-it-test-4283","label":"iot_hue_lightup","state":{"richiesta_utente":"aumenta la luminosità in questa stanza"},"meta":{"split":"test","massive_id":"4283","scenario":"iot"}}
+{"id":"massive-it-test-3870","label":"alarm_query","state":{"richiesta_utente":"a che ora suonerà la sveglia che ho messo per il volo questo fine settimana"},"meta":{"split":"test","massive_id":"3870","scenario":"alarm"}}
+{"id":"massive-it-test-1076","label":"music_dislikeness","state":{"richiesta_utente":"non riprodurre rock metal"},"meta":{"split":"test","massive_id":"1076","scenario":"music"}}
+{"id":"massive-it-test-11990","label":"recommendation_movies","state":{"richiesta_utente":"un film al cinema che non fa schifo"},"meta":{"split":"test","massive_id":"11990","scenario":"recommendation"}}
+{"id":"massive-it-test-2174","label":"music_query","state":{"richiesta_utente":"chi canta hotel california"},"meta":{"split":"test","massive_id":"2174","scenario":"music"}}
+{"id":"massive-it-test-3020","label":"takeaway_query","state":{"richiesta_utente":"rossopomodoro fa da asporto"},"meta":{"split":"test","massive_id":"3020","scenario":"takeaway"}}
+{"id":"massive-it-test-4845","label":"datetime_convert","state":{"richiesta_utente":"quante ore di distanza ci sono tra la mia posizione e roma"},"meta":{"split":"test","massive_id":"4845","scenario":"datetime"}}
+{"id":"massive-it-dev-1277","label":"general_greet","state":{"richiesta_utente":"ehi"},"meta":{"split":"dev","massive_id":"1277","scenario":"general"}}
+{"id":"massive-it-test-14505","label":"qa_factoid","state":{"richiesta_utente":"chi è il primo ministro della russia al momento"},"meta":{"split":"test","massive_id":"14505","scenario":"qa"}}
+{"id":"massive-it-test-804","label":"audio_volume_mute","state":{"richiesta_utente":"siri silenzia gli altoparlanti"},"meta":{"split":"test","massive_id":"804","scenario":"audio"}}
+{"id":"massive-it-test-494","label":"general_joke","state":{"richiesta_utente":"qual è una bella barzelletta"},"meta":{"split":"test","massive_id":"494","scenario":"general"}}
+{"id":"massive-it-test-13926","label":"qa_factoid","state":{"richiesta_utente":"qual è la data di nascita di montale"},"meta":{"split":"test","massive_id":"13926","scenario":"qa"}}
+{"id":"massive-it-test-9707","label":"play_music","state":{"richiesta_utente":"apri il media play jingle bells"},"meta":{"split":"test","massive_id":"9707","scenario":"play"}}
+{"id":"massive-it-test-27","label":"iot_cleaning","state":{"richiesta_utente":"è sporco fai rumore"},"meta":{"split":"test","massive_id":"27","scenario":"iot"}}
+{"id":"massive-it-test-6319","label":"general_quirky","state":{"richiesta_utente":"pensi che debba andare a teatro oggi"},"meta":{"split":"test","massive_id":"6319","scenario":"general"}}
+{"id":"massive-it-test-11067","label":"lists_createoradd","state":{"richiesta_utente":"per favore aggiungi arance alla mia lista della spesa"},"meta":{"split":"test","massive_id":"11067","scenario":"lists"}}
+{"id":"massive-it-test-12553","label":"transport_taxi","state":{"richiesta_utente":"prenotami un taxi per posto"},"meta":{"split":"test","massive_id":"12553","scenario":"transport"}}
+{"id":"massive-it-test-11029","label":"lists_createoradd","state":{"richiesta_utente":"aggiungi alla lista"},"meta":{"split":"test","massive_id":"11029","scenario":"lists"}}
+{"id":"massive-it-test-11947","label":"recommendation_locations","state":{"richiesta_utente":"quali sono i ristoranti vicino a me"},"meta":{"split":"test","massive_id":"11947","scenario":"recommendation"}}
+{"id":"massive-it-test-9406","label":"play_radio","state":{"richiesta_utente":"avvia radio centocinque"},"meta":{"split":"test","massive_id":"9406","scenario":"play"}}
+{"id":"massive-it-test-9772","label":"play_audiobook","state":{"richiesta_utente":"continua la lettura dell audiolibro per favore"},"meta":{"split":"test","massive_id":"9772","scenario":"play"}}
+{"id":"massive-it-test-10855","label":"lists_query","state":{"richiesta_utente":"devo controllare la mia lista"},"meta":{"split":"test","massive_id":"10855","scenario":"lists"}}
+{"id":"massive-it-test-6227","label":"general_quirky","state":{"richiesta_utente":"vado a lavoro oggi"},"meta":{"split":"test","massive_id":"6227","scenario":"general"}}
+{"id":"massive-it-test-10756","label":"lists_remove","state":{"richiesta_utente":"svuota la lista della spesa"},"meta":{"split":"test","massive_id":"10756","scenario":"lists"}}
+{"id":"massive-it-test-10996","label":"lists_createoradd","state":{"richiesta_utente":"aggiungi mario al mio elenco contatti"},"meta":{"split":"test","massive_id":"10996","scenario":"lists"}}
+{"id":"massive-it-test-1084","label":"news_query","state":{"richiesta_utente":"facile da usare"},"meta":{"split":"test","massive_id":"1084","scenario":"news"}}
+{"id":"massive-it-test-1151","label":"iot_cleaning","state":{"richiesta_utente":"avvia l'aspirapolvere"},"meta":{"split":"test","massive_id":"1151","scenario":"iot"}}
+{"id":"massive-it-test-10957","label":"lists_query","state":{"richiesta_utente":"ricordami quante liste ho"},"meta":{"split":"test","massive_id":"10957","scenario":"lists"}}
+{"id":"massive-it-test-2316","label":"news_query","state":{"richiesta_utente":"alexa dimmi le notizie in prima pagina"},"meta":{"split":"test","massive_id":"2316","scenario":"news"}}
+{"id":"massive-it-test-14473","label":"qa_stock","state":{"richiesta_utente":"apri il prezzo delle azioni per nome"},"meta":{"split":"test","massive_id":"14473","scenario":"qa"}}
+{"id":"massive-it-test-10182","label":"cooking_recipe","state":{"richiesta_utente":"quante uova mi servono per fare una frittata"},"meta":{"split":"test","massive_id":"10182","scenario":"cooking"}}
+{"id":"massive-it-test-13411","label":"qa_maths","state":{"richiesta_utente":"dammi il risultato di questa operazione duecento quarantasei più seicento cinquantaquattro"},"meta":{"split":"test","massive_id":"13411","scenario":"qa"}}
+{"id":"massive-it-test-4934","label":"takeaway_query","state":{"richiesta_utente":"quando dovrebbe arrivare il mio ordine da burger king"},"meta":{"split":"test","massive_id":"4934","scenario":"takeaway"}}
+{"id":"massive-it-test-5911","label":"music_settings","state":{"richiesta_utente":"riproduci di nuovo le musiche"},"meta":{"split":"test","massive_id":"5911","scenario":"music"}}
+{"id":"massive-it-test-4249","label":"iot_hue_lightchange","state":{"richiesta_utente":"puoi rendere tutte le luci di casa blu"},"meta":{"split":"test","massive_id":"4249","scenario":"iot"}}
+{"id":"massive-it-test-1630","label":"audio_volume_up","state":{"richiesta_utente":"alza il volume di questa musica"},"meta":{"split":"test","massive_id":"1630","scenario":"audio"}}
+{"id":"massive-it-test-3474","label":"audio_volume_down","state":{"richiesta_utente":"per favore abbassa il volume della musica"},"meta":{"split":"test","massive_id":"3474","scenario":"audio"}}
+{"id":"massive-it-test-8791","label":"calendar_query","state":{"richiesta_utente":"più informazioni su questo evento"},"meta":{"split":"test","massive_id":"8791","scenario":"calendar"}}
+{"id":"massive-it-test-174","label":"alarm_set","state":{"richiesta_utente":"imposta una sveglia per giovedì alle sette di mattina"},"meta":{"split":"test","massive_id":"174","scenario":"alarm"}}
+{"id":"massive-it-test-5697","label":"iot_cleaning","state":{"richiesta_utente":"inizia a passare l'aspirapolvere"},"meta":{"split":"test","massive_id":"5697","scenario":"iot"}}
+{"id":"massive-it-test-7463","label":"calendar_set","state":{"richiesta_utente":"informa il mio gruppo che la nuova data della riunione è domani"},"meta":{"split":"test","massive_id":"7463","scenario":"calendar"}}
+{"id":"massive-it-test-12263","label":"transport_query","state":{"richiesta_utente":"california"},"meta":{"split":"test","massive_id":"12263","scenario":"transport"}}
+{"id":"massive-it-test-4618","label":"iot_wemo_on","state":{"richiesta_utente":"attiva la presa intelligente"},"meta":{"split":"test","massive_id":"4618","scenario":"iot"}}
+{"id":"massive-it-test-10319","label":"play_game","state":{"richiesta_utente":"gioca a calcio con me"},"meta":{"split":"test","massive_id":"10319","scenario":"play"}}
+{"id":"massive-it-test-9952","label":"cooking_recipe","state":{"richiesta_utente":"dammi un tutorial di cucina"},"meta":{"split":"test","massive_id":"9952","scenario":"cooking"}}
+{"id":"massive-it-test-14591","label":"qa_definition","state":{"richiesta_utente":"dammi la descrizione di un circuito televisivo"},"meta":{"split":"test","massive_id":"14591","scenario":"qa"}}
+{"id":"massive-it-test-4461","label":"takeaway_query","state":{"richiesta_utente":"da china town non si può ordinare da asporto"},"meta":{"split":"test","massive_id":"4461","scenario":"takeaway"}}
+{"id":"massive-it-test-16532","label":"email_querycontact","state":{"richiesta_utente":"chiama"},"meta":{"split":"test","massive_id":"16532","scenario":"email"}}
+{"id":"massive-it-test-14406","label":"qa_stock","state":{"richiesta_utente":"dimmi i dettagli dei prezzi delle azioni della samsung"},"meta":{"split":"test","massive_id":"14406","scenario":"qa"}}
+{"id":"massive-it-test-11922","label":"recommendation_locations","state":{"richiesta_utente":"per favore cerca i ristoranti locali che sono aperti adesso"},"meta":{"split":"test","massive_id":"11922","scenario":"recommendation"}}
+{"id":"massive-it-test-15326","label":"social_query","state":{"richiesta_utente":"per favore leggi il mio feed facebook"},"meta":{"split":"test","massive_id":"15326","scenario":"social"}}
+{"id":"massive-it-test-5531","label":"music_likeness","state":{"richiesta_utente":"la canzone in sottofondo è di tendenza"},"meta":{"split":"test","massive_id":"5531","scenario":"music"}}
+{"id":"massive-it-test-10936","label":"lists_remove","state":{"richiesta_utente":"per favore rimuovi la lista degli album preferiti"},"meta":{"split":"test","massive_id":"10936","scenario":"lists"}}
+{"id":"massive-it-test-286","label":"iot_hue_lighton","state":{"richiesta_utente":"accendi le luci in cucina"},"meta":{"split":"test","massive_id":"286","scenario":"iot"}}
+{"id":"massive-it-test-310","label":"datetime_query","state":{"richiesta_utente":"che giorno è capodanno quest'anno"},"meta":{"split":"test","massive_id":"310","scenario":"datetime"}}
+{"id":"massive-it-test-4271","label":"iot_coffee","state":{"richiesta_utente":"fai il caffè adesso"},"meta":{"split":"test","massive_id":"4271","scenario":"iot"}}
+{"id":"massive-it-test-1684","label":"weather_query","state":{"richiesta_utente":"la temperatura di domani sarà calda si o no"},"meta":{"split":"test","massive_id":"1684","scenario":"weather"}}
+{"id":"massive-it-test-6290","label":"general_quirky","state":{"richiesta_utente":"cosa mi consigli da leggere"},"meta":{"split":"test","massive_id":"6290","scenario":"general"}}
+{"id":"massive-it-test-4155","label":"audio_volume_other","state":{"richiesta_utente":"regola il volume al trentacinque percento"},"meta":{"split":"test","massive_id":"4155","scenario":"audio"}}
+{"id":"massive-it-test-5584","label":"iot_hue_lightoff","state":{"richiesta_utente":"spegni le luci per favore"},"meta":{"split":"test","massive_id":"5584","scenario":"iot"}}
+{"id":"massive-it-test-15249","label":"social_query","state":{"richiesta_utente":"a qualcuno piace la mia foto che ho appena postato"},"meta":{"split":"test","massive_id":"15249","scenario":"social"}}
+{"id":"massive-it-test-0","label":"alarm_set","state":{"richiesta_utente":"svegliami alle cinque di mattina questa settimana"},"meta":{"split":"test","massive_id":"0","scenario":"alarm"}}
+{"id":"massive-it-test-7141","label":"calendar_query","state":{"richiesta_utente":"questo programma è in agenda"},"meta":{"split":"test","massive_id":"7141","scenario":"calendar"}}
+{"id":"massive-it-test-8182","label":"calendar_remove","state":{"richiesta_utente":"puoi cancellare l' appuntamento dal dentista"},"meta":{"split":"test","massive_id":"8182","scenario":"calendar"}}
+{"id":"massive-it-test-4851","label":"alarm_query","state":{"richiesta_utente":"ho impostato la mia sveglia"},"meta":{"split":"test","massive_id":"4851","scenario":"alarm"}}
+{"id":"massive-it-test-14142","label":"qa_currency","state":{"richiesta_utente":"quanto vale la sterlina"},"meta":{"split":"test","massive_id":"14142","scenario":"qa"}}
+{"id":"massive-it-test-6147","label":"general_joke","state":{"richiesta_utente":"trova barzellette divertenti"},"meta":{"split":"test","massive_id":"6147","scenario":"general"}}
+{"id":"massive-it-test-7170","label":"calendar_set","state":{"richiesta_utente":"è il compleanno di mia madre oggi mandami una notifica ogni anno alla stessa data"},"meta":{"split":"test","massive_id":"7170","scenario":"calendar"}}
+{"id":"massive-it-test-9630","label":"play_radio","state":{"richiesta_utente":"riproduci radio italia"},"meta":{"split":"test","massive_id":"9630","scenario":"play"}}
+{"id":"massive-it-test-12634","label":"transport_query","state":{"richiesta_utente":"quando parte il prossimo treno per bologna"},"meta":{"split":"test","massive_id":"12634","scenario":"transport"}}
+{"id":"massive-it-test-6073","label":"iot_hue_lightoff","state":{"richiesta_utente":"spegni la luce in veranda"},"meta":{"split":"test","massive_id":"6073","scenario":"iot"}}
+{"id":"massive-it-test-6726","label":"calendar_remove","state":{"richiesta_utente":"cancella la prossima riunione"},"meta":{"split":"test","massive_id":"6726","scenario":"calendar"}}
+{"id":"massive-it-test-764","label":"weather_query","state":{"richiesta_utente":"quali sono le previsioni del tempo per questa settimana"},"meta":{"split":"test","massive_id":"764","scenario":"weather"}}
+{"id":"massive-it-test-1760","label":"news_query","state":{"richiesta_utente":"ultime notizie sul terrorismo"},"meta":{"split":"test","massive_id":"1760","scenario":"news"}}
+{"id":"massive-it-test-9054","label":"calendar_set","state":{"richiesta_utente":"evento promemoria maria martedì"},"meta":{"split":"test","massive_id":"9054","scenario":"calendar"}}
+{"id":"massive-it-test-4620","label":"iot_wemo_on","state":{"richiesta_utente":"accendi la nuova presa intelligente"},"meta":{"split":"test","massive_id":"4620","scenario":"iot"}}
+{"id":"massive-it-test-4017","label":"alarm_remove","state":{"richiesta_utente":"sbarazzati delle mie sveglie attuali"},"meta":{"split":"test","massive_id":"4017","scenario":"alarm"}}
+{"id":"massive-it-test-19","label":"iot_hue_lightoff","state":{"richiesta_utente":"olly spegni le luci della camera da letto"},"meta":{"split":"test","massive_id":"19","scenario":"iot"}}
+{"id":"massive-it-test-14429","label":"qa_definition","state":{"richiesta_utente":"cos'è un caftano"},"meta":{"split":"test","massive_id":"14429","scenario":"qa"}}
+{"id":"massive-it-test-5727","label":"iot_hue_lightup","state":{"richiesta_utente":"aumenta la luce dell'ingresso"},"meta":{"split":"test","massive_id":"5727","scenario":"iot"}}
+{"id":"massive-it-test-11825","label":"recommendation_locations","state":{"richiesta_utente":"cerca un centro commerciale a firenze per vestiti da donna"},"meta":{"split":"test","massive_id":"11825","scenario":"recommendation"}}
+{"id":"massive-it-test-10403","label":"play_game","state":{"richiesta_utente":"avvia giochi"},"meta":{"split":"test","massive_id":"10403","scenario":"play"}}
+{"id":"massive-it-test-11773","label":"recommendation_movies","state":{"richiesta_utente":"trova un film candidato all'oscar"},"meta":{"split":"test","massive_id":"11773","scenario":"recommendation"}}
+{"id":"massive-it-test-122","label":"general_joke","state":{"richiesta_utente":"fammi ridere"},"meta":{"split":"test","massive_id":"122","scenario":"general"}}
+{"id":"massive-it-test-3590","label":"audio_volume_up","state":{"richiesta_utente":"parla più forte"},"meta":{"split":"test","massive_id":"3590","scenario":"audio"}}
+{"id":"massive-it-test-10753","label":"lists_query","state":{"richiesta_utente":"cos'ho già messo nella mia lista dell' ipercoop"},"meta":{"split":"test","massive_id":"10753","scenario":"lists"}}
+{"id":"massive-it-test-12051","label":"recommendation_locations","state":{"richiesta_utente":"devo trovare un regalo quali negozi ci sono nel raggio di un chilometro"},"meta":{"split":"test","massive_id":"12051","scenario":"recommendation"}}
+{"id":"massive-it-test-12161","label":"transport_taxi","state":{"richiesta_utente":"potresti prenotare un taxi quando esco per andare in ufficio"},"meta":{"split":"test","massive_id":"12161","scenario":"transport"}}
+{"id":"massive-it-test-5365","label":"alarm_set","state":{"richiesta_utente":"imposta sveglia per le sei del mattino"},"meta":{"split":"test","massive_id":"5365","scenario":"alarm"}}
+{"id":"massive-it-test-6500","label":"social_query","state":{"richiesta_utente":"i social media"},"meta":{"split":"test","massive_id":"6500","scenario":"social"}}
+{"id":"massive-it-test-1352","label":"audio_volume_down","state":{"richiesta_utente":"abbassa il volume altoparlante"},"meta":{"split":"test","massive_id":"1352","scenario":"audio"}}
+{"id":"massive-it-test-11267","label":"play_podcasts","state":{"richiesta_utente":"trova un podcast dei vincitori del premio strega"},"meta":{"split":"test","massive_id":"11267","scenario":"play"}}
+{"id":"massive-it-test-11341","label":"play_podcasts","state":{"richiesta_utente":"trova l ultimo podcast della disney"},"meta":{"split":"test","massive_id":"11341","scenario":"play"}}
+{"id":"massive-it-test-7266","label":"calendar_query","state":{"richiesta_utente":"quali sono i miei impegni in sospeso"},"meta":{"split":"test","massive_id":"7266","scenario":"calendar"}}
+{"id":"massive-it-test-2128","label":"iot_hue_lightdim","state":{"richiesta_utente":"il colore della luce dovrebbe essere reso più tenue"},"meta":{"split":"test","massive_id":"2128","scenario":"iot"}}
+{"id":"massive-it-test-3162","label":"alarm_query","state":{"richiesta_utente":"mostrami le sveglie che ho impostato"},"meta":{"split":"test","massive_id":"3162","scenario":"alarm"}}
+{"id":"massive-it-test-41","label":"general_quirky","state":{"richiesta_utente":"voglio un aggiornamento sulla luminosità del mio schermo"},"meta":{"split":"test","massive_id":"41","scenario":"general"}}
+{"id":"massive-it-test-1072","label":"iot_hue_lightup","state":{"richiesta_utente":"aumenta la luminosità dello schermo al massimo"},"meta":{"split":"test","massive_id":"1072","scenario":"iot"}}
+{"id":"massive-it-test-369","label":"iot_hue_lightoff","state":{"richiesta_utente":"spegni le luci"},"meta":{"split":"test","massive_id":"369","scenario":"iot"}}
+{"id":"massive-it-test-5888","label":"iot_wemo_off","state":{"richiesta_utente":"spegni per favore"},"meta":{"split":"test","massive_id":"5888","scenario":"iot"}}
+{"id":"massive-it-test-12736","label":"transport_traffic","state":{"richiesta_utente":"traffico sulla strada"},"meta":{"split":"test","massive_id":"12736","scenario":"transport"}}
+{"id":"massive-it-test-1786","label":"iot_hue_lightoff","state":{"richiesta_utente":"spegni la camera padronale"},"meta":{"split":"test","massive_id":"1786","scenario":"iot"}}
+{"id":"massive-it-test-17095","label":"email_querycontact","state":{"richiesta_utente":"qual è l' email di leonardo"},"meta":{"split":"test","massive_id":"17095","scenario":"email"}}
+{"id":"massive-it-test-16158","label":"email_addcontact","state":{"richiesta_utente":"ricorda questa email"},"meta":{"split":"test","massive_id":"16158","scenario":"email"}}
+{"id":"massive-it-test-5152","label":"music_settings","state":{"richiesta_utente":"per favore salta due canzoni"},"meta":{"split":"test","massive_id":"5152","scenario":"music"}}
+{"id":"massive-it-test-13192","label":"qa_maths","state":{"richiesta_utente":"qual è la radice di seicentoventicinque"},"meta":{"split":"test","massive_id":"13192","scenario":"qa"}}
+{"id":"massive-it-test-5615","label":"music_query","state":{"richiesta_utente":"come si chiama questo pezzo"},"meta":{"split":"test","massive_id":"5615","scenario":"music"}}
+{"id":"massive-it-test-12874","label":"transport_ticket","state":{"richiesta_utente":"biglietto del treno per favore"},"meta":{"split":"test","massive_id":"12874","scenario":"transport"}}
+{"id":"massive-it-test-10097","label":"cooking_recipe","state":{"richiesta_utente":"vorrei un cheeseburger"},"meta":{"split":"test","massive_id":"10097","scenario":"cooking"}}
+{"id":"massive-it-test-12235","label":"transport_ticket","state":{"richiesta_utente":"per favore compra un biglietto del treno per questo fine settimana"},"meta":{"split":"test","massive_id":"12235","scenario":"transport"}}
+{"id":"massive-it-test-11678","label":"recommendation_locations","state":{"richiesta_utente":"quali sono i migliori pub nelle vicinanze"},"meta":{"split":"test","massive_id":"11678","scenario":"recommendation"}}
+{"id":"massive-it-test-4166","label":"audio_volume_other","state":{"richiesta_utente":"porta il volume al massimo"},"meta":{"split":"test","massive_id":"4166","scenario":"audio"}}
+{"id":"massive-it-test-4081","label":"alarm_set","state":{"richiesta_utente":"voglio impostare una sveglia tornando a casa domani per ricordarmi di fermarmi al supermercato e comprare da mangiare"},"meta":{"split":"test","massive_id":"4081","scenario":"alarm"}}
+{"id":"massive-it-test-14544","label":"qa_stock","state":{"richiesta_utente":"qual è il prezzo delle azioni di microsoft in nasdaq"},"meta":{"split":"test","massive_id":"14544","scenario":"qa"}}
+{"id":"massive-it-test-389","label":"iot_wemo_on","state":{"richiesta_utente":"accendi la presa intelligente"},"meta":{"split":"test","massive_id":"389","scenario":"iot"}}
+{"id":"massive-it-test-13666","label":"qa_currency","state":{"richiesta_utente":"quanto valgono le sterline adesso"},"meta":{"split":"test","massive_id":"13666","scenario":"qa"}}
+{"id":"massive-it-test-15556","label":"social_post","state":{"richiesta_utente":"twitta una lamentela"},"meta":{"split":"test","massive_id":"15556","scenario":"social"}}
+{"id":"massive-it-test-5525","label":"audio_volume_mute","state":{"richiesta_utente":"silenzia per un'ora"},"meta":{"split":"test","massive_id":"5525","scenario":"audio"}}
+{"id":"massive-it-test-12629","label":"transport_query","state":{"richiesta_utente":"a che ora parte il primo treno da bologna"},"meta":{"split":"test","massive_id":"12629","scenario":"transport"}}
+{"id":"massive-it-test-1804","label":"iot_hue_lightup","state":{"richiesta_utente":"più luci"},"meta":{"split":"test","massive_id":"1804","scenario":"iot"}}
+{"id":"massive-it-test-9562","label":"play_radio","state":{"richiesta_utente":"avvia questo programma"},"meta":{"split":"test","massive_id":"9562","scenario":"play"}}
+{"id":"massive-it-test-5757","label":"datetime_query","state":{"richiesta_utente":"le due meno un quarto"},"meta":{"split":"test","massive_id":"5757","scenario":"datetime"}}
+{"id":"massive-it-test-4090","label":"audio_volume_up","state":{"richiesta_utente":"alza il volume dei miei altoparlanti"},"meta":{"split":"test","massive_id":"4090","scenario":"audio"}}
+{"id":"massive-it-test-3595","label":"iot_hue_lightup","state":{"richiesta_utente":"più luminoso"},"meta":{"split":"test","massive_id":"3595","scenario":"iot"}}
+{"id":"massive-it-test-14189","label":"qa_stock","state":{"richiesta_utente":"qual è il prezzo delle azioni di bper"},"meta":{"split":"test","massive_id":"14189","scenario":"qa"}}
+{"id":"massive-it-test-10317","label":"play_game","state":{"richiesta_utente":"mettimi tetris"},"meta":{"split":"test","massive_id":"10317","scenario":"play"}}
+{"id":"massive-it-test-2840","label":"datetime_query","state":{"richiesta_utente":"il due del prossimo mese cade in quale giorno"},"meta":{"split":"test","massive_id":"2840","scenario":"datetime"}}
+{"id":"massive-it-test-5823","label":"audio_volume_down","state":{"richiesta_utente":"abbassa del venti percento"},"meta":{"split":"test","massive_id":"5823","scenario":"audio"}}
+{"id":"massive-it-test-11861","label":"recommendation_movies","state":{"richiesta_utente":"qual è il film più consigliato del momento"},"meta":{"split":"test","massive_id":"11861","scenario":"recommendation"}}
+{"id":"massive-it-test-2673","label":"alarm_query","state":{"richiesta_utente":"mi sono ricordato di impostare una sveglia promemoria per la mia prossima visita medica"},"meta":{"split":"test","massive_id":"2673","scenario":"alarm"}}
+{"id":"massive-it-test-2056","label":"music_dislikeness","state":{"richiesta_utente":"non voglio mai più sentire quella canzone di nuovo"},"meta":{"split":"test","massive_id":"2056","scenario":"music"}}
+{"id":"massive-it-dev-1698","label":"music_dislikeness","state":{"richiesta_utente":"non mi piace quella canzone spegnila"},"meta":{"split":"dev","massive_id":"1698","scenario":"music"}}
+{"id":"massive-it-test-9956","label":"cooking_recipe","state":{"richiesta_utente":"con cosa posso sostituire il burro"},"meta":{"split":"test","massive_id":"9956","scenario":"cooking"}}
+{"id":"massive-it-test-4831","label":"audio_volume_up","state":{"richiesta_utente":"aumenta il volume della cassa"},"meta":{"split":"test","massive_id":"4831","scenario":"audio"}}
+{"id":"massive-it-test-1509","label":"audio_volume_mute","state":{"richiesta_utente":"non fare nessun rumore fino alla sveglia di domani mattina"},"meta":{"split":"test","massive_id":"1509","scenario":"audio"}}
+{"id":"massive-it-test-13982","label":"qa_currency","state":{"richiesta_utente":"tasso del dollaro attuale"},"meta":{"split":"test","massive_id":"13982","scenario":"qa"}}
+{"id":"massive-it-test-13016","label":"qa_definition","state":{"richiesta_utente":"cerca il significato di gaffe"},"meta":{"split":"test","massive_id":"13016","scenario":"qa"}}
+{"id":"massive-it-test-5204","label":"datetime_convert","state":{"richiesta_utente":"passa dalle otto del mattino a manila all'orario di new york"},"meta":{"split":"test","massive_id":"5204","scenario":"datetime"}}
+{"id":"massive-it-test-1832","label":"play_music","state":{"richiesta_utente":"riproduci l' album dei negrita"},"meta":{"split":"test","massive_id":"1832","scenario":"play"}}
+{"id":"massive-it-test-1158","label":"general_joke","state":{"richiesta_utente":"raccontami una barzelletta"},"meta":{"split":"test","massive_id":"1158","scenario":"general"}}
+{"id":"massive-it-test-4601","label":"alarm_set","state":{"richiesta_utente":"dimmi quando sono le diciassette"},"meta":{"split":"test","massive_id":"4601","scenario":"alarm"}}
+{"id":"massive-it-test-10472","label":"lists_createoradd","state":{"richiesta_utente":"aiutami a iniziare la mia lista per la cucina"},"meta":{"split":"test","massive_id":"10472","scenario":"lists"}}
+{"id":"massive-it-test-3835","label":"takeaway_order","state":{"richiesta_utente":"voglio ordinare della cucina cinese da asporto"},"meta":{"split":"test","massive_id":"3835","scenario":"takeaway"}}
+{"id":"massive-it-test-10538","label":"lists_query","state":{"richiesta_utente":"per favore ripetimi la mia lista della spesa"},"meta":{"split":"test","massive_id":"10538","scenario":"lists"}}
+{"id":"massive-it-test-12844","label":"transport_taxi","state":{"richiesta_utente":"chiamami un taxi in ufficio"},"meta":{"split":"test","massive_id":"12844","scenario":"transport"}}
+{"id":"massive-it-test-3280","label":"iot_hue_lightdim","state":{"richiesta_utente":"abbassa le luci per favore"},"meta":{"split":"test","massive_id":"3280","scenario":"iot"}}
+{"id":"massive-it-test-10444","label":"lists_remove","state":{"richiesta_utente":"elimina elemento"},"meta":{"split":"test","massive_id":"10444","scenario":"lists"}}
+{"id":"massive-it-test-5116","label":"alarm_remove","state":{"richiesta_utente":"non voglio nessuna sveglia"},"meta":{"split":"test","massive_id":"5116","scenario":"alarm"}}
+{"id":"massive-it-dev-167","label":"general_greet","state":{"richiesta_utente":"ehi ehi"},"meta":{"split":"dev","massive_id":"167","scenario":"general"}}
+{"id":"massive-it-test-2400","label":"music_likeness","state":{"richiesta_utente":"è una bella canzone salva questa per me"},"meta":{"split":"test","massive_id":"2400","scenario":"music"}}
+{"id":"massive-it-test-16228","label":"email_querycontact","state":{"richiesta_utente":"è il compleanno di qualcuno questo mese"},"meta":{"split":"test","massive_id":"16228","scenario":"email"}}
+{"id":"massive-it-test-158","label":"iot_hue_lightdim","state":{"richiesta_utente":"diminuisci le luci"},"meta":{"split":"test","massive_id":"158","scenario":"iot"}}
+{"id":"massive-it-test-14354","label":"qa_factoid","state":{"richiesta_utente":"qual è la risposta all'universo"},"meta":{"split":"test","massive_id":"14354","scenario":"qa"}}
+{"id":"massive-it-test-12685","label":"transport_traffic","state":{"richiesta_utente":"com'è il traffico adesso"},"meta":{"split":"test","massive_id":"12685","scenario":"transport"}}
+{"id":"massive-it-test-2517","label":"iot_cleaning","state":{"richiesta_utente":"come avvio il robot aspirapolvere"},"meta":{"split":"test","massive_id":"2517","scenario":"iot"}}
+{"id":"massive-it-test-1379","label":"takeaway_query","state":{"richiesta_utente":"fratelli la bufala fa consegna a domicilio"},"meta":{"split":"test","massive_id":"1379","scenario":"takeaway"}}
+{"id":"massive-it-test-15456","label":"social_post","state":{"richiesta_utente":"voglio inviare un tweet ad alitalia io sono arrabbiata perchè mi avete perso i bagagli"},"meta":{"split":"test","massive_id":"15456","scenario":"social"}}
+{"id":"massive-it-test-16373","label":"email_query","state":{"richiesta_utente":"ho ricevuto qualche mail con numeri di tracking"},"meta":{"split":"test","massive_id":"16373","scenario":"email"}}
+{"id":"massive-it-test-9726","label":"play_audiobook","state":{"richiesta_utente":"interrompi l'audiolibro"},"meta":{"split":"test","massive_id":"9726","scenario":"play"}}
+{"id":"massive-it-test-9767","label":"play_audiobook","state":{"richiesta_utente":"riproduci audiolibro di il fu mattia pascal"},"meta":{"split":"test","massive_id":"9767","scenario":"play"}}
+{"id":"massive-it-test-2085","label":"play_music","state":{"richiesta_utente":"alexa voglio sentire musica classica ma non bach o schubert"},"meta":{"split":"test","massive_id":"2085","scenario":"play"}}
+{"id":"massive-it-test-17075","label":"email_query","state":{"richiesta_utente":"ci sono nuove email ricevute dopo le quattro di oggi"},"meta":{"split":"test","massive_id":"17075","scenario":"email"}}
+{"id":"massive-it-test-4026","label":"iot_wemo_off","state":{"richiesta_utente":"spegni"},"meta":{"split":"test","massive_id":"4026","scenario":"iot"}}
+{"id":"massive-it-test-1812","label":"iot_coffee","state":{"richiesta_utente":"fammi il caffè senza dolcificante"},"meta":{"split":"test","massive_id":"1812","scenario":"iot"}}
+{"id":"massive-it-test-11505","label":"play_podcasts","state":{"richiesta_utente":"riproduci di nuovo il mio ultimo podcast"},"meta":{"split":"test","massive_id":"11505","scenario":"play"}}
+{"id":"massive-it-test-7777","label":"calendar_query","state":{"richiesta_utente":"ho un appuntamento oggi"},"meta":{"split":"test","massive_id":"7777","scenario":"calendar"}}
+{"id":"massive-it-test-4145","label":"alarm_query","state":{"richiesta_utente":"che sveglie ho impostato oggi"},"meta":{"split":"test","massive_id":"4145","scenario":"alarm"}}
+{"id":"massive-it-test-5627","label":"play_music","state":{"richiesta_utente":"riproduci delle canzoni dei beatles"},"meta":{"split":"test","massive_id":"5627","scenario":"play"}}
+{"id":"massive-it-test-3864","label":"music_query","state":{"richiesta_utente":"chi canta la canzone che ascolto ora"},"meta":{"split":"test","massive_id":"3864","scenario":"music"}}
+{"id":"massive-it-test-10608","label":"lists_createoradd","state":{"richiesta_utente":"cerca l'elemento"},"meta":{"split":"test","massive_id":"10608","scenario":"lists"}}
+{"id":"massive-it-test-3103","label":"music_dislikeness","state":{"richiesta_utente":"non riprodurre di nuovo questa canzone"},"meta":{"split":"test","massive_id":"3103","scenario":"music"}}
+{"id":"massive-it-test-9689","label":"play_audiobook","state":{"richiesta_utente":"metti in pausa il libro"},"meta":{"split":"test","massive_id":"9689","scenario":"play"}}
+{"id":"massive-it-test-14026","label":"qa_maths","state":{"richiesta_utente":"se una matita costa quattro dollari e un libro ne costa dieci quanto spenderei comprando due matite e tre libri"},"meta":{"split":"test","massive_id":"14026","scenario":"qa"}}
+{"id":"massive-it-test-15987","label":"email_addcontact","state":{"richiesta_utente":"aggiungi questa nuova email con il contatto"},"meta":{"split":"test","massive_id":"15987","scenario":"email"}}
+{"id":"massive-it-test-169","label":"takeaway_query","state":{"richiesta_utente":"fanno consegne"},"meta":{"split":"test","massive_id":"169","scenario":"takeaway"}}
+{"id":"massive-it-test-2540","label":"iot_hue_lightchange","state":{"richiesta_utente":"illumina la stanza di luce blu"},"meta":{"split":"test","massive_id":"2540","scenario":"iot"}}
+{"id":"massive-it-test-14874","label":"qa_stock","state":{"richiesta_utente":"controlla i prezzi delle azioni di starbucks"},"meta":{"split":"test","massive_id":"14874","scenario":"qa"}}
+{"id":"massive-it-test-15225","label":"social_query","state":{"richiesta_utente":"mostrami le mie ultime notifiche"},"meta":{"split":"test","massive_id":"15225","scenario":"social"}}
+{"id":"massive-it-test-11467","label":"play_podcasts","state":{"richiesta_utente":"riproduci l'ultimo podcast di american life"},"meta":{"split":"test","massive_id":"11467","scenario":"play"}}
+{"id":"massive-it-test-128","label":"datetime_query","state":{"richiesta_utente":"che data è"},"meta":{"split":"test","massive_id":"128","scenario":"datetime"}}
+{"id":"massive-it-test-16470","label":"email_addcontact","state":{"richiesta_utente":"per favore aggiungi questa email ai miei contatti"},"meta":{"split":"test","massive_id":"16470","scenario":"email"}}
+{"id":"massive-it-test-3196","label":"iot_coffee","state":{"richiesta_utente":"olly mi fai un caffè cremoso"},"meta":{"split":"test","massive_id":"3196","scenario":"iot"}}
+{"id":"massive-it-test-5812","label":"audio_volume_other","state":{"richiesta_utente":"imposta l' impostazione audio predefinita"},"meta":{"split":"test","massive_id":"5812","scenario":"audio"}}
+{"id":"massive-it-test-2578","label":"iot_hue_lightoff","state":{"richiesta_utente":"spegni la luce della veranda"},"meta":{"split":"test","massive_id":"2578","scenario":"iot"}}
+{"id":"massive-it-dev-1179","label":"music_dislikeness","state":{"richiesta_utente":"non riprodurre niente di country"},"meta":{"split":"dev","massive_id":"1179","scenario":"music"}}
+{"id":"massive-it-test-4550","label":"music_likeness","state":{"richiesta_utente":"hey alexa mi piace la musica dei maneskin"},"meta":{"split":"test","massive_id":"4550","scenario":"music"}}
+{"id":"massive-it-dev-5094","label":"iot_hue_lighton","state":{"richiesta_utente":"è buio qui"},"meta":{"split":"dev","massive_id":"5094","scenario":"iot"}}
+{"id":"massive-it-test-7209","label":"calendar_set","state":{"richiesta_utente":"puoi ricordarmi di portare fuori la spazzatura martedì"},"meta":{"split":"test","massive_id":"7209","scenario":"calendar"}}
+{"id":"massive-it-test-10931","label":"lists_query","state":{"richiesta_utente":"cosa c'è nella mia playlist"},"meta":{"split":"test","massive_id":"10931","scenario":"lists"}}
+{"id":"massive-it-test-11911","label":"recommendation_events","state":{"richiesta_utente":"qualcosa di bello questo fine settimana nella zona"},"meta":{"split":"test","massive_id":"11911","scenario":"recommendation"}}
+{"id":"massive-it-test-3","label":"audio_volume_mute","state":{"richiesta_utente":"silenzio"},"meta":{"split":"test","massive_id":"3","scenario":"audio"}}
+{"id":"massive-it-test-10843","label":"lists_remove","state":{"richiesta_utente":"cancella latte dalla mia lista della spesa"},"meta":{"split":"test","massive_id":"10843","scenario":"lists"}}
+{"id":"massive-it-test-5333","label":"datetime_convert","state":{"richiesta_utente":"che differenza di orario c'è tra il regno unito e gli stati uniti"},"meta":{"split":"test","massive_id":"5333","scenario":"datetime"}}
+{"id":"massive-it-test-16694","label":"email_addcontact","state":{"richiesta_utente":"trova l'email del conad e mettila nella mia lista contatti"},"meta":{"split":"test","massive_id":"16694","scenario":"email"}}
+{"id":"massive-it-test-10673","label":"lists_remove","state":{"richiesta_utente":"per favore rimuovi la lista seguente"},"meta":{"split":"test","massive_id":"10673","scenario":"lists"}}
+{"id":"massive-it-test-6477","label":"general_quirky","state":{"richiesta_utente":"risultati ultima giornata serie a"},"meta":{"split":"test","massive_id":"6477","scenario":"general"}}
+{"id":"massive-it-test-14981","label":"qa_definition","state":{"richiesta_utente":"descrizione dell'iphone sette"},"meta":{"split":"test","massive_id":"14981","scenario":"qa"}}
+{"id":"massive-it-test-5732","label":"weather_query","state":{"richiesta_utente":"dovrei cambiare le gomme con le gomme da neve presto"},"meta":{"split":"test","massive_id":"5732","scenario":"weather"}}
+{"id":"massive-it-test-6064","label":"audio_volume_mute","state":{"richiesta_utente":"non parlare per un'ora"},"meta":{"split":"test","massive_id":"6064","scenario":"audio"}}
+{"id":"massive-it-test-4826","label":"iot_hue_lightchange","state":{"richiesta_utente":"rendi le luci rosa"},"meta":{"split":"test","massive_id":"4826","scenario":"iot"}}
+{"id":"massive-it-test-5198","label":"music_likeness","state":{"richiesta_utente":"tagga questa canzone con cinque stelle"},"meta":{"split":"test","massive_id":"5198","scenario":"music"}}
+{"id":"massive-it-test-1710","label":"music_settings","state":{"richiesta_utente":"cambia la modalità musica su rock"},"meta":{"split":"test","massive_id":"1710","scenario":"music"}}
+{"id":"massive-it-test-12008","label":"recommendation_events","state":{"richiesta_utente":"ci sono eventi interessanti a bari oggi"},"meta":{"split":"test","massive_id":"12008","scenario":"recommendation"}}
+{"id":"massive-it-test-10709","label":"lists_createoradd","state":{"richiesta_utente":"aggiungi questo alla lista"},"meta":{"split":"test","massive_id":"10709","scenario":"lists"}}
+{"id":"massive-it-test-4982","label":"general_joke","state":{"richiesta_utente":"qual è la barzelletta più divertente"},"meta":{"split":"test","massive_id":"4982","scenario":"general"}}
+{"id":"massive-it-test-11437","label":"play_podcasts","state":{"richiesta_utente":"riproduci il podcast per me"},"meta":{"split":"test","massive_id":"11437","scenario":"play"}}
+{"id":"massive-it-test-9720","label":"play_audiobook","state":{"richiesta_utente":"riprendi harry potter libro quattro"},"meta":{"split":"test","massive_id":"9720","scenario":"play"}}
+{"id":"massive-it-test-10308","label":"play_game","state":{"richiesta_utente":"avvia ping pong"},"meta":{"split":"test","massive_id":"10308","scenario":"play"}}
+{"id":"massive-it-test-11905","label":"recommendation_events","state":{"richiesta_utente":"olly raccontami delle attività in programma questo fine settimana nella mia zona"},"meta":{"split":"test","massive_id":"11905","scenario":"recommendation"}}
+{"id":"massive-it-test-1715","label":"audio_volume_down","state":{"richiesta_utente":"abbassa il volume del cinquanta percento"},"meta":{"split":"test","massive_id":"1715","scenario":"audio"}}
+{"id":"massive-it-test-1533","label":"news_query","state":{"richiesta_utente":"che notizie c'erano oggi su sky"},"meta":{"split":"test","massive_id":"1533","scenario":"news"}}
+{"id":"massive-it-test-864","label":"iot_cleaning","state":{"richiesta_utente":"passa il robot aspirapolvere in soggiorno ora"},"meta":{"split":"test","massive_id":"864","scenario":"iot"}}
+{"id":"massive-it-test-8453","label":"calendar_set","state":{"richiesta_utente":"inserisci evento nel mio calendario e segnalo come evento ricorrente per favore"},"meta":{"split":"test","massive_id":"8453","scenario":"calendar"}}
+{"id":"massive-it-test-5966","label":"takeaway_order","state":{"richiesta_utente":"puoi ordinarmi del cibo"},"meta":{"split":"test","massive_id":"5966","scenario":"takeaway"}}
+{"id":"massive-it-test-8553","label":"calendar_set","state":{"richiesta_utente":"aggiungi al calendario una riunione con tommaso alle nove"},"meta":{"split":"test","massive_id":"8553","scenario":"calendar"}}
+{"id":"massive-it-test-6403","label":"transport_query","state":{"richiesta_utente":"come andare da qualche parte"},"meta":{"split":"test","massive_id":"6403","scenario":"transport"}}
+{"id":"massive-it-test-4201","label":"iot_wemo_on","state":{"richiesta_utente":"accendi la presa smart"},"meta":{"split":"test","massive_id":"4201","scenario":"iot"}}
+{"id":"massive-it-test-4240","label":"iot_cleaning","state":{"richiesta_utente":"accendi roomba"},"meta":{"split":"test","massive_id":"4240","scenario":"iot"}}
+{"id":"massive-it-test-3884","label":"alarm_query","state":{"richiesta_utente":"elenca le sveglie impostate al momento"},"meta":{"split":"test","massive_id":"3884","scenario":"alarm"}}
+{"id":"massive-it-test-16529","label":"email_querycontact","state":{"richiesta_utente":"controlla il numero di mamma"},"meta":{"split":"test","massive_id":"16529","scenario":"email"}}
+{"id":"massive-it-test-15333","label":"social_query","state":{"richiesta_utente":"c'è qualcosa di nuovo su insta"},"meta":{"split":"test","massive_id":"15333","scenario":"social"}}
+{"id":"massive-it-dev-4778","label":"music_settings","state":{"richiesta_utente":"ripeti di nuovo l'ultima canzone"},"meta":{"split":"dev","massive_id":"4778","scenario":"music"}}
+{"id":"massive-it-dev-6613","label":"cooking_query","state":{"richiesta_utente":"cucinare"},"meta":{"split":"dev","massive_id":"6613","scenario":"cooking"}}
+{"id":"massive-it-test-7294","label":"calendar_remove","state":{"richiesta_utente":"elimina il mio appuntamento con giorgio rossi dal calendario"},"meta":{"split":"test","massive_id":"7294","scenario":"calendar"}}
+{"id":"massive-it-test-16221","label":"email_sendemail","state":{"richiesta_utente":"recupera l'email di carolina e scrivi che le farò sapere"},"meta":{"split":"test","massive_id":"16221","scenario":"email"}}
+{"id":"massive-it-test-4189","label":"music_query","state":{"richiesta_utente":"come definiresti questo tipo di musica che stiamo ascoltando"},"meta":{"split":"test","massive_id":"4189","scenario":"music"}}
+{"id":"massive-it-test-16961","label":"email_sendemail","state":{"richiesta_utente":"rispondi con"},"meta":{"split":"test","massive_id":"16961","scenario":"email"}}
+{"id":"massive-it-test-2075","label":"iot_hue_lightup","state":{"richiesta_utente":"vorrei più luce"},"meta":{"split":"test","massive_id":"2075","scenario":"iot"}}
+{"id":"massive-it-test-4930","label":"alarm_set","state":{"richiesta_utente":"metti una sveglia per le quindici e trenta di oggi"},"meta":{"split":"test","massive_id":"4930","scenario":"alarm"}}
+{"id":"massive-it-test-2016","label":"iot_hue_lightdim","state":{"richiesta_utente":"abbassa le luci in cucina"},"meta":{"split":"test","massive_id":"2016","scenario":"iot"}}
+{"id":"massive-it-test-8679","label":"calendar_query","state":{"richiesta_utente":"oggi è ferragosto"},"meta":{"split":"test","massive_id":"8679","scenario":"calendar"}}
+{"id":"massive-it-test-10770","label":"lists_remove","state":{"richiesta_utente":"rimuovi cereali dalla mia lista della spesa"},"meta":{"split":"test","massive_id":"10770","scenario":"lists"}}
+{"id":"massive-it-test-14163","label":"qa_factoid","state":{"richiesta_utente":"cerca la località"},"meta":{"split":"test","massive_id":"14163","scenario":"qa"}}
+{"id":"massive-it-test-9980","label":"cooking_recipe","state":{"richiesta_utente":"qual è il menù di oggi aggiungi delle verdure grigliate"},"meta":{"split":"test","massive_id":"9980","scenario":"cooking"}}
+{"id":"massive-it-test-5497","label":"datetime_convert","state":{"richiesta_utente":"che differenza di orario c'è tra roma e berlino"},"meta":{"split":"test","massive_id":"5497","scenario":"datetime"}}
+{"id":"massive-it-test-4833","label":"audio_volume_mute","state":{"richiesta_utente":"cancella dati"},"meta":{"split":"test","massive_id":"4833","scenario":"audio"}}
+{"id":"massive-it-test-9216","label":"play_radio","state":{"richiesta_utente":"riproduci la mia stazione"},"meta":{"split":"test","massive_id":"9216","scenario":"play"}}
+{"id":"massive-it-test-10177","label":"cooking_recipe","state":{"richiesta_utente":"come usare la zucca"},"meta":{"split":"test","massive_id":"10177","scenario":"cooking"}}
+{"id":"massive-it-test-5856","label":"iot_wemo_off","state":{"richiesta_utente":"spegni la presa smart"},"meta":{"split":"test","massive_id":"5856","scenario":"iot"}}
+{"id":"massive-it-test-3364","label":"general_joke","state":{"richiesta_utente":"toc toc"},"meta":{"split":"test","massive_id":"3364","scenario":"general"}}
+{"id":"massive-it-test-3669","label":"datetime_convert","state":{"richiesta_utente":"dimmi che ore sono in qualche posto"},"meta":{"split":"test","massive_id":"3669","scenario":"datetime"}}
+{"id":"massive-it-test-14355","label":"qa_factoid","state":{"richiesta_utente":"trentatré trentini entrarono a trento tutti e trentatré trotterellando"},"meta":{"split":"test","massive_id":"14355","scenario":"qa"}}
+{"id":"massive-it-test-11844","label":"recommendation_events","state":{"richiesta_utente":"qualcosa di interessante in corso nella zona di riccione"},"meta":{"split":"test","massive_id":"11844","scenario":"recommendation"}}
+{"id":"massive-it-test-944","label":"datetime_convert","state":{"richiesta_utente":"qual è la differenza di orario tra qui e l'italia"},"meta":{"split":"test","massive_id":"944","scenario":"datetime"}}
+{"id":"massive-it-test-4567","label":"news_query","state":{"richiesta_utente":"leggimi gli ultimi titoli del corriere della sera"},"meta":{"split":"test","massive_id":"4567","scenario":"news"}}
+{"id":"massive-it-test-15056","label":"qa_factoid","state":{"richiesta_utente":"quanti anni ha il nuovo fidanzato di giulia de lellis"},"meta":{"split":"test","massive_id":"15056","scenario":"qa"}}
+{"id":"massive-it-test-1336","label":"music_likeness","state":{"richiesta_utente":"mi piacciono le canzoni dei maneskin per favore suona qualcosa"},"meta":{"split":"test","massive_id":"1336","scenario":"music"}}
+{"id":"massive-it-dev-2161","label":"music_settings","state":{"richiesta_utente":"ripeti brano"},"meta":{"split":"dev","massive_id":"2161","scenario":"music"}}
+{"id":"massive-it-test-13310","label":"qa_maths","state":{"richiesta_utente":"quanto fa due più due"},"meta":{"split":"test","massive_id":"13310","scenario":"qa"}}
+{"id":"massive-it-test-8","label":"iot_hue_lightchange","state":{"richiesta_utente":"vogliamo solo il rosa"},"meta":{"split":"test","massive_id":"8","scenario":"iot"}}
+{"id":"massive-it-test-2717","label":"play_music","state":{"richiesta_utente":"voglio ascoltare non è per sempre"},"meta":{"split":"test","massive_id":"2717","scenario":"play"}}
+{"id":"massive-it-test-14761","label":"qa_definition","state":{"richiesta_utente":"dimmi la definizione della parola pontificato"},"meta":{"split":"test","massive_id":"14761","scenario":"qa"}}
+{"id":"massive-it-test-14928","label":"qa_currency","state":{"richiesta_utente":"dimmi qual è il tasso di cambio tra euro e corona svedese"},"meta":{"split":"test","massive_id":"14928","scenario":"qa"}}
+{"id":"massive-it-test-10260","label":"play_game","state":{"richiesta_utente":"gioca a scarabeo con me"},"meta":{"split":"test","massive_id":"10260","scenario":"play"}}
+{"id":"massive-it-test-12558","label":"transport_taxi","state":{"richiesta_utente":"per favore prenota un taxi"},"meta":{"split":"test","massive_id":"12558","scenario":"transport"}}
+{"id":"massive-it-test-16781","label":"email_addcontact","state":{"richiesta_utente":"aggiungi questo indirizzo email ai miei contatti e invia email"},"meta":{"split":"test","massive_id":"16781","scenario":"email"}}
+{"id":"massive-it-test-15618","label":"social_post","state":{"richiesta_utente":"twitta a unipol e digli che fanno schifo"},"meta":{"split":"test","massive_id":"15618","scenario":"social"}}
+{"id":"massive-it-test-5652","label":"iot_wemo_off","state":{"richiesta_utente":"spegni la presa wemo"},"meta":{"split":"test","massive_id":"5652","scenario":"iot"}}
+{"id":"massive-it-test-6112","label":"takeaway_order","state":{"richiesta_utente":"ehi ordina due hamburger con patatine dal mcdonald"},"meta":{"split":"test","massive_id":"6112","scenario":"takeaway"}}
+{"id":"massive-it-test-4544","label":"takeaway_order","state":{"richiesta_utente":"ordina un hamburger con patatine e una sprite come bevanda"},"meta":{"split":"test","massive_id":"4544","scenario":"takeaway"}}
+{"id":"massive-it-test-12054","label":"recommendation_events","state":{"richiesta_utente":"cosa c'è in città"},"meta":{"split":"test","massive_id":"12054","scenario":"recommendation"}}
+{"id":"massive-it-test-1831","label":"takeaway_order","state":{"richiesta_utente":"ordina una pizza da michele"},"meta":{"split":"test","massive_id":"1831","scenario":"takeaway"}}
+{"id":"massive-it-test-11273","label":"play_audiobook","state":{"richiesta_utente":"riproduci il prossimo episodio di harry potter di j. k. rowling"},"meta":{"split":"test","massive_id":"11273","scenario":"play"}}
+{"id":"massive-it-test-5358","label":"datetime_query","state":{"richiesta_utente":"aggiorna orario attuale"},"meta":{"split":"test","massive_id":"5358","scenario":"datetime"}}
+{"id":"massive-it-test-15794","label":"email_querycontact","state":{"richiesta_utente":"dove vive matteo"},"meta":{"split":"test","massive_id":"15794","scenario":"email"}}
+{"id":"massive-it-test-13040","label":"qa_maths","state":{"richiesta_utente":"qual è la radice quadrata di nove"},"meta":{"split":"test","massive_id":"13040","scenario":"qa"}}
+{"id":"massive-it-test-3161","label":"alarm_query","state":{"richiesta_utente":"ho qualche sveglia impostata per le sei di domani mattina"},"meta":{"split":"test","massive_id":"3161","scenario":"alarm"}}
+{"id":"massive-it-test-1048","label":"audio_volume_down","state":{"richiesta_utente":"abbassa il volume dell' altoparlante"},"meta":{"split":"test","massive_id":"1048","scenario":"audio"}}
+{"id":"massive-it-test-2780","label":"music_likeness","state":{"richiesta_utente":"ci sono tra poco dei concerti di"},"meta":{"split":"test","massive_id":"2780","scenario":"music"}}
+{"id":"massive-it-test-3598","label":"general_quirky","state":{"richiesta_utente":"e tu"},"meta":{"split":"test","massive_id":"3598","scenario":"general"}}
+{"id":"massive-it-test-9316","label":"play_radio","state":{"richiesta_utente":"metti radio kiss kiss"},"meta":{"split":"test","massive_id":"9316","scenario":"play"}}
+{"id":"massive-it-test-11563","label":"recommendation_events","state":{"richiesta_utente":"cosa posso fare a pescara"},"meta":{"split":"test","massive_id":"11563","scenario":"recommendation"}}
+{"id":"massive-it-dev-312","label":"iot_hue_lighton","state":{"richiesta_utente":"è troppo scuro qui"},"meta":{"split":"dev","massive_id":"312","scenario":"iot"}}
+{"id":"massive-it-test-702","label":"iot_hue_lightdim","state":{"richiesta_utente":"ehi puoi abbassare le luci per favore"},"meta":{"split":"test","massive_id":"702","scenario":"iot"}}
+{"id":"massive-it-test-5165","label":"iot_hue_lightdim","state":{"richiesta_utente":"diminuisci l'intensità della luce"},"meta":{"split":"test","massive_id":"5165","scenario":"iot"}}
+{"id":"massive-it-test-12883","label":"transport_ticket","state":{"richiesta_utente":"prenota un biglietto del treno il weekend del ventisei da firenze a roma"},"meta":{"split":"test","massive_id":"12883","scenario":"transport"}}
+{"id":"massive-it-test-5292","label":"alarm_set","state":{"richiesta_utente":"sistema sveglia"},"meta":{"split":"test","massive_id":"5292","scenario":"alarm"}}
+{"id":"massive-it-test-11470","label":"play_podcasts","state":{"richiesta_utente":"riproduci il mio podcast preferito per favore"},"meta":{"split":"test","massive_id":"11470","scenario":"play"}}
+{"id":"massive-it-test-14973","label":"qa_currency","state":{"richiesta_utente":"qual è il tasso di cambio tra euro e dollaro"},"meta":{"split":"test","massive_id":"14973","scenario":"qa"}}
+{"id":"massive-it-test-4913","label":"general_joke","state":{"richiesta_utente":"questa barzelletta la conosci"},"meta":{"split":"test","massive_id":"4913","scenario":"general"}}
+{"id":"massive-it-test-14530","label":"qa_currency","state":{"richiesta_utente":"mandami una notifica quando il tasso di cambio tra euro e sterlina è quello che mi interessa"},"meta":{"split":"test","massive_id":"14530","scenario":"qa"}}
+{"id":"massive-it-test-12004","label":"recommendation_locations","state":{"richiesta_utente":"olly elenca i migliori negozi di abbigliamento vicino a me per favore"},"meta":{"split":"test","massive_id":"12004","scenario":"recommendation"}}
+{"id":"massive-it-test-13630","label":"recommendation_locations","state":{"richiesta_utente":"qual è lo zoo più vicino alla mia posizione"},"meta":{"split":"test","massive_id":"13630","scenario":"recommendation"}}
+{"id":"massive-it-test-11585","label":"recommendation_events","state":{"richiesta_utente":"eventi culturali in calabria"},"meta":{"split":"test","massive_id":"11585","scenario":"recommendation"}}
+{"id":"massive-it-test-10696","label":"lists_remove","state":{"richiesta_utente":"rimpiazza"},"meta":{"split":"test","massive_id":"10696","scenario":"lists"}}
+{"id":"massive-it-test-15904","label":"email_query","state":{"richiesta_utente":"controlla le mie nuove email e dimmi di cosa trattano"},"meta":{"split":"test","massive_id":"15904","scenario":"email"}}

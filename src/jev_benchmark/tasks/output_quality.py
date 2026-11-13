@@ -10,9 +10,17 @@ from __future__ import annotations
 
 import gzip
 import json
+from collections import Counter
 
 from jev_benchmark.config import RAW_DIR
-from jev_benchmark.tasks.base import Example, Task, TaskKind, download, stratified_sample
+from jev_benchmark.tasks.base import (
+    Example,
+    Task,
+    TaskKind,
+    balanced_quotas,
+    download,
+    stratified_sample,
+)
 
 HELPSTEER2_VAL_URL = "https://huggingface.co/datasets/nvidia/HelpSteer2/resolve/main/validation.jsonl.gz"
 
@@ -54,11 +62,18 @@ def render_prompt(prompt: str) -> str:
     return f"User: {text}"
 
 
-def prepare(per_class: int = 60, seed: int = 42) -> list[Example]:
+def prepare(total: int = 500, seed: int = 42) -> list[Example]:
+    """`total` validation pairs, as balanced across the 5 levels as the split allows.
+
+    The validation split has only 78 pairs at level 0 and 93 at level 1, so those are all taken and
+    the other levels get ~110 each (v1 used 60 per level: those 300 are all included).
+    """
     path = download(HELPSTEER2_VAL_URL, RAW_DIR / "helpsteer2" / "validation.jsonl.gz")
     with gzip.open(path, "rt", encoding="utf-8") as fh:
         rows = [(i, json.loads(line)) for i, line in enumerate(fh)]
-    sampled = stratified_sample(rows, key=lambda r: str(r[1]["helpfulness"]), per_class=per_class, seed=seed)
+    level = lambda r: str(r[1]["helpfulness"])  # noqa: E731
+    quotas = balanced_quotas(Counter(level(r) for r in rows), total, seed)
+    sampled = stratified_sample(rows, key=level, per_class=quotas, seed=seed)
     return [
         Example(
             id=f"helpsteer2-val-{i:04d}",

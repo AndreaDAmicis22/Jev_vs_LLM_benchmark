@@ -9,9 +9,17 @@ split used for the benchmark) and follow the actual semantics of the dataset lab
 from __future__ import annotations
 
 import csv
+from collections import Counter
 
 from jev_benchmark.config import RAW_DIR
-from jev_benchmark.tasks.base import Example, Task, TaskKind, download, stratified_sample
+from jev_benchmark.tasks.base import (
+    Example,
+    Task,
+    TaskKind,
+    balanced_quotas,
+    download,
+    stratified_sample,
+)
 
 BANKING77_TEST_URL = (
     "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/master/banking_data/test.csv"
@@ -111,11 +119,13 @@ TASK = Task(
 )
 
 
-def prepare(per_class: int = 4, seed: int = 42) -> list[Example]:
+def prepare(total: int = 500, seed: int = 42) -> list[Example]:
+    """`total` test messages, 6-7 per intent (v1 used 4 per intent: those 308 are all included)."""
     path = download(BANKING77_TEST_URL, RAW_DIR / "banking77" / "test.csv")
     with path.open(encoding="utf-8") as fh:
         rows = [(i, row) for i, row in enumerate(csv.DictReader(fh))]
-    sampled = stratified_sample(rows, key=lambda r: r[1]["category"], per_class=per_class, seed=seed)
+    quotas = balanced_quotas(Counter(row["category"] for _, row in rows), total, seed)
+    sampled = stratified_sample(rows, key=lambda r: r[1]["category"], per_class=quotas, seed=seed)
     return [
         Example(
             id=f"banking77-test-{i:04d}",

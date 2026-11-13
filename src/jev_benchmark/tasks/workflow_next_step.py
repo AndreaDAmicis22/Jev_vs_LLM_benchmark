@@ -18,7 +18,7 @@ import random
 from collections import defaultdict
 
 from jev_benchmark.config import RAW_DIR
-from jev_benchmark.tasks.base import Example, Task, TaskKind, download
+from jev_benchmark.tasks.base import Example, Task, TaskKind, balanced_quotas, download
 
 ABCD_URL = "https://github.com/asappresearch/abcd/raw/master/data/abcd_v1.1.json.gz"
 GUIDELINES_URL = "https://raw.githubusercontent.com/asappresearch/abcd/master/data/guidelines.json"
@@ -204,7 +204,16 @@ def _decision_points(convo: dict) -> list[tuple[int, str]]:
     return points
 
 
-def prepare(per_class: int = 10, seed: int = 42) -> list[Example]:
+V1_PER_CLASS = 10  # size per action of the first benchmark version (300 examples)
+
+
+def prepare(total: int = 500, seed: int = 42) -> list[Example]:
+    """`total` decision points, 16-17 per action, at most one per conversation.
+
+    Phase 1 reproduces exactly the v1 sample (10 per action), so its 300 examples and their results
+    stay valid; phase 2 extends every action towards its quota by continuing through the same shuffled
+    candidate pools. The test split is used first; dev only fills actions that test cannot cover.
+    """
     data_path = download(ABCD_URL, RAW_DIR / "abcd" / "abcd_v1.1.json.gz")
     guide_path = download(GUIDELINES_URL, RAW_DIR / "abcd" / "guidelines.json")
     with gzip.open(data_path, "rt", encoding="utf-8") as fh:
@@ -212,27 +221,44 @@ def prepare(per_class: int = 10, seed: int = 42) -> list[Example]:
     guidelines = json.loads(guide_path.read_text(encoding="utf-8"))
 
     rng = random.Random(seed)
-    # Candidates per action, test split first; dev is used only to fill rare actions.
     by_action: dict[str, dict[str, list]] = defaultdict(lambda: {"test": [], "dev": []})
     for split in ("test", "dev"):
         for convo in data[split]:
             for idx, action in _decision_points(convo):
                 by_action[action][split].append((split, convo, idx))
 
-    picked, used_convos = [], set()
-    for action in ACTIONS:  # deterministic order
-        chosen = []
+    chosen: dict[str, list] = {action: [] for action in ACTIONS}
+    used_convos: set[str] = set()
+
+    def take(action: str, limit: int) -> None:
         for split in ("test", "dev"):
-            pool = by_action[action][split]
-            rng.shuffle(pool)
-            for split_name, convo, idx in pool:
-                if len(chosen) == per_class:
-                    break
+            for split_name, convo, idx in by_action[action][split]:
+                if len(chosen[action]) >= limit:
+                    return
                 if convo["convo_id"] in used_convos:  # one decision point per conversation
                     continue
-                chosen.append((split_name, convo, idx, action))
+                chosen[action].append((split_name, convo, idx, action))
                 used_convos.add(convo["convo_id"])
-        picked.extend(chosen)
+
+    # Phase 1: v1 sampling (same random draws in the same order).
+    for action in ACTIONS:
+        for split in ("test", "dev"):
+            rng.shuffle(by_action[action][split])
+        take(action, V1_PER_CLASS)
+    # Phase 2: extend to balanced quotas; actions that run out of conversations leave their share
+    # to the others (extra rounds until `total` is reached).
+    quotas = balanced_quotas(dict.fromkeys(ACTIONS, total), total, seed)
+    for action in ACTIONS:
+        take(action, quotas[action])
+    while (missing := total - sum(len(v) for v in chosen.values())) > 0:
+        before = missing
+        for action in ACTIONS:
+            if total - sum(len(v) for v in chosen.values()) > 0:
+                take(action, len(chosen[action]) + 1)
+        if total - sum(len(v) for v in chosen.values()) == before:
+            raise ValueError(f"Only {total - before} decision points available, {total} requested")
+
+    picked = [item for action in ACTIONS for item in chosen[action]]
     rng.shuffle(picked)
 
     examples = []
